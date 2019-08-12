@@ -9,22 +9,49 @@ class Login extends CI_Controller {
 		//membuat view
 		$this->load->view('login');
 		//membuat model Mlogin
-		$this->load->model('Mlogin');
+		//$this->load->model('Mlogin');
 
-		if($this->input->post())
+		
+		
+	}
+
+	public function proses_login()
+	{
+		$email_magang = $this->input->post('email_magang');
+		$password = $this->input->post('password');
+		$magang = $this->db->get_where('magang', ['email_magang' => $email_magang])->row_array();
+
+		if ($magang) 
 		{
-			$cek = $this->Mlogin->login_magang($this->input->post());
-
-			if($cek=="berhasil")
+			if ($magang['is_actived']==1) 
 			{
-				redirect('mahasiswa','refresh');
+				if (password_verify($password,$magang['password_magang'])) 
+				{
+					$data = [
+						'id_magang' => $magang['id_magang'],	
+						'email_magang' => $magang['email_magang'],
+						'password' => $magang['password']
+					];
+					$this->session->set_userdata('mahasiswa', $data);
+					redirect('mahasiswa','refresh');
+				}
+				else
+				{
+					$this->session->set_flashdata('pesan', 'password salah');
+					redirect('Login','refresh');
+				}
 			}
 			else
 			{
-				echo "<script>alert('Login gagal');location='".base_url("login")."'</script>";
+				$this->session->set_flashdata('pesan', 'email belum aktif');
+				redirect('Login','refresh');
 			}
 		}
-		
+		else
+		{
+			$this->session->set_flashdata('pesan', 'email belum terdaftar');
+			redirect('Login','refresh');
+		}
 	}
 
 }

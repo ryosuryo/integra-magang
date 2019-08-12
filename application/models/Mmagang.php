@@ -3,15 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mmagang extends CI_Model 
 {
-	function periode_magang($id_magang)
-	{
-		$this->db->join('magang', 'periode_pemagang.id_magang = magang.id_magang', 'left');
-		$this->db->join('periode_magang', 'periode_pemagang.id_periode = periode_magang.id_periode', 'left');
-		$this->db->where('periode_pemagang.id_magang', $id_magang);
-		$ambil = $this->db->get('periode_pemagang');
-		$data = $ambil->result_array();
-		return $data;
-	}
+	
 	function tampil()
 	{
 		$ambil = $this->db->get('magang');
@@ -19,15 +11,13 @@ class Mmagang extends CI_Model
 		return $data;
 	}
 
-	function periode_pemagang($id,$periode)
+	function periode_pemagang($id)
 	{
-		foreach ($periode as $id_periode => $value)
-		{
-			$data['id_periode'] = $id_periode;
+			$input = $this->input->post();
+			$data['tgl_awal'] = $input['tgl_awal'];
+			$data['tgl_akhir'] = $input['tgl_akhir'];
 			$data['id_magang'] = $id;
-
 			$this->db->insert('periode_pemagang', $data);
-		}
 	}
 
 	function tampil_magang_baru($status)
@@ -50,10 +40,7 @@ class Mmagang extends CI_Model
 
 	function detail($id)
 	{
-		$this->db->where('id_magang', $id);
-		$ambil = $this->db->get('magang');
-		$data = $ambil->row_array();
-		return $data;
+		return $this->db->join('periode_pemagang', 'periode_pemagang.id_magang = magang.id_magang')->where('magang.id_magang',$id)->get('magang')->row_array();
 	}
 
 	function detail_magang($id)
@@ -112,7 +99,7 @@ class Mmagang extends CI_Model
 	function daftar_magang($input)
 	{
 		$data['nama_magang'] = $input['nama_magang'];
-		$data['password_magang'] = sha1($input['password']);
+		$data['password_magang'] = password_hash($input['password'], PASSWORD_DEFAULT);
 		$data['email_magang'] = $input['email'];
 		$data['alamat_magang']= $input['alamat'];
 		$data['nohp_magang']=$input['no_hp'];
@@ -133,7 +120,7 @@ class Mmagang extends CI_Model
 		}
 	}
 
-	function daftarmagang($input,$id_magang)
+	function daftarmagang($inputan,$id_magang)
 	{
 		$config['upload_path'] = './assets/dokumen/';
 		$config['allowed_types'] = 'gif|jpg|png|doc|pdf';
@@ -143,7 +130,7 @@ class Mmagang extends CI_Model
 
 		if ($this->upload->do_upload('file_magang'))
 		{
-			$input['file_magang'] = $this->upload->data('file_name');
+			$inputan['file_magang'] = $this->upload->data('file_name');
 		}
 
 		// echo "<pre>";
@@ -152,7 +139,7 @@ class Mmagang extends CI_Model
 
 		$input['status_magang'] = "Pending";
 		$this->db->where('id_magang', $id_magang);
-		$this->db->update('magang', $input);
+		$this->db->update('magang', $inputan);
 	}
 
 	function ubah_status($input)

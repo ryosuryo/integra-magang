@@ -103,16 +103,12 @@
 								<tr>
 									<th>Periode Magang</th>
 									<td>
-										<ul>
-											<?php foreach ($periode as $key => $value): ?>
-												<li><?php echo $value['bulan'] ?> - <?php echo $value['tahun']; ?></li>
-											<?php endforeach ?>
-										</ul>
+										<?php echo $detail['tgl_awal']; ?> <strong>s/d</strong> <?php echo $detail['tgl_akhir']; ?>
 									</td>
 								</tr>
 							</table>
 							<ul class="list-inline pull-right">
-								<li><a href="<?php echo base_url("login"); ?>" class="btn btn-primary next-step">Selesai</a></li>
+								<li><a href="<?php echo base_url("login"); ?>" class="btn btn-primary next-step">Simpan & Aktifasi</a></li>
 							</ul>
 						</div>
 						<div class="clearfix"></div>

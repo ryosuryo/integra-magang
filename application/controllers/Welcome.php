@@ -25,6 +25,6 @@ class Welcome extends CI_Controller {
 
 		$data["grafik"] = $this->Mmagang->grafik_magang();
 
-		$this->load->view('index', $data);
+		$this->load->view('index');
 	}
 }

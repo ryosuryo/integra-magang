@@ -35,8 +35,8 @@ class Daftar extends CI_Controller
 
 	function kampus($id_magang)
 	{
-		$data['periode'] = $this->Mperiode->tampil_periode_tahun();
-		$this->load->view('daftar_2',$data);
+		//$data['periode'] = $this->Mperiode->tampil_periode_tahun();
+		$this->load->view('daftar_2');
 
 
 		if ($this->input->post())
@@ -46,10 +46,11 @@ class Daftar extends CI_Controller
 			$inputan['kampus_magang'] = $input['kampus_magang'];
 			$inputan['jurusan_magang'] = $input['jurusan_magang'];
 			$inputan['nim_magang'] = $input['nim_magang'];
-
+			$inputan['status_magang'] = "pending";
+			$inputan['is_actived'] = 1;
+			$inputan['date_created'] = time('hh:mm:ss');
 			$this->Mmagang->daftarmagang($inputan,$id_magang);
-
-			$this->Mmagang->periode_pemagang($id_magang,$input['id_periode']);
+			$this->Mmagang->periode_pemagang($id_magang);
 			redirect("daftar/selesai/$id_magang",'refresh');
 
 		}
@@ -58,7 +59,7 @@ class Daftar extends CI_Controller
 	function selesai($id_magang)
 	{
 		$data['detail'] = $this->Mmagang->detail($id_magang);
-		$data['periode'] = $this->Mmagang->periode_magang($id_magang);
+		//$data['periode'] = $this->Mmagang->periode_magang($id_magang);
 		$this->load->view('daftar_selesai', $data);
 
 

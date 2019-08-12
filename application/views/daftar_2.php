@@ -74,7 +74,7 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label for="name">Prodi/Kejuruan</label>
-												<input type="text" class="form-control" name="jurusan_magang"required="true"placeholder="Prodi">
+												<input type="text" class="form-control" name="jurusan_magang" required="true"placeholder="Prodi">
 											</div>
 										</div>
 									</div>
@@ -92,22 +92,26 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<label for="Periode">Periode Magang</label>
-												<div class="row">
-													<?php foreach ($periode as $key => $value): ?>
-														<div class="col-md-4">
-															<?php echo $value['tahun']; ?>
-															<ul style="list-style: none;">
-																<?php foreach ($value['detail'] as $key => $isi):?>
-																	<li>
-																		<input type="checkbox" name="id_periode[<?php echo $isi['id_periode'] ?>]"
-																		<?php if ($isi['status']=="Tidak Aktif")
-																		{echo"disabled=''";echo'title="Penuh"';} ?>><?php echo $isi['bulan'] ?>
-																	</li>
-																<?php endforeach ?>
-															</ul>
-														</div>
-														<?php endforeach ?>
+												<label for="Periode">Periode Magang (awal)</label>
+													<div class="row">
+														<div class="input-group date">
+													    	<div class="input-group-addon">
+													           <span class="glyphicon glyphicon-th"></span>
+													       	</div>
+													       <input id="tgl_mulai" type="date" class="form-control datepicker" name="tgl_awal">
+													   	</div>
+													  </div>
+													</div>
+													<div class="form-group">
+												<label for="Periode">Periode Magang (akhir)</label>
+													<div class="row">
+														<div class="input-group date">
+													    	<div class="input-group-addon">
+													           <span class="glyphicon glyphicon-th"></span>
+													       	</div>
+													       <input id="tgl_mulai" type="date" class="form-control datepicker" name="tgl_akhir">
+													   	</div>
+													  </div>
 													</div>
 												</div>
 											</div>
@@ -132,6 +136,7 @@
 </div>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
 
 </body>
 </html>
