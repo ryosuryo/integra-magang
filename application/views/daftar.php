@@ -63,13 +63,14 @@
 					</div>					
 					<div class="tab-content">
 						<div class="tab-pane active" role="tabpanel" id="step1">
-							<form method="POST">
+							<form method="POST"">
 								<div class="step1">
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
 												<label for="name">Nama</label>
-												<input type="text" class="form-control" name="nama_magang" required="true" placeholder="Nama Anda">
+												<input type="text" class="form-control" name="nama_magang" required="true" placeholder="Nama Anda" >
+						
 											</div>
 										</div>
 										<div class="col-md-6">

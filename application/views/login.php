@@ -24,13 +24,14 @@
 		<br>
 		<a href="<?php echo base_url("index.php") ?>"><p>Kembali Ke Beranda</p></a>
 		<p class="mt-5 mb-3 text-muted">@Integra Inovasi Indonesia</p>
-		<?php
+							<?php
                                 $pesan = $this->session->flashdata('pesan');
                                 if($pesan != NULL){
                                     echo ' <div class="alert alert-danger">'.$pesan.'</div>';
                                 }
 
                             ?>
+                           <?= $this->session->flashdata('pesan_login');?>
 	</form>
 	
 

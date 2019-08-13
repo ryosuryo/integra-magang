@@ -67,7 +67,10 @@
 							<h3>Detail Pemagang</h3>
 
 							<table class="table">
-
+								<tr>
+									<th>---</th>
+									<td><?= $this->session->flashdata('pesan_');?></td>
+								</tr>
 								<tr>
 									<th>NIM</th>
 									<td><?php echo $detail['nim_magang']; ?></td>
@@ -108,7 +111,7 @@
 								</tr>
 							</table>
 							<ul class="list-inline pull-right">
-								<li><a href="<?php echo base_url("login"); ?>" class="btn btn-primary next-step">Simpan & Aktifasi</a></li>
+								<li><a href="<?php echo base_url("login"); ?>" class="btn btn-primary next-step">Login</a></li>
 							</ul>
 						</div>
 						<div class="clearfix"></div>

@@ -52,7 +52,7 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script>
 	
-Highcharts.chart('grafik', {
+//Highcharts.chart('grafik', {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
@@ -96,7 +96,7 @@ Highcharts.chart('grafik', {
         <?php endforeach ?> 
         ]
     }]
-});
+//});
 </script>
 </body>
 </html>

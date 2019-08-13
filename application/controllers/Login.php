@@ -25,12 +25,15 @@ class Login extends CI_Controller {
 		{
 			if ($magang['is_actived']==1) 
 			{
+				if ($magang['status_magang']=="Diterima") {
+					# code...
+				}
 				if (password_verify($password,$magang['password_magang'])) 
 				{
 					$data = [
 						'id_magang' => $magang['id_magang'],	
 						'email_magang' => $magang['email_magang'],
-						'password' => $magang['password']
+						'password' => $magang['password_magang']
 					];
 					$this->session->set_userdata('mahasiswa', $data);
 					redirect('mahasiswa','refresh');
@@ -52,6 +55,12 @@ class Login extends CI_Controller {
 			$this->session->set_flashdata('pesan', 'email belum terdaftar');
 			redirect('Login','refresh');
 		}
+	}
+
+	function logout()
+	{
+		$this->session->userdata('mahasiswa');
+		redirect('login','refresh');
 	}
 
 }

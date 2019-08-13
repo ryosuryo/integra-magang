@@ -22,7 +22,7 @@ class Welcome extends CI_Controller
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
 		$this->load->view('admin/index', $data);
-		$this->load->view('admin/footer');
+		//$this->load->view('admin/footer');
 
 		if ($this->input->post('status_magang'))
 		{

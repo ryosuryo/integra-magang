@@ -30,7 +30,7 @@ class Welcome extends CI_Controller
 
 		$data['aktifitas'] = $this->Maktifitas->tampil_aktifitas_magang($login['id_magang']);
 
-		$data['detail'] = $this->Mmagang->detail_magang($login['id_magang']);
+		//$data['detail'] = $this->Mmagang->detail_magang($login['id_magang']);
 
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/sidebar');
@@ -45,11 +45,7 @@ class Welcome extends CI_Controller
 		
 	}
 
-	function logout()
-	{
-		$this->session->userdata('mahasiswa');
-		redirect('login','refresh');
-	}
+	
 
 }
 

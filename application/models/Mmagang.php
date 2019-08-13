@@ -11,6 +11,52 @@ class Mmagang extends CI_Model
 		return $data;
 	}
 
+	function daftar_magang($input)
+	{
+		$data['nama_magang'] = $input['nama_magang'];
+		$data['password_magang'] = password_hash($input['password'], PASSWORD_DEFAULT);
+		$data['email_magang'] = $input['email'];
+		$data['alamat_magang']= $input['alamat'];
+		$data['nohp_magang']=$input['no_hp'];
+		$data['jk_magang']=$input['jk_magang'];
+
+		$cek = $this->ambil_magang_email($data['email_magang']);
+
+		if (empty($cek))
+		{
+			$this->db->insert('magang', $data);
+
+			$id = $this->db->insert_id('magang');
+			return $id;
+		}
+		else
+		{
+			return 'gagal';
+		}
+	}
+
+	function daftarmagang($inputan,$id_magang)
+	{
+		$config['upload_path'] = './assets/dokumen/';
+		$config['allowed_types'] = 'gif|jpg|png|doc|pdf';
+
+		$this->load->library('upload', $config);
+
+
+		if ($this->upload->do_upload('file_magang'))
+		{
+			$inputan['file_magang'] = $this->upload->data('file_name');
+		}
+
+		// echo "<pre>";
+		// print_r ($input);
+		// echo "</pre>";
+
+		$input['status_magang'] = "Pending";
+		$this->db->where('id_magang', $id_magang);
+		$this->db->update('magang', $inputan);
+	}
+
 	function periode_pemagang($id)
 	{
 			$input = $this->input->post();
@@ -96,51 +142,7 @@ class Mmagang extends CI_Model
 	}
 
 
-	function daftar_magang($input)
-	{
-		$data['nama_magang'] = $input['nama_magang'];
-		$data['password_magang'] = password_hash($input['password'], PASSWORD_DEFAULT);
-		$data['email_magang'] = $input['email'];
-		$data['alamat_magang']= $input['alamat'];
-		$data['nohp_magang']=$input['no_hp'];
-		$data['jk_magang']=$input['jk_magang'];
-
-		$cek = $this->ambil_magang_email($data['email_magang']);
-
-		if (empty($cek))
-		{
-			$this->db->insert('magang', $data);
-
-			$id = $this->db->insert_id('magang');
-			return $id;
-		}
-		else
-		{
-			return 'gagal';
-		}
-	}
-
-	function daftarmagang($inputan,$id_magang)
-	{
-		$config['upload_path'] = './assets/dokumen/';
-		$config['allowed_types'] = 'gif|jpg|png|doc|pdf';
-
-		$this->load->library('upload', $config);
-
-
-		if ($this->upload->do_upload('file_magang'))
-		{
-			$inputan['file_magang'] = $this->upload->data('file_name');
-		}
-
-		// echo "<pre>";
-		// print_r ($input);
-		// echo "</pre>";
-
-		$input['status_magang'] = "Pending";
-		$this->db->where('id_magang', $id_magang);
-		$this->db->update('magang', $inputan);
-	}
+	
 
 	function ubah_status($input)
 	{

@@ -22,7 +22,7 @@ class Profil extends CI_Controller
 
 		$login = $this->session->userdata('mahasiswa');
 		$data['magang'] = $this->Mmagang->detail($login['id_magang']);
-		$data['periode_pemagang'] = $this->Mmagang->periode_magang($login['id_magang']);
+		//$data['periode_pemagang'] = $this->Mmagang->periode_magang($login['id_magang']);
 
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/sidebar');
