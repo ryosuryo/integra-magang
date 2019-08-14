@@ -141,20 +141,6 @@ class Mmagang extends CI_Model
 		return $data;
 	}
 
-
-	
-
-	function ubah_status($input)
-	{
-		foreach ($input as $id_magang => $status)
-		{
-			$hasil['status_magang'] = $status;
-
-			$this->db->where('id_magang', $id_magang);
-			$this->db->update('magang', $hasil);
-		}
-	}
-
 	function grafik_magang()
 	{
 		$tahunsekarang = date('Y');

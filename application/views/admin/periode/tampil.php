@@ -4,40 +4,32 @@
 	</div>
 	<div class="box-body">
 		<div class="table-responsive">
-			<table class="table table-bordered table-striped" id="example">
+			<table class="table table-striped" id="example">
 				<thead>
 					<tr>
 						<th>No</th>
-						<th>Bulan</th>
-						<th>Tahun</th>
-						<th>Status</th>
-						<th>Aksi</th>
+						<th>Nama pemagang</th>
+						<th>Tanggal Mulai</th>
+						<th>Tanggal Selesai</th>
+						
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ($periode as $key => $value):?>
-						<tr>
-							<td><?php echo $key+1; ?></td>
-							<td><?php echo $value['bulan']; ?></td>
-							<td><?php echo $value['tahun']; ?></td>
-							<td>
-								<?php if ($value['status']=="Aktif"): ?>
-									<label class="label label-success"><?php echo $value['status'] ?></label>
-									<?php else: ?>
-										<label class="label label-danger"><?php echo $value['status'] ?></label>
-									<?php endif ?>
-								</td>
-								<td>
-									<a href="<?php echo base_url("admin/periode/hapus/$value[id_periode]") ?>" class="btn btn-danger btn-xs" onclick="return confirm ('Yakin mau hapus?');">Hapus</a>
-
-									<a href="<?php echo base_url("admin/periode/edit/$value[id_periode]") ?>" class="btn btn-warning btn-xs">Edit</a>
-								</td>
-							</tr>
-						<?php endforeach ?>
-					</tbody>
-				</table>
-
-				<a href="<?php echo base_url("admin/periode/tambah"); ?>" class ="btn btn-primary btn-sm">Tambah</a>
+					<?php
+						$no=0;
+						foreach ($periode as $p) {
+							$no++;
+							echo '<tr>
+									<td>'.$no.'</td>
+									<td>'.$p->nama_magang.'</td>
+									<td>'.$p->tgl_awal.'</td>
+									<td>'.$p->tgl_akhir.'</td>
+									
+								</tr>';
+						}
+					?>
+				</tbody>
+			</table>
 			</div>
 
 		</div>

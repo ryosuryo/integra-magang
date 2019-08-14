@@ -14,16 +14,10 @@ class Mperiode extends CI_Model
 	}
 	function tampil()
 	{
-		$ambil = $this->db->get('periode_magang');
-		$data = $ambil->result_array();
-		return $data;
+		return $this->db->join('magang', 'magang.id_magang = periode_pemagang.id_magang')
+				 		->get('periode_pemagang')
+				 		->result();
 	}
-
-	function tambah($input)
-	{
-		$this->db->insert ('periode_magang', $input);
-	}
-
 	function hapus($id_periode)
 	{
 		$this->db->where('id_periode', $id_periode);
@@ -36,13 +30,6 @@ class Mperiode extends CI_Model
 		$ambil = $this->db->get('periode_magang');
 		$data = $ambil->row_array();
 		return $data;
-	}
-
-
-	function edit ($input,$id_periode)
-	{
-		$this->db->where('id_periode', $id_periode);
-		$this->db->update('periode_magang', $input);
 	}
 
 	

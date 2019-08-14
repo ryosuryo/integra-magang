@@ -22,13 +22,62 @@ class Welcome extends CI_Controller
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
 		$this->load->view('admin/index', $data);
-		//$this->load->view('admin/footer');
+		$this->load->view('admin/footer');
 
-		if ($this->input->post('status_magang'))
-		{
-			$input = $this->input->post('status_magang');
-			$this->Mmagang->ubah_status($input);
+	}
+	public function beritahu()
+	{
+		$input = $this->input->post('status_magang');
+			$input2 = $this->input->post('catatan');
+			//$this->Mmagang->ubah_status($input);
+			foreach ($input as $id_magang => $status)
+			{
+				$hasil['status_magang'] = $status;
+				$this->db->where('id_magang', $id_magang);
+				$this->db->update('magang', $hasil);
+
+				foreach ($input2 as $id_magang => $catatan) 
+				{
+					$hasil['catatan'] = $catatan;
+					$data = [
+						'id_magang' => $id_magang,
+						'status_magang' => $status,
+						'catatan' => $catatan
+					];
+					$this->db->insert('catatan_penolakan', $data);
+					$this->kirim_email_pemberitahuan($id_magang);
+					$this->db->delete('magang', ['status_magang' => "Ditolak"]);
+				}
+			}
 			redirect('admin','refresh');
+	}
+
+	private function kirim_email_pemberitahuan($id_magang)
+	{
+		$magang = $this->db->get_where('magang', ['id_magang' => $id_magang])->row_array();
+		$catatan = $this->db->get_where('catatan_penolakan', ['id_magang' => $id_magang])->row_array();
+		$config = [
+			'protocol' => 'smtp',
+			'smtp_host' => 'ssl://smtp.googlemail.com',
+			'smtp_user' => 'boogjaofc@gmail.com',
+			'smtp_pass' => 'Bookingsaja123',
+			'smtp_port' => 465,
+			'mailtype' => 'html',
+			'charset' => 'utf-8',
+			'newline' => "\r\n"
+		];
+		$this->load->library('email', $config);
+		$this->email->from('boogjaofc@gmail.com','PT. Integra Inovasi Indonesia');
+		$this->email->to($magang['email_magang']);
+		$this->email->subject('Announcement');
+		$this->email->message('Pengajuan magang anda : '. $catatan['status_magang'] .' <br>Catatan : '.$catatan['catatan'].'<br>Mohon maaf jika kami memiliki kekurangan saat proses pendaftaran');
+		if ($this->email->send()) {
+			return true;
+		}
+		else
+		{
+			echo $this->email->print_debugger();
+			die;
 		}
 	}
 

@@ -30,11 +30,11 @@ class Jadwal extends CI_Controller {
 
 		}
 
-		$data['jadwal'] = $this->Mjadwal->tampil_jadwal_periode($data['id_periode']);
+		//$data['jadwal'] = $this->Mjadwal->tampil_jadwal_periode($data['id_periode']);
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
 		$this->load->view('admin/jadwal/tampil', $data);
-		$this->load->view('admin/footer');
+		//$this->load->view('admin/footer');
 		
 	}
 

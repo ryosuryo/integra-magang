@@ -48,9 +48,8 @@ class Maktifitas extends CI_Model
 	{
 
 		$this->db->group_by('aktifitas.id_periode_pemagang');
-		$this->db->join('periode_pemagang', 'aktifitas.id_periode_pemagang = periode_pemagang.id_periode_pemagang', 'left');
-		$this->db->join('magang', 'periode_pemagang.id_magang = magang.id_magang', 'left');
-
+		//$this->db->join('periode_pemagang', 'aktifitas.id_periode_pemagang = periode_pemagang.id_periode_pemagang', 'left');
+		$this->db->join('magang', 'aktifitas.id_magang = magang.id_magang', 'left');
 		$ambil = $this->db->get('aktifitas');
 		$data = $ambil->result_array();
 

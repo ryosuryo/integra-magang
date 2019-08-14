@@ -16,15 +16,24 @@ class Aktifitas extends CI_Controller
 
 	public function index()
 	{
-		$data['data_aktifitas'] = $this->Maktifitas->aktifitas_magang();
+		//$data['data_aktifitas'] = $this->Maktifitas->aktifitas_magang();
 
 		$data['aktifitas'] = $this->Maktifitas->tampil_aktifitas();
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
 		$this->load->view('admin/tampil_aktifitas', $data);
-		$this->load->view('admin/footer');
-
-		
+		$this->load->view('admin/footer');		
+	}
+	public function ubah_status_aktifitas()
+	{
+		$input = $this->input->post('status_aktifitas');
+		foreach ($input as $id_magang => $status) 
+		{
+			$hasil['status_aktifitas'] = $status;
+			$this->db->where('id_magang', $id_magang);
+			$this->db->update('aktifitas', $hasil);
+		}
+		redirect('admin/aktifitas','refresh');
 	}
 	function hapus($id)
 	{

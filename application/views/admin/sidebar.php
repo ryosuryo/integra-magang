@@ -5,14 +5,9 @@
                   <div class="navbar-header">
                     <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
                       <i class="glyphicon glyphicon-align-left"></i>
-                      <span>Toggle Sidebar</span>
+                      <span>Toggle Sidebar</span>                     
                     </button>
-                  </div>
-
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                      <li><a href="<?php echo base_url("admin/logout"); ?>">Logout</a></li>
-                    </ul>
+                    <a href="<?php echo base_url("admin/logout"); ?>" class="btn btn-danger">Logout</a>
                   </div>
                 </div>
               </nav>

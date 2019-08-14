@@ -25,22 +25,27 @@ class Login extends CI_Controller {
 		{
 			if ($magang['is_actived']==1) 
 			{
-				if ($magang['status_magang']=="Diterima") {
-					# code...
-				}
-				if (password_verify($password,$magang['password_magang'])) 
+				if ($magang['status_magang']=="Diterima") 
 				{
-					$data = [
-						'id_magang' => $magang['id_magang'],	
-						'email_magang' => $magang['email_magang'],
-						'password' => $magang['password_magang']
-					];
-					$this->session->set_userdata('mahasiswa', $data);
-					redirect('mahasiswa','refresh');
+					if (password_verify($password,$magang['password_magang'])) 
+					{
+						$data = [
+							'id_magang' => $magang['id_magang'],	
+							'email_magang' => $magang['email_magang'],
+							'password' => $magang['password_magang']
+						];
+						$this->session->set_userdata('mahasiswa', $data);
+						redirect('mahasiswa','refresh');
+					}
+					else
+					{
+						$this->session->set_flashdata('pesan', 'password salah');
+						redirect('Login','refresh');
+					}
 				}
 				else
 				{
-					$this->session->set_flashdata('pesan', 'password salah');
+					$this->session->set_flashdata('pesan', 'Kamu Belum diterima, Tidak bisa login');
 					redirect('Login','refresh');
 				}
 			}
