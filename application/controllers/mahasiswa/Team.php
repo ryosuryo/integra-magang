@@ -7,12 +7,6 @@ class Team	 extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-
-		if(!$this->session->userdata('mahasiswa') OR empty($this->session->userdata('mahasiswa')))
-		{
-			redirect('login','refresh');
-		}
-
 		$this->load->model('Mmagang');
 	}
 

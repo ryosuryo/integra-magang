@@ -9,11 +9,6 @@ class Profil extends CI_Controller
 
 		parent::__construct();
 
-		if(!$this->session->userdata('mahasiswa') OR empty($this->session->userdata('mahasiswa')))
-		{
-			redirect('login','refresh');
-		}
-
 		$this->load->model('Mmagang');
 	}
 

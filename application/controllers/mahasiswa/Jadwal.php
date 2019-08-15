@@ -7,11 +7,6 @@ class Jadwal extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		
-		if(!$this->session->userdata('mahasiswa') OR empty($this->session->userdata('mahasiswa')))
-		{
-			redirect('login','refresh');
-		}
 
 		$this->load->model('Mmagang');
 		$this->load->model('Mjadwal');	

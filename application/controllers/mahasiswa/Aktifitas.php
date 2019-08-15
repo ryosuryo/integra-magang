@@ -7,19 +7,14 @@ class Aktifitas extends CI_Controller
 	{
 		parent::__construct();
 
-		if(!$this->session->userdata('mahasiswa') OR empty($this->session->userdata('mahasiswa')))
-		{
-			redirect('login','refresh');
-		}
-
 		$this->load->model('Mmagang');
 		$this->load->model('Maktifitas');	
 	}
 	public function index()
 	{
 
-		$login = $this->session->userdata('mahasiswa');
-		$data['aktifitas'] = $this->Maktifitas->tampil_aktifitas_magang($login['id_magang']);
+		$id = $this->session->userdata('id_magang');
+		$data['aktifitas'] = $this->Maktifitas->tampil_aktifitas_magang($id);
 		//$data['periode_pemagang'] = $this->Mmagang->periode_magang($login['id_magang']);
 
 
@@ -27,13 +22,20 @@ class Aktifitas extends CI_Controller
 		$this->load->view('mahasiswa/sidebar');
 		$this->load->view('mahasiswa/aktifitas', $data );
 		$this->load->view('mahasiswa/footer');
-
-		if ($this->input->post())
-		{
-			$this->Maktifitas->simpan_aktifitas_magang($this->input->post());
-			redirect('mahasiswa/aktifitas','refresh');
-		}
-
+	}
+	public function tambah_aktifitas()
+	{
+		$input = $this->input->post();
+		$id = $this->session->userdata('id_magang');
+		$data = [
+			'id_magang' => $id,
+			'tgl_aktifitas' => $input['tgl_aktifitas'],
+			'isi_aktifitas' => $input['isi_aktifitas'],
+			'status_aktifitas' => "pending"
+		];
+		
+		$this->db->insert('aktifitas', $data);
+		redirect('mahasiswa/aktifitas','refresh');
 	}
 
 	function hapus($id)

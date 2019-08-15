@@ -17,20 +17,38 @@ class Aktifitas extends CI_Controller
 	public function index()
 	{
 		//$data['data_aktifitas'] = $this->Maktifitas->aktifitas_magang();
-
 		$data['aktifitas'] = $this->Maktifitas->tampil_aktifitas();
+		$data['mahasiswa'] = $this->Maktifitas->get_magang();
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
 		$this->load->view('admin/tampil_aktifitas', $data);
 		$this->load->view('admin/footer');		
 	}
+
+	public function cari()
+	{
+		$nama = $this->input->post('nama_magang');
+		if ($nama==null)
+		{
+			redirect('admin/aktifitas','refresh');	
+		}
+		else
+		{
+			$data['aktifitas'] = $this->Maktifitas->cari($nama);
+			$data['mahasiswa'] = $this->Maktifitas->get_magang();
+			$this->load->view('admin/header');
+			$this->load->view('admin/sidebar');
+			$this->load->view('admin/tampil_aktifitas', $data);
+			$this->load->view('admin/footer');	
+		}
+	}
 	public function ubah_status_aktifitas()
 	{
 		$input = $this->input->post('status_aktifitas');
-		foreach ($input as $id_magang => $status) 
+		foreach ($input as $id_aktifitas => $status) 
 		{
 			$hasil['status_aktifitas'] = $status;
-			$this->db->where('id_magang', $id_magang);
+			$this->db->where('id_aktifitas', $id_aktifitas);
 			$this->db->update('aktifitas', $hasil);
 		}
 		redirect('admin/aktifitas','refresh');

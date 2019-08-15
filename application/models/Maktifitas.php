@@ -6,9 +6,9 @@ class Maktifitas extends CI_Model
 
 	function tampil_aktifitas_magang($id)
 	{
-		$this->db->where('periode_pemagang.id_magang', $id);
-		$this->db->join('periode_pemagang', 'aktifitas.id_periode_pemagang = periode_pemagang.id_periode_pemagang', 'left');
-		$ambil = $this->db->get('aktifitas');
+		
+		//$this->db->join('periode_pemagang', 'aktifitas.id_periode_pemagang = periode_pemagang.id_periode_pemagang', 'left');
+		$ambil = $this->db->query("SELECT * FROM `aktifitas` WHERE id_magang = $id ORDER BY tgl_aktifitas");
 		$data = $ambil->result_array();
 		return $data;
 
@@ -23,52 +23,51 @@ class Maktifitas extends CI_Model
 		return $data;
 	}
 
-	function simpan_aktifitas_magang($input)
-	{
-		$config['upload_path'] = 'assets/aktifitas';
-		$config['allowed_types'] = 'gif|jpg|png|pdf';
-		
-		$this->load->library('upload', $config);
-
-		if ($this->upload->do_upload('file_aktifitas'))
-		{
-
-			$input['file_aktifitas'] = $this->upload->data("file_name");
-		}
-
-
-		$input['tgl_aktifitas'] = date("Y-m-d");
-
-
-		$this->db->insert('aktifitas', $input);
-	}
-
 
 	function tampil_aktifitas()
 	{
-
-		$this->db->group_by('aktifitas.id_periode_pemagang');
-		//$this->db->join('periode_pemagang', 'aktifitas.id_periode_pemagang = periode_pemagang.id_periode_pemagang', 'left');
-		$this->db->join('magang', 'aktifitas.id_magang = magang.id_magang', 'left');
-		$ambil = $this->db->get('aktifitas');
+		$ambil = $this->db->join('magang', 'aktifitas.id_magang = magang.id_magang', 'left')->order_by('tgl_aktifitas')->get('aktifitas');
 		$data = $ambil->result_array();
 
 
 		$semua=array();
 		foreach ($data as $key => $value) 
 		{
-			$this->db->where('periode_pemagang.id_periode_pemagang', $value['id_periode_pemagang']);
-			$this->db->join('periode_pemagang', 'aktifitas.id_periode_pemagang = periode_pemagang.id_periode_pemagang', 'left');
-			$this->db->join('magang', 'periode_pemagang.id_magang = magang.id_magang', 'left');
+			$ambil1 = $this->db->join('magang', 'aktifitas.id_magang = magang.id_magang', 'left')->order_by('tgl_aktifitas')->get('aktifitas');
+			$data1 = $ambil1->result_array();
+			$value['detail']=$data1;
+			$semua[] = $value;
+		}
+		return $semua;
 
-			$ambil1 = $this->db->get('aktifitas');
+	}
+	public function cari($nama)
+	{
+		$ambil = $this->db->where('nama_magang',$nama)
+						  ->join('magang', 'aktifitas.id_magang = magang.id_magang', 'left')
+						  ->order_by('tgl_aktifitas')
+						  ->get('aktifitas');
+		$data = $ambil->result_array();
+
+
+		$semua=array();
+		foreach ($data as $key => $value) 
+		{
+			$ambil1 = $this->db->where('nama_magang',$nama)
+							   ->join('magang', 'aktifitas.id_magang = magang.id_magang', 'left')
+							   ->order_by('tgl_aktifitas')
+							   ->get('aktifitas');
 			$data1 = $ambil1->result_array();
 			$value['detail']=$data1;
 			$semua[] = $value;
 		}
 
 		return $semua;
+	}
 
+	public function get_magang()
+	{
+		return $this->db->get('magang')->result();
 	}
 
 	function hapus_aktifitas($id)

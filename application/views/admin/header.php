@@ -17,47 +17,5 @@
 </head>
 <body>
  <div class="wrapper">
-  <nav id="sidebar">
-    <div class="sidebar-header">
-      <h3>Integra Inovasi Indonesia</h3>
-      <strong><i class="glyphicon glyphicon-home"></i></strong>
-    </div>
-
-    <ul class="list-unstyled components">
-      <li class="">
-        <a href="<?php echo base_url("admin"); ?>">
-          <i class="glyphicon glyphicon-dashboard"></i>
-          Dashboard
-        </a>
-        <br>
-      </li>
-      <li>
-        <a href="<?php echo base_url("admin/magang"); ?>">
-          <i class="glyphicon glyphicon-list-alt"></i>
-          Data Pemagang
-        </a>
-      </li>
-      <br>
-      <li>
-        <a href="<?php echo base_url("admin/periode"); ?>">
-          <i class="glyphicon glyphicon-briefcase"></i>
-          Periode Magang
-        </a>
-      </li>
-      <br>
-      <li>
-        <a href="#">
-          <i class="glyphicon glyphicon-eye-open"></i>
-          Absensi
-        </a>
-      </li>
-      <br>
-      <li>
-        <a href="<?php echo base_url("admin/aktifitas"); ?>">
-          <i class="glyphicon glyphicon-eye-open"></i>
-          Aktivitas
-        </a>
-      </li>
-    </ul>
-  </nav>
+  
   

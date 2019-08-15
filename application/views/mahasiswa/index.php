@@ -117,7 +117,6 @@
 						<tr>
 							<th>No</th>
 							<th>Tanggal</th>
-							<th>Judul</th>
 							<th>Aktifitas</th>
 							<th>File</th>
 							<th>Aksi</th>
@@ -128,7 +127,6 @@
 							<tr>
 								<td><?php echo $key+1; ?></td>
 								<td><?php echo $value['tgl_aktifitas']; ?></td>
-								<td><?php echo $value['judul_aktifitas']; ?></td>
 								<td><?php echo $value['isi_aktifitas']; ?></td>
 								<td>
 									<a href="<?php echo base_url("assets/aktifitas/$value[file_aktifitas]"); ?>"target ="_blank"><?php echo $value['file_aktifitas']; ?></a>

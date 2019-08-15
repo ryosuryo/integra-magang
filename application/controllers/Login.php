@@ -32,9 +32,11 @@ class Login extends CI_Controller {
 						$data = [
 							'id_magang' => $magang['id_magang'],	
 							'email_magang' => $magang['email_magang'],
-							'password' => $magang['password_magang']
+							'nama_magang' => $magang['nama_magang'],
+							'password' => $magang['password_magang'],
+							'logged' => true
 						];
-						$this->session->set_userdata('mahasiswa', $data);
+						$this->session->set_userdata($data);
 						redirect('mahasiswa','refresh');
 					}
 					else

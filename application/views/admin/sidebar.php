@@ -1,13 +1,30 @@
             <div id="content">
-              <nav class="navbar navbar-default">
-                <div class="container-fluid">
-
-                  <div class="navbar-header">
-                    <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                      <i class="glyphicon glyphicon-align-left"></i>
-                      <span>Toggle Sidebar</span>                     
-                    </button>
-                    <a href="<?php echo base_url("admin/logout"); ?>" class="btn btn-danger">Logout</a>
-                  </div>
+            
+              <nav class="navbar navbar-expand-lg navbar-light">
+                <a class="navbar-brand" href="#">Integra</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link" href="<?php echo base_url("admin"); ?>">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="<?php echo base_url("admin/magang"); ?>">Data Pemagang</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="<?php echo base_url("admin/periode"); ?>">Data Periode</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Absensi</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="<?php echo base_url("admin/aktifitas"); ?>">Aktivitas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="<?php echo base_url("admin/logout"); ?>">logout</a>
+                    </li>
+                  </ul>
                 </div>
               </nav>

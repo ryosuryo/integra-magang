@@ -13,10 +13,6 @@ class Welcome extends CI_Controller
 
 
 		//jika tidak ada session mahasiswa maka
-		if(!$this->session->userdata('mahasiswa') OR empty($this->session->userdata('mahasiswa')))
-		{
-			redirect('login','refresh');
-		}
 		$this->load->model('Mmagang');
 		$this->load->model('Maktifitas');
 	}
