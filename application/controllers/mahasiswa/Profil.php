@@ -15,9 +15,9 @@ class Profil extends CI_Controller
 	public function index()
 	{
 
-		$login = $this->session->userdata('mahasiswa');
-		$data['magang'] = $this->Mmagang->detail($login['id_magang']);
-		//$data['periode_pemagang'] = $this->Mmagang->periode_magang($login['id_magang']);
+		$id = $this->session->userdata('id_magang');
+		$data['magang'] = $this->Mmagang->detail($id);
+		//$data['periode_pemagang'] = $this->Mmagang->get_periode($id]);
 
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/sidebar');

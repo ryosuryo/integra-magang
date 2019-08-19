@@ -39,7 +39,7 @@
 				</div>
 				<br>
 				<br>
-				<ul class="timeline timeline-inverse" style="margin-left: 40px;">
+				<ul class="timeline timeline-inverse" style="">
 					<li>
 						<div class="timeline-item" style="background: white;border:none;">
 							<h3 class="timeline-header" style="border-bottom:0px;">Jenis Kelamin : <a href="#"><?php echo $magang['jk_magang']; ?></a></h3>
@@ -60,15 +60,13 @@
 					</li>
 					<li>
 						<div class="timeline-item" style="background: white;border:none;">
-							<h3 class="timeline-header"><a href="#">Pekerjaan</a></h3>
+							<h3 class="timeline-header"><a href="#">Pengalaman</a></h3>
 							<br>
 							<ul>
 								<li>
 									Magang di PT. Integra
 									<ul>
-										<?php foreach ($periode_pemagang as $key => $value): ?>
-											<li><?php echo $value['bulan']; ?> - <?php echo $value['tahun']; ?></li>
-										<?php endforeach ?>
+										<?php echo $magang['tgl_awal']; ?> s/d <?php echo $magang['tgl_akhir']; ?>
 									</ul>
 								</li>
 							</ul>

@@ -112,13 +112,12 @@
 					</div>
 					<div class="box collapse" id="demo1">
 						<div class="box-body">
-							<table class="table table-bordered">
+							<table class="table table-striped">
 					<thead>
 						<tr>
 							<th>No</th>
 							<th>Tanggal</th>
 							<th>Aktifitas</th>
-							<th>File</th>
 							<th>Aksi</th>
 						</tr>
 					</thead>
@@ -128,9 +127,6 @@
 								<td><?php echo $key+1; ?></td>
 								<td><?php echo $value['tgl_aktifitas']; ?></td>
 								<td><?php echo $value['isi_aktifitas']; ?></td>
-								<td>
-									<a href="<?php echo base_url("assets/aktifitas/$value[file_aktifitas]"); ?>"target ="_blank"><?php echo $value['file_aktifitas']; ?></a>
-								</td>
 								<td>
 									<a href="<?php echo base_url("mahasiswa/aktifitas/hapus/$value[id_aktifitas]") ?>" class="btn btn-danger btn-xs" onclick="return confirm ('Yakin mau hapus?');">Hapus</a>
 								</td>

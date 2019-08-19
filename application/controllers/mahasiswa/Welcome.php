@@ -21,10 +21,10 @@ class Welcome extends CI_Controller
 
 	public function index()
 	{
-		$login = $this->session->userdata('mahasiswa');
-		$data['magang'] = $this->Mmagang->detail($login['id_magang']);
+		$id = $this->session->userdata('id_magang');
+		$data['magang'] = $this->Mmagang->detail($id);
 
-		$data['aktifitas'] = $this->Maktifitas->tampil_aktifitas_magang($login['id_magang']);
+		$data['aktifitas'] = $this->Maktifitas->tampil_aktifitas_magang($id);
 
 		//$data['detail'] = $this->Mmagang->detail_magang($login['id_magang']);
 
@@ -35,7 +35,7 @@ class Welcome extends CI_Controller
 
 		if ($this->input->post())
 		{
-			$this->Mmagang->ubah_magang($this->input->post(), $login['id_magang']);
+			$this->Mmagang->ubah_magang($this->input->post(), $id);
 			redirect('mahasiswa','refresh');
 		}
 		

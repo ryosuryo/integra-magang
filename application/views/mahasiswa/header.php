@@ -41,9 +41,9 @@
       </li>
       <br>
       <li>
-        <a href="<?php echo base_url("mahasiswa/jadwal"); ?>">
+        <a href="<?php echo base_url("mahasiswa/Absensi"); ?>">
           <i class="glyphicon glyphicon-calendar"></i>
-          Jadwal Magang
+          Absensi
         </a>
       </li>
       <br>

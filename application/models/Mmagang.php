@@ -88,7 +88,7 @@ class Mmagang extends CI_Model
 	{
 		return $this->db->join('periode_pemagang', 'periode_pemagang.id_magang = magang.id_magang')->where('magang.id_magang',$id)->get('magang')->row_array();
 	}
-
+	
 	function detail_magang($id)
 	{
 		$this->db->where('id_magang', $id);
