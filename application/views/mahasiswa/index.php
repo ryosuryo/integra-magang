@@ -12,13 +12,13 @@
 						<p class="text-muted text-center"></p>
 						<ul class="list-group list-group-unbordered">
 							<li class="list-group-item">
-								<b>Jenis Kelamin</b><a class="pull-right"><?php echo $magang['jk_magang'] ?></a>
+								<b>Jenis Kelamin</b><br><a class=""><?php echo $magang['jk_magang'] ?></a>
 							</li>
 							<li class="list-group-item">
-								<b>Email</b><a class="pull-right"><?php echo $magang['email_magang'] ?></a>
+								<b>Email </b><br><a class=""><?php echo $magang['email_magang'] ?></a>
 							</li>
 							<li class="list-group-item">
-								<b>Handphone</b><a class="pull-right"><?php echo $magang['nohp_magang'] ?></a>
+								<b>Handphone</b><br><a class=""><?php echo $magang['nohp_magang'] ?></a>
 							</li>
 						</ul>
 					</div>
@@ -36,15 +36,14 @@
 						<strong><i class="fa fa-book margin-r-5"></i>Univeritas</strong>
 						<p class="text-muted">
 							<?php echo $magang['kampus_magang']; ?>
-
 						</p>
-						<hr>
 						<strong><i class="fa fa-pencil margin-r-5"></i>Prodi</strong>
 						<p class="text-muted">
-							<?php echo $magang['jurusan_magang']; ?></p>
-							<strong><i class="fa fa-map-marker margin-r-5"></i>Alamat</strong>
-
-							<p class="text-muted"><?php echo $magang['alamat_magang']; ?></p>
+							<?php echo $magang['jurusan_magang']; ?>
+						</p>
+						<strong><i class="fa fa-map-marker margin-r-5"></i>Alamat</strong>
+							<p class="text-muted">
+							<?php echo $magang['alamat_magang']; ?></p>
 						</div>
 						<!-- box body -->
 					</div>
@@ -118,7 +117,6 @@
 							<th>No</th>
 							<th>Tanggal</th>
 							<th>Aktifitas</th>
-							<th>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -127,9 +125,6 @@
 								<td><?php echo $key+1; ?></td>
 								<td><?php echo $value['tgl_aktifitas']; ?></td>
 								<td><?php echo $value['isi_aktifitas']; ?></td>
-								<td>
-									<a href="<?php echo base_url("mahasiswa/aktifitas/hapus/$value[id_aktifitas]") ?>" class="btn btn-danger btn-xs" onclick="return confirm ('Yakin mau hapus?');">Hapus</a>
-								</td>
 							</tr>
 							
 						<?php endforeach ?>

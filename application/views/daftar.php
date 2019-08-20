@@ -63,7 +63,7 @@
 					</div>					
 					<div class="tab-content">
 						<div class="tab-pane active" role="tabpanel" id="step1">
-							<form method="POST"">
+							<form method="POST">
 								<div class="step1">
 									<div class="row">
 										<div class="col-md-6">

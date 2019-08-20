@@ -1,7 +1,7 @@
             <div id="content">
             
               <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="#">Integra</a>
+                <a class="navbar-brand" href="#">Admin</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -17,7 +17,7 @@
                       <a class="nav-link" href="<?php echo base_url("admin/periode"); ?>">Data Periode</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Absensi</a>
+                      <a class="nav-link" href="<?php echo base_url("admin/Absensi_admin"); ?>">Absensi</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="<?php echo base_url("admin/aktifitas"); ?>">Aktivitas</a>

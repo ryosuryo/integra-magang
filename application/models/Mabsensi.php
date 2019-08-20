@@ -3,7 +3,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mabsensi extends CI_Model {
 
-	
+	public function tampil_absen()
+	{
+		return $this->db->join('magang','magang.id_magang=absensi.id_magang')->get('absensi')->result();
+	}
+	public function get_magang()
+	{
+		return $this->db->get('magang')->result();
+	}
+	public function cari_absen($nama)
+	{
+		return $this->db->where('nama_magang', $nama)
+						->join('magang','magang.id_magang=absensi.id_magang')
+						->get('absensi')
+						->result();
+	}
 
 }
 
