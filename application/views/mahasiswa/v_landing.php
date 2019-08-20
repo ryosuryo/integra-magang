@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 
-		<title>Porto - Responsive HTML5 Template 7.5.0</title>	
+		<title>Integra Inovasi Indonesia</title>	
 
 		<meta name="keywords" content="HTML5 Template" />
 		<meta name="description" content="Porto - Responsive HTML5 Template">
@@ -335,7 +335,7 @@
 								 <br>
 								<!-- Google Maps - Settings on footer -->
 								
-								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.002196710974!2d110.35187851402735!3d-7.789590394386394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5818addd2185%3A0x52df8a7945064334!2sPT.+Integra+Inovasi+Indonesia!5e0!3m2!1sen!2sid!4v1565767357907!5m2!1sen!2sid" width="700" height="550" frameborder="0" style="border:0" allowfullscreen></iframe>
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.002196710974!2d110.35187851402735!3d-7.789590394386394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5818addd2185%3A0x52df8a7945064334!2sPT.+Integra+Inovasi+Indonesia!5e0!3m2!1sen!2sid!4v1565767357907!5m2!1sen!2sid" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
 				
 							</div>
 							<div class="col-md-6 p-5 my-5">
@@ -366,6 +366,8 @@
 						<div class="row py-4">
 							<div class="col d-flex align-items-center justify-content-center">
 								<p><strong>PT INTEGRA INOVASI INDONESIA</strong> - © Copyright 2019. All Rights Reserved.</p>
+								<br>	
+								<p>IT Consultant | Software & Web Developer | Mobile Apps Solution | Network & Hardware | IT Training</p>
 							</div>
 						</div>
 					</div>

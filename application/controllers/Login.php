@@ -7,7 +7,7 @@ class Login extends CI_Controller {
 	{
 
 		//membuat view
-		$this->load->view('login');
+		$this->load->view('v_login');
 		//membuat model Mlogin
 		//$this->load->model('Mlogin');
 
