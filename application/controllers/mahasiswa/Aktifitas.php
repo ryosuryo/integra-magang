@@ -25,17 +25,34 @@ class Aktifitas extends CI_Controller
 	}
 	public function tambah_aktifitas()
 	{
-		$input = $this->input->post();
-		$id = $this->session->userdata('id_magang');
-		$data = [
-			'id_magang' => $id,
-			'tgl_aktifitas' => $input['tgl_aktifitas'],
-			'isi_aktifitas' => $input['isi_aktifitas'],
-			'status_aktifitas' => "pending"
-		];
+		$config['upload_path'] = './assets/capture_aktivitas';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
+		$config['max_size']  = '100000000000';
+		$config['max_width']  = '10240000000000';
+		$config['max_height']  = '76800000000000000';
 		
-		$this->db->insert('aktifitas', $data);
-		redirect('mahasiswa/aktifitas','refresh');
+		$this->load->library('upload', $config);
+		
+		if ( ! $this->upload->do_upload('capture_aktifitas')){
+			echo "<script>alert('Yaaah... Gagal Tambah, tanyakan ke pembimbing');</script>";
+			redirect('mahasiswa/aktifitas','refresh');
+		}
+		else
+		{
+			$input = $this->input->post();
+			$id = $this->session->userdata('id_magang');
+			$data = [
+				'id_magang' => $id,
+				'tgl_aktifitas' => $input['tgl_aktifitas'],
+				'isi_aktifitas' => $input['isi_aktifitas'],
+				'status_aktifitas' => "pending",
+				'capture_aktifitas' => $this->upload->data('file_name')
+			];
+			
+			$this->db->insert('aktifitas', $data);
+			echo "<script>alert('Berhasil Tambah');</script>";
+			redirect('mahasiswa/aktifitas','refresh');	
+		}
 	}
 
 	function hapus($id)

@@ -17,9 +17,6 @@ class Daftar extends CI_Controller
 		if($this->input->post())
 		{
 			$input = $this->input->post();
-
-			
-
 			$id = $this->Mmagang->daftar_magang($input);
 			if ($id=="gagal")
 			{
@@ -27,7 +24,16 @@ class Daftar extends CI_Controller
 			}
 			else
 			{
-				redirect("daftar/kampus/$id",'refresh');
+				if ($id=="gagal_no") 
+				{
+					echo "<script>alert('Nomor sudah terdaftar'); location='".base_url('daftar')."'</script>";
+				} 
+				else 
+				{
+					redirect("daftar/kampus/$id",'refresh');
+				}
+				
+				
 			}
 
 		}

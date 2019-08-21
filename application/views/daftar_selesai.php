@@ -69,7 +69,7 @@
 							<table class="table">
 								<tr>
 									<th>---</th>
-									<td><?= $this->session->flashdata('pesan_');?></td>
+									<td><?= $this->session->flashdata('pesan');?></td>
 								</tr>
 								<tr>
 									<th>NIM</th>

@@ -1,21 +1,7 @@
 <style>
 @media print{
-	@page
-	{ size: portrait;
-
-	 }
 	
-	.timeline:before {
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		width: 4px;
-		background: #ddd;
-		left: 31px;
-		margin: 0;
-		border-radius: 2px;
-	}
+	
 	.box-info
 	{
 		border-top:none;

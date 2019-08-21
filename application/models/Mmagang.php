@@ -20,14 +20,20 @@ class Mmagang extends CI_Model
 		$data['nohp_magang']=$input['no_hp'];
 		$data['jk_magang']=$input['jk_magang'];
 
-		$cek = $this->ambil_magang_email($data['email_magang']);
-
-		if (empty($cek))
+		$cek_email = $this->db->get_where('magang', ['email_magang' => $data['email_magang']])->row_array();
+		$cek_nomor = $this->db->get_where('magang', ['nohp_magang' => $data['nohp_magang']])->row_array();
+		
+		if (empty($cek_email))
 		{
-			$this->db->insert('magang', $data);
-
-			$id = $this->db->insert_id('magang');
-			return $id;
+			if (empty($cek_nomor)) {
+				$this->db->insert('magang', $data);
+				$id = $this->db->insert_id('magang');
+				return $id;
+			} 
+			else 
+			{
+				return 'gagal_no';
+			}
 		}
 		else
 		{
@@ -133,13 +139,7 @@ class Mmagang extends CI_Model
 		
 	}
 
-	function ambil_magang_email($email)
-	{
-		$this->db->where('email_magang', $email);
-		$ambil = $this->db->get('magang');
-		$data = $ambil->row_array();
-		return $data;
-	}
+	
 
 	function grafik_magang()
 	{

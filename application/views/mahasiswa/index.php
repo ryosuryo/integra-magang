@@ -133,42 +133,7 @@
 						</div>
 					</div>
 
-					<br>
-					<br>
-					<div class="box box-solid bg-blue">
-						<div class="box-header">
-							<div class="pull-right box-tools">
-								<button class="btn btn-primary btn-sm pull-right" data-toggle="collapse" data-target="#demo2"><i class="fa fa-minus"></i></button>
-							</div>
-							<h3 class="box-title">Team Magang</h3>
-						</div>
-					</div>
-					<div class="box collapse" id="demo2">
-						<div class="box-body">
-							<table class="table table-bordered">
-								<thead>
-									<tr>
-										<th>No</th>
-										<th>NIM</th>
-										<th>Nama</th>
-										<th>Nohp</th>
-									</tr>
-								</thead>
-								<tbody>
-									<?php foreach ($detail as $key => $value):?>
-										<tr>
-											<td><?php echo $key+1 ?></td>
-											<td><?php echo $value['nim'] ?></td>
-											<td><?php echo $value['nama'] ?></td>
-											<td><?php echo $value['nohp'] ?></td>
-										</tr>
-										<?php endforeach ?>
-								</tbody>
-							</table>
-							<br>	
-							<a class="btn btn-primary btn-sm" href="<?php echo 	base_url("mahasiswa/team") ?>">Tambah</a>
-						</div>
-					</div>
+					
 				</div>
 			</div>	
 
