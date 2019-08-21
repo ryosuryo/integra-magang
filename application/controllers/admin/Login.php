@@ -12,7 +12,7 @@ class Login extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('admin/login');
+		$this->load->view('admin/v_login');
 		if($this->input->post())
 		{
 			$username = $this->input->post('username');

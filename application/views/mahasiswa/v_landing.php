@@ -127,7 +127,7 @@
 					<div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'sliderLayout': 'fullscreen', 'delay': 9000, 'gridwidth': 1140, 'gridheight': 800, 'responsiveLevels': [4096,1200,992,500]}">
 						<ul>
 							<li class="slide-overlay" data-transition="fade">
-								<img src="<?= base_url()?>assets2/img/slides/background-int.jpg"  
+								<img src="<?= base_url()?>assets2/img/slides/slide-1.jpg"  
 									alt=""
 									data-bgposition="center center" 
 									data-bgfit="cover" 
@@ -174,7 +174,7 @@
 								
 							</li>
 							<li class="slide-overlay slide-overlay-dark" data-transition="fade">
-								<img src="<?= base_url()?>assets2/img/slides/gambar.jpg"  
+								<img src="<?= base_url()?>assets2/img/slides/slide-2.jpg"  
 									alt=""
 									data-bgposition="center center" 
 									data-bgfit="cover" 
@@ -183,18 +183,18 @@
 				
 								<div class="tp-caption text-color-light font-weight-normal"
                                     data-x="center"
-									data-y="center" data-voffset="['-50','-50','-50','-75']"
+									data-y="center" data-voffset="['-60','-50','-50','-75']"
 									data-start="700"
-									data-fontsize="['40','40','40','80']"
-									data-lineheight="['25','25','25','45']"
-									data-transform_in="y:[-50%];opacity:0;s:500;">INTEGRA INOVASI INDONESIA</div>
+									data-fontsize="['50','40','40','80']"
+									data-lineheight="['30','25','25','45']"
+									data-transform_in="y:[-40%];opacity:0;s:500;">INTEGRA INOVASI INDONESIA</div>
 				
 								<div class="tp-caption font-weight-light text-color-light"
 									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2300,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
 									data-x="center"
 									data-y="center" data-voffset="['8','8','8','140']"
 									data-fontsize="['18','18','18','40']"
-									data-lineheight="['1','1','1','3']">TEMPAT MAGANG TERBAIK DI YOGYAKARTA </div>
+									data-lineheight="['1','1','1','3']">We Never Stop Innovating</div>
 								
 							</li>
 						</ul>
@@ -217,6 +217,18 @@
                                     <img src="<?= base_url()?>assets2/img/icons/programming.png" alt="">
 										<h4 class="font-weight-bold text-color-light text-4 mb-2">WEB DEVELOPMENT</h4>
 										<p class="text-color-light opacity-7">Pengembangan website untuk profil instansi / perusahaan, e-commerce, online shop, portal dan sistem informasi berbasis web</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 appear-animation" data-appear-animation="fadeInUpShorter">
+								<div class="feature-box feature-box-style-2">
+									<div class="feature-box-icon">
+										
+									</div>
+									<div class="feature-box-info">
+                                    <img src="<?= base_url()?>assets2/img/icons/smartphone.png" alt="">
+										<h4 class="font-weight-bold text-color-light text-4 mb-2">MOBILE APPLICATION</h4>
+										<p class="text-color-light opacity-7">Pengembangan layanan dengan menggunakan teknologi mobile antara lain SMS Broadcast, VASMS 5 Digit (SMS Premium), dan Mobile Application</p>
 									</div>
 								</div>
 							</div>
@@ -277,7 +289,7 @@
 				</div>
 				</div>
 				<br>
-				<section id="clients" class="section section-background section-height-4 overlay overlay-show overlay-op-9 border-0 m-0" style="background-image: url(<?= base_url()?>assets2/img/background-iklan.jpg); background-size: cover; background-position: center;">
+				<section id="clients" class="section section-background section-height-4 overlay overlay-show overlay-op-9 border-0 m-0" style="background-image: url(<?= base_url()?>assets2/img/bg-client.jpg); background-size: cover; background-position: center;">
 					<div class="container">
 						<div class="row">
 							<div class="col text-center">
