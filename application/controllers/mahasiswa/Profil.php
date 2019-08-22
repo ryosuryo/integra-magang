@@ -8,7 +8,6 @@ class Profil extends CI_Controller
 
 
 		parent::__construct();
-
 		$this->load->model('Mmagang');
 	}
 
@@ -31,9 +30,6 @@ class Profil extends CI_Controller
 		}
 
 	}
-
-	
-
 	function download()
 	{
 		//mendapatkan data login mahasiswa

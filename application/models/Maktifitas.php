@@ -13,6 +13,14 @@ class Maktifitas extends CI_Model
 		return $data;
 
 	}
+	public function tampil_aktifitas_cetak_pdf($id)
+	{
+		return $this->db->join('magang', 'magang.id_magang = aktifitas.id_magang')
+				 ->where('aktifitas.id_magang', $id)
+				 ->order_by('tgl_aktifitas')
+				 ->get('aktifitas')
+				 ->result();
+	}
 
 	function aktifitas_magang()
 	{

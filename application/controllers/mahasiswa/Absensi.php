@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Absensi extends CI_Controller {
+  
 
 	public function index()
 	{
@@ -27,6 +28,8 @@ class Absensi extends CI_Controller {
        redirect('mahasiswa/Absensi','refresh');
 
     }
+
+    
     public function absen_masuk()
     {
         $tanggal = date('Y-m-d');

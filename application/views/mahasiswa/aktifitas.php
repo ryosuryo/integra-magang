@@ -23,7 +23,7 @@
 				</div>
 			</div>
 			<input type="submit" class="btn btn-primary">
-			<a href="#" class="btn btn-success">Lampirkan Ke PDF</a>
+			<a href="<?= base_url()?>mahasiswa/Aktifitas/cetak_pdf" class="btn btn-success">Lampirkan Ke PDF</a>
 		</form>
 		<hr>
 		<div class="table-responsive">
