@@ -23,6 +23,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400" rel="stylesheet" type="text/css">
 
 		<!-- Vendor CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="<?= base_url()?>assets2/vendor/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?= base_url()?>assets2/vendor/fontawesome-free/css/all.min.css">
 		<link rel="stylesheet" href="<?= base_url()?>assets2/vendor/animate/animate.min.css">
@@ -42,8 +43,7 @@
 		<link rel="stylesheet" href="<?= base_url()?>assets2/vendor/rs-plugin/css/layers.css">
 		<link rel="stylesheet" href="<?= base_url()?>assets2/vendor/rs-plugin/css/navigation.css">
 		
-		<!-- Demo CSS -->
-
+	
 
 		<!-- Skin CSS -->
 		<link rel="stylesheet" href="<?= base_url()?>assets2/css/skins/default.css"> 
@@ -103,24 +103,64 @@
 													<li>
 													<a class="dropdown-item" data-hash data-hash-offset="68" href="#contact">Kontak</a>
 													</li>
-													
-													
-													
 												</ul>
-												
-											</nav>
-										</div>
-										<a class="btn btn-primary" href="<?php echo base_url("login") ?>" >LOGIN</a>
-										<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
-											<i class="fas fa-bars"></i>
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
+							</nav>
 					</div>
-				</div>
-			</header>
+					<div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2 ">
+										<div class="header-nav-feature header-nav-features-user d-inline-flex mx-2 pr-2 signin" id="headerAccount">
+											<a href="#" class="header-nav-features-toggle text-color-light">
+												<i class="far fa-user text-color-light"></i> Sign In
+											</a>
+											<div class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed header-nav-features-dropdown-force-right" id="headerTopUserDropdown">
+												<div class="signin-form">
+													<h5 class="text-uppercase mb-4 font-weight-bold text-3">Sign In</h5>
+													<form class="login100-form validate-form" method="POST" action="<?= base_url()?>Login/proses_login">
+														<div class="form-group validate-input" data-validate = "Valid email is: a@b.c">
+														
+															<label class="mb-1 text-2 opacity-8">Masukkan Email Anda*</label>
+															<input type="email"  name="email_magang" class="form-control form-control-lg " required="true">
+															
+														</div>
+														<div class="form-group validate-input" data-validate="Enter password">
+															<label class="mb-1 text-2 opacity-8">Masukkan Password Anda*</label>
+															<input type="password"  name="password"class="form-control form-control-lg" required="true">
+														</div>
+														<div class="form-row pb-2">
+															<div class="form-group form-check col-lg-6 pl-1">
+																<div class="custom-control custom-checkbox">
+																	<input type="checkbox" class="custom-control-input" id="rememberMeCheck">
+																	<label class="custom-control-label text-2" for="rememberMeCheck">Remember Me</label>
+																</div>
+															</div>
+															
+														</div>
+													
+															<div class="form-row">
+																<div class="col d-flex justify-content-end">
+																	<button class="btn btn-primary" type="submit" name="masuk">
+																	Login
+																	</button>
+																</div>
+															</div>
+														</div>
+														<div class="extra-actions">
+															<p>Belum punya akun ?  <a href="<?php echo base_url("daftar") ?>"  class="text-uppercase text-1 font-weight-bold text-color-dark">Daftar Sekarang</a></p>
+														</div>
+															<?php
+                            						    $pesan = $this->session->flashdata('pesan');
+                            						    if($pesan != NULL){
+                            					        echo ' <div class="alert alert-danger">'.$pesan.'</div>';
+                            						    }
+
+                           								 ?>
+                          								 <?= $this->session->flashdata('pesan_login');?>
+
+													</form>
+												</div>
+											</div>
+										</header>
+
+			
 
 			<div role="main" class="main" id="home">
 				<div class="slider-container rev_slider_wrapper" style="height: 100vh;">
@@ -238,12 +278,39 @@
 										
 									</div>
 									<div class="feature-box-info">
-                                    <img src="<?= base_url()?>assets2/img/icons/smartphone.png" alt="">
-										<h4 class="font-weight-bold text-color-light text-4 mb-2">MOBILE APPLICATION</h4>
-										<p class="text-color-light opacity-7">Pengembangan layanan dengan menggunakan teknologi mobile antara lain SMS Broadcast, VASMS 5 Digit (SMS Premium), dan Mobile Application</p>
+                                    <img src="<?= base_url()?>assets2/img/icons/iot.png" alt="">
+										<h4 class="font-weight-bold text-color-light text-4 mb-2">HARDWARE & NETWORKING</h4>
+										<p class="text-color-light opacity-7">Penganalan tentang hardware dan jaringan pada teknologi modern</p>
 									</div>
 								</div>
 							</div>
+
+							<div class="col-lg-4 appear-animation" data-appear-animation="fadeInUpShorter">
+								<div class="feature-box feature-box-style-2">
+									<div class="feature-box-icon">
+										
+									</div>
+									<div class="feature-box-info">
+                                    <img src="<?= base_url()?>assets2/img/icons/e-goverment.png" alt="">
+										<h4 class="font-weight-bold text-color-light text-4 mb-2">E-GOVERMENT</h4>
+										<p class="text-color-light opacity-7">Produk sistem informasi untuk pemerintahan (e-government solution) dalam rangka meningkatkan kinerja instansi pemerintahan dan pelayanan kepada masyarakat</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-4 appear-animation" data-appear-animation="fadeInUpShorter">
+								<div class="feature-box feature-box-style-2">
+									<div class="feature-box-icon">
+										
+									</div>
+									<div class="feature-box-info">
+                                    <img src="<?= base_url()?>assets2/img/icons/network.png" alt="">
+										<h4 class="font-weight-bold text-color-light text-4 mb-2">INFORMATION SYSTEM</h4>
+										<p class="text-color-light opacity-7">Pengembangan Sistem Informasi untuk berbagai keperluan pengelolaan data, reporting, dashboard executive, decision support system, mapping / GIS. dll untuk diterapkan dalam dunia pemerintahan, pendidikan, perusahaan</p>
+									</div>
+								</div>
+							</div>
+							
 							<div class="col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="300">
 								<div class="feature-box feature-box-style-2">
 									<div class="feature-box-icon">
@@ -271,7 +338,7 @@
 					
 					
 					<div class="card" style="width: 25rem; margin-right: 5%; margin-left: 5%;" >
-  				<img src="<?= base_url()?>assets2/img/icons/work1.jpg" alt="" class="card-img-top" >
+  				<img src="<?= base_url()?>assets2/img/icons/lowongan.jpg" alt="" class="card-img-top" >
   				<div class="card-body">
   					  <h5 class="card-title">LOWONGAN PEKERJAAN</h5>
   				  <p class="card-text">Daftar pekerjaan PT Integra Inovasi Indonesia. Siapkan dokumen data diri , surat lamaran pekerjaan dan CV. Daftar Sekarang.</p>
@@ -289,7 +356,7 @@
 				</div>
 				</div>
 				<br>
-				<section id="clients" class="section section-background section-height-4 overlay overlay-show overlay-op-9 border-0 m-0" style="background-image: url(<?= base_url()?>assets2/img/bg-client.jpg); background-size: cover; background-position: center;">
+				<section id="clients" class="section section-background section-height-4 overlay overlay-show overlay-op-9 border-0 m-0" style="background-image: url(<?= base_url()?>assets2/img/slides/	bg-client.jpg); background-size: cover; background-position: center;">
 					<div class="container">
 						<div class="row">
 							<div class="col text-center">
@@ -306,7 +373,7 @@
 									<img class="img-fluid" src="<?= base_url()?>assets2/img/logos/uny.png" alt="">
 								</div>
 								<div>
-									<img class="img-fluid" src="<?= base_url()?>assets2/img/logos/telkom1.png" alt="">
+									<img class="img-fluid" src="<?= base_url()?>assets2/img/logos/telkom.png" alt="">
 								</div>
 								<div>
 									<img class="img-fluid" src="<?= base_url()?>assets2/img/logos/idn.png" alt="">
@@ -339,6 +406,36 @@
 						</div>
 					</div>
 				</section>
+
+				<div id="team" class="container pb-4">
+					<div class="row pt-5 mt-5 mb-4">
+						<div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter">
+							<h2 class="font-weight-bold mb-1">Team</h2>
+							<p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT</p>
+						</div>
+					</div>
+					<div class="row pb-5 mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+						<div class="col-sm-6 col-lg-3 mb-4 mb-lg-0">
+							<span class="thumb-info thumb-info-hide-wrapper-bg thumb-info-no-zoom">
+								<span class="thumb-info-wrapper">
+									<a href="about-me.html">
+										<img src="<?= base_url()?>assets2/img/icons/smartphone.png" class="img-fluid" alt="">
+									</a>
+								</span>
+								<span class="thumb-info-caption">
+									<h3 class="font-weight-extra-bold text-color-dark text-4 line-height-1 mt-3 mb-0">John Doe</h3>
+									<span class="text-2 mb-0">CEO</span>
+									<span class="thumb-info-caption-text pt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan</span>
+									<span class="thumb-info-social-icons">
+										<a target="_blank" href="http://www.facebook.com"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+										<a href="http://www.twitter.com"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+										<a href="http://www.linkedin.com"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a>
+									</span>
+								</span>
+							</span>
+						</div>	
+					</div>
+				</div>
 				
 				<section id="contact" class="section bg-color-grey-scale-1 border-0 py-0 m-0">
 					<div class="container-fluid">

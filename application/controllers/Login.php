@@ -7,7 +7,7 @@ class Login extends CI_Controller {
 	{
 
 		//membuat view
-		$this->load->view('v_login');
+		$this->load->view('v_landing');
 		//membuat model Mlogin
 		//$this->load->model('Mlogin');
 
@@ -42,25 +42,25 @@ class Login extends CI_Controller {
 					else
 					{
 						$this->session->set_flashdata('pesan', 'password salah');
-						redirect('Login','refresh');
+						redirect('welcome','refresh');
 					}
 				}
 				else
 				{
 					$this->session->set_flashdata('pesan', 'Kamu Belum diterima, Tidak bisa login');
-					redirect('Login','refresh');
+					redirect('welcome','refresh');
 				}
 			}
 			else
 			{
 				$this->session->set_flashdata('pesan', 'email belum aktif');
-				redirect('Login','refresh');
+				redirect('welcome','refresh');
 			}
 		}
 		else
 		{
 			$this->session->set_flashdata('pesan', 'email belum terdaftar');
-			redirect('Login','refresh');
+			redirect('welcome','refresh');
 		}
 	}
 
