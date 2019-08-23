@@ -38,7 +38,6 @@
 						<th>Tanggal</th>
 						<th>Absen</th>
 						<th>Ket.</th>
-						<th>Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -52,7 +51,6 @@
 								<td>'.$ab->tanggal.'</td>
 								<td>'.$ab->absen.'</td>
 								<td>'.$ab->alasan.'</td>
-								<td></td>
 							</tr>';
 						}
 					?>

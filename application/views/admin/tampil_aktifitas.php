@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-3">
 	<div class="box box-info">
 			<div class="box-header">
 				<h3 class="box-title">Filter</h3>
@@ -22,7 +22,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-8">
+	<div class="col-md-9">
 	<div class="box box-info">
 	<div class="box-header">
 		<h3 class="box-title">Aktifitas</h3>
@@ -37,6 +37,7 @@
 						<th>Nama</th>
 						<th>Tanggal</th>
 						<th>Kegiatan</th>
+						<th>Capture</th>
 						<th>Aksi</th>
 					</tr>
 				</thead>
@@ -47,6 +48,7 @@
 							<td><?php echo $value['nama_magang']; ?></td>
 							<td><?php echo $value['tgl_aktifitas']; ?></td>
 							<td><?php echo $value['isi_aktifitas']; ?></td>
+							<td><a href="<?= base_url("assets/capture_aktivitas/$value[capture_aktifitas]");?>" target="_blank">Lihat</a></td>
 							<td>
 								
 								<select name="status_aktifitas[<?php echo $value['id_aktifitas']?>]" class="form-control" onchange="submit()">

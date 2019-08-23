@@ -66,8 +66,8 @@ class Login extends CI_Controller {
 
 	function logout()
 	{
-		$this->session->userdata('mahasiswa');
-		redirect('login','refresh');
+		$this->session->sess_destroy();
+		redirect('welcome','refresh');
 	}
 
 }
