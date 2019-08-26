@@ -57,7 +57,7 @@
 							<div class="pull-right box-tools">
 								<button class="btn btn-primary btn-sm pull-right" data-toggle="collapse" data-target="#demo"><i class="fa fa-minus"></i></button>
 							</div>
-							<h3 class="box-title">Pengaturan</h3>
+							<h3 class="box-title">Pengaturan Akun</h3>
 						</div>
 					</div>
 					<div id="demo" class="collapse">
@@ -112,28 +112,54 @@
 					<div class="box collapse" id="demo1">
 						<div class="box-body">
 							<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>No</th>
-							<th>Tanggal</th>
-							<th>Aktifitas</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach ($aktifitas as $key => $value): ?>
-							<tr>
-								<td><?php echo $key+1; ?></td>
-								<td><?php echo $value['tgl_aktifitas']; ?></td>
-								<td><?php echo $value['isi_aktifitas']; ?></td>
-							</tr>
-							
-						<?php endforeach ?>
-					</tbody>
-				</table>
+								<thead>
+									<tr>
+										<th>No</th>
+										<th>Tanggal</th>
+										<th>Aktifitas</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php foreach ($aktifitas as $key => $value): ?>
+										<tr>
+											<td><?php echo $key+1; ?></td>
+											<td><?php echo $value['tgl_aktifitas']; ?></td>
+											<td><?php echo $value['isi_aktifitas']; ?></td>
+										</tr>
+										
+									<?php endforeach ?>
+								</tbody>
+							</table>
+						</div>
+					</div>	
+					<br>
+					<br>
+					<div class="box box-solid bg-blue">
+						<div class="box-header">
+							<div class="pull-right box-tools">
+								<button class="btn btn-primary btn-sm pull-right" data-toggle="collapse"data-target="#demo2"><i class="fa fa-minus"></i></button>
+							</div>
+							<h3 class="box-title">Upload Surat Magang</h3>
 						</div>
 					</div>
-
-					
+					<div class="box collapse" id="demo2">
+						<div class="box-body">
+							<form class="form-horizontal" action="<?= base_url()?>mahasiswa/Welcome/upload_surat_magang" method="POST" enctype="multipart/form-data">
+								<div class="form-group">
+									<label class="col-sm-2 control-label">Surat Magang</label>
+									<div class="col-sm-10">
+										<input type="file" class="form-control" name="file_magang">
+										<span class="text-danger">*Surat Pengantar dari Universitas (file format: ZIP/PDF , format nama: Nama anda_nama universitas/sekolah)</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-2 col-sm-10">
+										<button type="submit" class="btn btn-danger">Upload</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>	
 				</div>
 			</div>	
 

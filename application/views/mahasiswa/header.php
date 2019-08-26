@@ -10,6 +10,8 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/bootstrap/css/bootstrap.min.css") ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url ("assets/customcss/custommagang.css") ?>">
+  <!-- ckeditor -->
+  <script type="text/javascript" src="<?= base_url()?>assets/ckeditor/ckeditor.js"></script>
   <!-- link icon from font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/adminLTE/dashboard.css") ?>">

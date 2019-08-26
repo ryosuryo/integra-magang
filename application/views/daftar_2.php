@@ -87,7 +87,7 @@
 											<div class="form-group">
 												<label for="file">Dokumen</label>
 												<input type="file" class="form-control" name="file_magang">
-												<span class="text-danger">*Surat Pengantar dari Universitas (file format: ZIP,PDF)</span>
+												<span class="text-danger">*Surat Pengantar dari Universitas (file format: ZIP/PDF , format nama: Nama anda_nama universitas/sekolah)<br>*Bila belum dapat, boleh dikosongi dahulu</span>
 											</div>
 										</div>
 										<div class="col-md-6">

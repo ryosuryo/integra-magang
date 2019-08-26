@@ -40,6 +40,33 @@ class Welcome extends CI_Controller
 		}
 		
 	}
+	public function upload_surat_magang()
+	{
+		$id = $this->session->userdata('id_magang');
+		$config['upload_path'] = './assets/SuratMagang';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg|pdf';
+		$config['max_size']  = '1000000000000000000';
+		$config['max_width']  = '1024000000000000000000';
+		$config['max_height']  = '768000000000000000000000';
+		
+		$this->load->library('upload', $config);
+		
+		if ( ! $this->upload->do_upload('file_magang'))
+		{
+			echo "<script>alert('Tidak dapat upload, coba tanyakan pembimbing');</script>";
+			redirect('mahasiswa/Welcome','refresh');
+		}
+		else
+		{
+			$input = $this->upload->data('file_name');
+			$data = [
+				'file_magang' => $input
+			];
+			$this->db->where('id_magang', $id)->update('magang', $data);
+			echo "<script>alert('Berhasil upload');</script>";
+			redirect('mahasiswa/Welcome','refresh');
+		}
+	}
 
 	
 
