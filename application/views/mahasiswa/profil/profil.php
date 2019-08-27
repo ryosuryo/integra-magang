@@ -49,6 +49,7 @@
 							<br>
 								<ul>
 									<li style="color: red;">Jika Tidak memiliki data lanjutan, boleh dikosongi</li>
+									<li style="color: red;">Langsung saja ketik ulang kemudian tekan tombol "kirim" jika ingin mengedit data yang sudah dikirim</li>
 								</ul>
 							<form action="<?= base_url()?>mahasiswa/Profil/simpan_data_lanjutan" method="post">
 								<br>
@@ -60,7 +61,7 @@
 					</li>
 				</ul>
 
-				<a href="#" class="hidden-print btn btn-sm btn-success">Cetak CV</a>
+				<a href="<?= base_url()?>mahasiswa/Profil/lihat_cv" class="hidden-print btn btn-sm btn-success">Lihat CV</a>
 			</div>
 		</div>
 	

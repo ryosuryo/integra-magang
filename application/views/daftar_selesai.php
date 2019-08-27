@@ -111,7 +111,7 @@
 								</tr>
 							</table>
 							<ul class="list-inline pull-right">
-								<li><a href="<?php echo base_url("login"); ?>" class="btn btn-primary next-step">Login</a></li>
+								<li><a href="<?php echo base_url("Welcome"); ?>" class="btn btn-primary next-step">Login</a></li>
 							</ul>
 						</div>
 						<div class="clearfix"></div>

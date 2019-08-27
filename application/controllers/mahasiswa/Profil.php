@@ -27,15 +27,30 @@ class Profil extends CI_Controller
 	public function simpan_data_lanjutan()
 	{
 		$this->form_validation->set_rules('ckeditor', 'ckeditor', 'trim|required');
-		if ($this->form_validation->run() == TRUE) {
-			$input = $this->input->post('ckeditor');
+		if ($this->form_validation->run() == TRUE) 
+		{
 			$id = $this->session->userdata('id_magang');
-			$data = [
-				'id_magang' =>  $id,
-				'data' => $input
-			];
-			$this->db->insert('datacv', $data);
-			redirect('mahasiswa/Profil','refresh');
+			$input = $this->input->post('ckeditor');
+			$cek = $this->db->get_where('datacv', ['id_magang' => $id])->row_array();
+			if (empty($cek)) 
+			{
+				$data = [
+					'id_magang' =>  $id,
+					'data' => $input
+				];
+				$this->db->insert('datacv', $data);
+				echo "<script>alert('Berhasil Tambah Data.....')</script>";
+				redirect('mahasiswa/Profil','refresh');	
+			} 
+			else 
+			{
+				$data = [
+					'data' => $input
+				];
+				$this->db->where('id_magang', $id)->update('datacv',$data);
+				echo "<script>alert('Berhasil Update Data')</script>";
+				redirect('mahasiswa/Profil','refresh');	
+			}
 		} 
 		else 
 		{
@@ -82,7 +97,15 @@ class Profil extends CI_Controller
 		redirect('mahasiswa/Profil','refresh');
 	}
 
-
+	Public function lihat_cv()
+	{
+		$id = $this->session->userdata('id_magang');
+		$data['cv_magang'] = $this->Mmagang->detail_cv($id);
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/sidebar');
+		$this->load->view('mahasiswa/profil/v_cv',$data);
+		$this->load->view('mahasiswa/footer');
+	}
 
 
 

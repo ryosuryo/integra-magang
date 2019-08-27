@@ -66,31 +66,31 @@ class Aktifitas extends CI_Controller
     public function cetak_pdf()
     {
     	$id = $this->session->userdata('id_magang');
-    	$cek_status = $this->db->get_where('aktifitas', ['id_magang' => $id])->row_array();
-    	if ($cek_status['status_aktifitas']=="pending") 
+    	$cek_status = $this->db->get_where('aktifitas', ['id_magang' => $id, 'status_aktifitas' => 'pending'])->row_array();
+    	if ($cek_status) 
     	{
     		echo "<script>alert('Tidak Bisa Cetak, karena ada aktiftas yang masih pending');</script>";
     		redirect('mahasiswa/aktifitas','refresh');
     	}
     	else
     	{
-    		$pdf = new FPDF('L','mm','A4'); //L = lanscape P= potrait
+    		$pdf = new FPDF('P','mm','A4'); //L = lanscape P= potrait
 	        // membuat halaman baru
 	        $pdf->AddPage();
 	        // setting jenis font yang akan digunakan
 	        $pdf->SetFont('Arial','B',16);
 	        $ya = 44;
 	        // mencetak string 
-	        $pdf->Cell(260,7,'Laporan Data Aktifitas Mahasiswa Selama Magang',0,1,'C');
+	        $pdf->Cell(190,7,'Laporan Data Aktifitas Mahasiswa Selama Magang',0,1,'C');
 	        $pdf->SetFont('Arial','B',12);
-	        $pdf->Cell(260,7,'PT. INTEGRA INOVASI INDONESIA',0,1,'C');
+	        $pdf->Cell(190,7,'PT. INTEGRA INOVASI INDONESIA',0,1,'C');
 	        // Memberikan space kebawah agar tidak terlalu rapat
 	        $pdf->Cell(10,7,'',0,1);
 	        $pdf->SetFont('Arial','B',10);
 	        $pdf->Cell(15,6,'No.',1,0);
 	        $pdf->Cell(55,6,'NAMA MAHASISWA',1,0);
 	        $pdf->Cell(40,6,'TANGGAL',1,0);
-	        $pdf->Cell(130,6,'ISI AKTIFITAS',1,0);
+	        $pdf->Cell(55,6,'ISI AKTIFITAS',1,0);
 	        $pdf->Cell(25,6,'STATUS',1,1);
 	        $pdf->SetFont('Arial','',10);
 	        $data = $this->Maktifitas->tampil_aktifitas_cetak_pdf($id);
@@ -100,7 +100,7 @@ class Aktifitas extends CI_Controller
 	            $pdf->Cell(15,6,$no,1,0);
 	            $pdf->Cell(55,6,$row->nama_magang,1,0);
 	            $pdf->Cell(40,6,$row->tgl_aktifitas,1,0);
-	            $pdf->Cell(130,6,$row->isi_aktifitas,1,0);
+	            $pdf->Cell(55,6,$row->isi_aktifitas,1,0);
 	            $pdf->Cell(25,6,$row->status_aktifitas,1,1);  
 	        }
 	        $pdf->Output();

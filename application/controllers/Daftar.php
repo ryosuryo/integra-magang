@@ -59,7 +59,7 @@ class Daftar extends CI_Controller
 
 			$this->Mmagang->daftarmagang($inputan,$id_magang);
 			$this->Mmagang->periode_pemagang($id_magang);
-			$this->session->set_flashdata('pesan_', '<div class="alert alert-success"> silahkan cek email untuk aktifasi </div>');
+			$this->session->set_flashdata('pesan', '<div class="alert alert-success"> silahkan cek email untuk aktifasi </div>');
 			redirect("daftar/selesai/$id_magang",'refresh');
 
 		}
@@ -108,7 +108,7 @@ class Daftar extends CI_Controller
 		}
 		else if ($type == 'forgot')
 		{
-
+			
 		}
 
 		//mengirim email verifikasi
@@ -139,27 +139,27 @@ class Daftar extends CI_Controller
 					$this->db->where('email_magang', $email_magang);
 					$this->db->update('magang');
 					$this->db->delete('user_token', ['email' => $email_magang]);
-					$this->session->set_flashdata('pesan_login', '<div class="alert alert-success">'. $email_magang .' telah aktif </div>');
-					redirect('Login','refresh');
+					$this->session->set_flashdata('pesan_login', '<div class="alert alert-success">'. $email_magang .' telah aktif , tunggu konfirmasi penerimaan untuk login</div>');
+					redirect('Welcome','refresh');
 				}
 				else
 				{
 					$this->db->delete('magang', ['email' => $email_magang]);
 					$this->db->delete('user_token', ['email' => $email_magang]);
 					$this->session->set_flashdata('pesan_login', '<div class="alert alert-danger">Activation Failed; Token Kadaluarsa</div>');
-					redirect('Login','refresh');
+					redirect('Welcome','refresh');
 				}
 			}
 			else
 			{
 				$this->session->set_flashdata('pesan_login', '<div class="alert alert-danger">Activation Failed; Email Salah</div>');
-				redirect('Login','refresh');
+				redirect('Welcome','refresh');
 			}
 		}
 		else
 		{
 			$this->session->set_flashdata('pesan_login', '<div class="alert alert-danger">Activation Failed; Email Salah</div>');
-			redirect('Login','refresh');
+			redirect('Welcome','refresh');
 		}
 	}
 
