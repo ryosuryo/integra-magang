@@ -11,6 +11,14 @@ class Mmagang extends CI_Model
 		return $data;
 	}
 
+	public function get_magang()
+	{
+		return $this->db->join('periode_pemagang','periode_pemagang.id_magang = magang.id_magang')
+					->get('magang')->result();
+		
+		
+	}	
+
 	function daftar_magang($input)
 	{
 		$data['nama_magang'] = $input['nama_magang'];

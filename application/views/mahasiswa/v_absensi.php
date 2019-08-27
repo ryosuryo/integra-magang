@@ -1,11 +1,12 @@
+
 <div class="box box-info">
-			<div class="box-header">
-				<h3 class="box-title hidden-print">ABSENSI MAGANG</h3>
+			<div class="box-header text-center ">
+				<h1>ABSENSI MAGANG</h1>
 			</div>
-			<div class="box-body">
+			<div class="box-body text-center">
                 <p>Absensi setiap hari, jika tidak absen maka dianggap tidak masuk tanpa izin (Alpa)</p>
-                <button type="button" class="btn btn-success" onclick="simpan_masuk()">Masuk</button>
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-success btn-lg" onclick="simpan_masuk()">Masuk</button> &nbsp;
+                <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">
                 Tidak Masuk / Izin
                 </button>
 			</div>
@@ -15,17 +16,18 @@
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Form Izin</h5>
+                <div class="modal-header text-center bg-primary">
+                    <h2 class="modal-title w-100 font-weight-bold text-color-light" id="exampleModalLabel">FORM IZIN PT INTEGRA</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form method="post" action="<?= base_url()?>mahasiswa/Absensi/absen_izin">
-                        <input type="text" name="alasan" id="alasan" required="true" class="form-control" placeholder="alasan">
+                        <h5 div="text-2 opacity-10">Masukkan alasan Anda*</h5>
+                        <input type="text" name="alasan" id="alasan" required="true" class="form-control" placeholder="Masukkan Alasan Anda">
                         <br>
-                        <input type="submit" name="" id="" value="Submit" class="btn btn-success">
+                        <input type="submit" name="" id="" value="Submit" class="btn btn-success"> &nbsp;
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                     </form>
                 </div>

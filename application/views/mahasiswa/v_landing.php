@@ -33,6 +33,7 @@
 		<link rel="stylesheet" href="<?= base_url()?>assets2/vendor/magnific-popup/magnific-popup.min.css">
 
 		<!-- Theme CSS -->
+		
 		<link rel="stylesheet" href="<?= base_url()?>assets2/css/theme.css">
 		<link rel="stylesheet" href="<?= base_url()?>assets2/css/theme-elements.css">
 		<link rel="stylesheet" href="<?= base_url()?>assets2/css/theme-blog.css">
@@ -53,6 +54,7 @@
 
 		<!-- Head Libs -->
 		<script src="<?= base_url()?>assets2/vendor/modernizr/modernizr.min.js"></script>
+		<script src="<?= base_url()?>assets2/vendor/jquery/jquery.min.js"></script>
 
 	</head>
 	<body class="loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
@@ -158,6 +160,8 @@
 													</form>
 												</div>
 											</div>
+
+											
 										</header>
 
 			
@@ -200,8 +204,8 @@
 									data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
 									data-x="center"
 									data-y="center"
-									data-fontsize="['50','50','50','90']"
-									data-lineheight="['55','55','55','95']">INTEGRA INOVASI INDONESIA</div>
+									data-fontsize="['40','50','50','70']"
+									data-lineheight="['45','55','55','95']">INTEGRA INOVASI INDONESIA</div>
 
 								<div class="tp-caption font-weight-light ws-normal text-center"
 									data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
@@ -355,6 +359,79 @@
 				</div>
 				</div>
 				</div>
+				
+										<div class="modal fade" id="modal_anggota" role="dialog">
+											<div class="modal-dialog modal-lg" role="document">
+  											  <div class="modal-content">
+     											 <div class="modal-header text-center bg-primary">
+												  <h4 class="modal-title w-100 font-weight-bold text-color-light">PT INTEGRA INOVASI INDONESIA</h4>
+												  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          											<span aria-hidden="true">&times;</span>
+       											 </button>
+											</div>
+										<div class="modal-body">
+										<div class="normal-table-list mg-t-30">
+                        					<div class="basic-tb-hd">
+                          					  <h4 >Data Anggota magang</h4>
+                            
+             								   </div>
+                       					 <div class="bsc-tbl-st">
+											<div style="overflow-x:auto;">
+                        					    <table class="table table-striped">
+                           					     <thead>
+                              	        <tr>
+                                        <th>No.</th>
+                                        <th>Id_magang</th>
+                                        <th>Nama magang</th>
+                                        <th>Kampus</th>
+                                        <th>Jurusan</th>
+                                        <th>Jenis Kelamin</th>
+										<th>Tanggal Awal</th>
+										<th>Tanggal Akhir</th>
+                                     
+                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                   <?php
+                                   $no=0;
+                                   foreach ($data_magang as $dm) 
+                                   {
+                                       $no++;
+                                       echo '<tr>
+                                                <td>'.$no.'</td>
+                                                <td>'.$dm->id_magang.'</td>
+                                                <td>'.$dm->nama_magang.'</td>
+                                                <td>'.$dm->kampus_magang.'</td>
+                                                <td>'.$dm->jurusan_magang.'</td>
+												<td>'.$dm->jk_magang.'</td>
+												<td>'.$dm->tgl_awal.'</td>
+                                                <td>'.$dm->tgl_akhir.'</td>
+                                            </tr>';
+                                 			  }
+                                 			  ?>
+                              		  </tbody>
+                          		  </table>
+									</div>
+                          		<br>
+                           		 </div>
+                   					 </div>
+										</div>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+							<br>
+							<div class="text-center">
+  							<a href="" class="btn btn-primary btn-rounded mb-4" data-toggle="modal" data-target="#modal_anggota">
+   							 DATA ANGGOTA MAGANG</a>
+							</div>
+						</div>
+
+				
 				<br>
 				<section id="clients" class="section section-background section-height-4 overlay overlay-show overlay-op-9 border-0 m-0" style="background-image: url(<?= base_url()?>assets2/img/slides/	bg-client.jpg); background-size: cover; background-position: center;">
 					<div class="container">
@@ -403,39 +480,14 @@
 								</div>
 				
 							</div>
+							
 						</div>
 					</div>
 				</section>
 
-				<div id="team" class="container pb-4">
-					<div class="row pt-5 mt-5 mb-4">
-						<div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter">
-							<h2 class="font-weight-bold mb-1">Team</h2>
-							<p>LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT</p>
-						</div>
-					</div>
-					<div class="row pb-5 mb-5 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
-						<div class="col-sm-6 col-lg-3 mb-4 mb-lg-0">
-							<span class="thumb-info thumb-info-hide-wrapper-bg thumb-info-no-zoom">
-								<span class="thumb-info-wrapper">
-									<a href="about-me.html">
-										<img src="<?= base_url()?>assets2/img/icons/smartphone.png" class="img-fluid" alt="">
-									</a>
-								</span>
-								<span class="thumb-info-caption">
-									<h3 class="font-weight-extra-bold text-color-dark text-4 line-height-1 mt-3 mb-0">John Doe</h3>
-									<span class="text-2 mb-0">CEO</span>
-									<span class="thumb-info-caption-text pt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ligula mi, non suscipitaccumsan</span>
-									<span class="thumb-info-social-icons">
-										<a target="_blank" href="http://www.facebook.com"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
-										<a href="http://www.twitter.com"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-										<a href="http://www.linkedin.com"><i class="fab fa-linkedin-in"></i><span>Linkedin</span></a>
-									</span>
-								</span>
-							</span>
-						</div>	
-					</div>
-				</div>
+			  
+				
+			
 				
 				<section id="contact" class="section bg-color-grey-scale-1 border-0 py-0 m-0">
 					<div class="container-fluid">
@@ -486,7 +538,7 @@
 		</div>
 
 		<!-- Vendor -->
-		<script src="<?= base_url()?>assets2/vendor/jquery/jquery.min.js"></script>
+		
 		<script src="<?= base_url()?>assets2/vendor/jquery.appear/jquery.appear.min.js"></script>
 		<script src="<?= base_url()?>assets2/vendor/jquery.easing/jquery.easing.min.js"></script>
 		<script src="<?= base_url()?>assets2/vendor/jquery.cookie/jquery.cookie.min.js"></script>
@@ -531,72 +583,14 @@
 			ga('send', 'pageview');
 		</script>
 		 -->
+  
 
 		<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
 		<script>
 
-			/*
-			Map Settings
-
-				Find the Latitude and Longitude of your address:
-					- https://www.latlong.net/
-					- http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
-
-			*/
-
-			// Map Markers
-			var mapMarkers = [{
-				address: "New York, NY 10017",
-				html: "<strong>New York Office</strong><br>New York, NY 10017<br><br><a href='#' onclick='mapCenterAt({latitude: 40.75198, longitude: -73.96978, zoom: 16}, event)'>[+] zoom here</a>",
-				icon: {
-					image: "img/pin.png",
-					iconsize: [26, 46],
-					iconanchor: [12, 46]
-				}
-			}];
-
-			// Map Initial Location
-			var initLatitude = 40.75198;
-			var initLongitude = -73.96978;
-
-			// Map Extended Settings
-			var mapSettings = {
-				controls: {
-					draggable: (($.browser.mobile) ? false : true),
-					panControl: true,
-					zoomControl: true,
-					mapTypeControl: true,
-					scaleControl: true,
-					streetViewControl: true,
-					overviewMapControl: true
-				},
-				scrollwheel: false,
-				markers: mapMarkers,
-				latitude: initLatitude,
-				longitude: initLongitude,
-				zoom: 5
-			};
-
-			var map = $('#googlemaps').gMap(mapSettings),
-				mapRef = $('#googlemaps').data('gMap.reference');
-
-			// Map text-center At
-			var mapCenterAt = function(options, e) {
-				e.preventDefault();
-				$('#googlemaps').gMap("centerAt", options);
-			}
-
-			// Styles from https://snazzymaps.com/
-			var styles = [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}];
-
-			var styledMap = new google.maps.StyledMapType(styles, {
-				name: 'Styled Map'
-			});
-
-			mapRef.mapTypes.set('map_style', styledMap);
-			mapRef.setMapTypeId('map_style');
-
+	
 		</script>
+
 
 
 

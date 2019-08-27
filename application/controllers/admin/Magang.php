@@ -8,6 +8,7 @@ class Magang extends CI_Controller {
 		if(!$this->session->userdata('admin'))
 		{
 			redirect('admin/login','refresh');
+			
 		}
 	}
 
@@ -26,7 +27,7 @@ class Magang extends CI_Controller {
 		$this->load->view('admin/magang/tampil',$data);
 		$this->load->view('admin/footer');
 	}
-
+	
 }
 
 /* End of file Magang.php */

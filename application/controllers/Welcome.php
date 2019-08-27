@@ -21,10 +21,9 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('Mmagang');
-		//$data['magang'] = $this->Mmagang->tampil_magang_baru("Diterima");
-
-		//$data["grafik"] = $this->Mmagang->grafik_magang();
-
-		$this->load->view('mahasiswa/v_landing');
+		$data['data_magang']=$this->Mmagang->get_magang();
+		
+		$this->load->view('mahasiswa/v_landing',$data);
+	
 	}
 }

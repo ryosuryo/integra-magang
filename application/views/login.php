@@ -37,3 +37,47 @@
 
 </body>
 </html>
+
+
+
+
+//data modal login//
+<div class="modal fade" id="login" role="dialog">
+											<div class="modal-dialog" role="document">
+  											  <div class="modal-content">
+     											 <div class="modal-header text-center">
+												  <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+												  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          											<span aria-hidden="true">&times;</span>
+       											 </button>
+											</div>
+											
+											<div class="modal-body mx-3">
+												<div class="md-form mb-3">
+													<input type="email" name="" id="defaultForm-pass" class="form-control validate">
+														<label for="defaultform-email">Your Email</label>
+												</div>
+											</div>
+											<div class="modal-body mx-3">
+											<div class="md-form mb-2">
+												<input type="password" id="defaultForm-pass" class="form-control validate">
+												<label for="defaultform-pass">Your Password</label>
+											</div>
+											</div>	
+
+
+										</div>
+
+										<div class="modal-footer ">
+											<button class="btn btn-primary">Login</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+							<div class="text-center">
+  							<a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#login">
+   							 Login</a>
+							</div>
+						</div>

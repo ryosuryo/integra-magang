@@ -23,8 +23,13 @@ class Welcome extends CI_Controller
 		$this->load->view('admin/sidebar');
 		$this->load->view('admin/index', $data);
 		$this->load->view('admin/footer');
+		
 
 	}
+
+	
+
+
 	public function beritahu()
 	{
 		$input = $this->input->post('status_magang');
