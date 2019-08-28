@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>HALAMAN MAHASISWA</title>
-
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- Bootstrap -->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/bootstrap/css/bootstrap.min.css") ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url ("assets/customcss/custommagang.css") ?>">
