@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-</head>
-<body>
+
+    
+
 
 <div class="box box-info">
 			<div class="box-header text-center ">
@@ -50,44 +43,20 @@
 
      
         
-        <!-- <script type="text/javascript">
+         <script type="text/javascript">
             function simpan_masuk()
             {
                 $.getJSON("<?= base_url()?>mahasiswa/Absensi/absen_masuk",function(hasil){
                     if (hasil['status']==1) 
                     {
-                        alert("Berhasil absen");
+                        swal("Good job!", "You clicked the button!", "success");
                     } 
                     else 
                     {
-                        alert("Gagal absen, coba tanyakan ke pembimbing !!");
+                        swal("Gagal absen, coba tanyakan ke pembimbing !!");
                     }
                 });
             }
         
-        </script> -->
+        </script>
 
-            <script type="text/javascript">
-            $(document).ready(function simpan_masuk(){
-            $('#simpan').on('simpan_masuk',function(h) {  
-            $.ajax({
-                url:'<?= base_url()?>mahasiswa/Absensi/absen_masuk', //nama action script php sobat
-            data:$(this).serialize(),
-            type:'POST',
-            success:function(hasil){
-                if(hasil['status']==1){
-            console.log(hasil);
-            swal("Success!", "Message sent!", "success");
-                }},
-            error:function(hasil){
-            swal("Oops...", "Something went wrong :(", "error");
-                }
-                });
-            e.preventDefault(); 
-            });
-            });
-</script>
-
-    
-</body>
-</html>
