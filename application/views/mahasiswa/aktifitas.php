@@ -1,6 +1,6 @@
 <div class="box box-info">
-	<div class="box-header">
-		<h3 class="box-title">Laporan Aktifitas</h3>
+	<div class="box-header text-center">
+		<h3>Laporan Aktifitas</h3>
 	</div>
 	<div class="box-body">
 		<form method="POST" action="<?= base_url()?>mahasiswa/Aktifitas/tambah_aktifitas" enctype="multipart/form-data">
@@ -22,7 +22,7 @@
 					</div>
 				</div>
 			</div>
-			<input type="submit" class="btn btn-primary">
+			<input type="submit" class="btn btn-primary"> &nbsp;
 			<a href="<?= base_url()?>mahasiswa/Aktifitas/cetak_pdf" class="btn btn-success">Lampirkan Ke PDF</a>
 		</form>
 		<hr>

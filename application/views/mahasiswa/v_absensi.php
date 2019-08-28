@@ -49,7 +49,7 @@
                 $.getJSON("<?= base_url()?>mahasiswa/Absensi/absen_masuk",function(hasil){
                     if (hasil['status']==1) 
                     {
-                        swal("Good job!", "You clicked the button!", "success");
+                        swal("Berhasil Masuk!", "Anda sudah absen hari ini!", "success");
                     } 
                     else 
                     {
@@ -59,4 +59,5 @@
             }
         
         </script>
+        
 
