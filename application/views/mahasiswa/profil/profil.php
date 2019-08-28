@@ -50,18 +50,19 @@
 								<ul>
 									<li style="color: red;">Jika Tidak memiliki data lanjutan, boleh dikosongi</li>
 									<li style="color: red;">Langsung saja ketik ulang kemudian tekan tombol "kirim" jika ingin mengedit data yang sudah dikirim</li>
+									<li style="color: red;">Jika ingin menghapus data lanjutan yang sudah dikirim, tekan saja tombol <button class="btn btn-xs btn-danger" onclick="hapus_datacv()">Hapus</button> </li>
 								</ul>
-							<form action="<?= base_url()?>mahasiswa/Profil/simpan_data_lanjutan" method="post">
-								<br>
-								<textarea class="ckeditor" id="ckeditor" name="ckeditor"></textarea>
-								<br>
-								<input type="submit" name="submit" class="btn btn-sm btn-primary">		
-							</form>					
+								<form method="post" action="<?= base_url()?>mahasiswa/Profil/simpan_data_lanjutan">
+									<br>
+									<textarea class="ckeditor" id="inputan" name="ckeditor"></textarea>
+									<br>
+									<input type="submit" name="submit" class="btn btn-sm btn-primary">
+								</form>				
 						</div>
 					</li>
 				</ul>
 
-				<a href="<?= base_url()?>mahasiswa/Profil/lihat_cv" class="hidden-print btn btn-sm btn-success">Lihat CV</a>
+				<a href="#" class="hidden-print btn btn-sm btn-success">Lihat CV</a>
 			</div>
 		</div>
 	
@@ -104,6 +105,7 @@
 </div>
 	
 	<script type="text/javascript">
+		//detail
 		function tm_detail()
 		{
 			$.getJSON("<?= base_url()?>mahasiswa/Profil/detail",function(data){
@@ -114,5 +116,50 @@
 				$('#nohp_magang').val(data['nohp_magang']);
 				$('#email_magang').val(data['email_magang']);
 			});
+		}
+
+		//detail datacv
+		$.getJSON("<?= base_url()?>mahasiswa/Profil/detailCV",function(dt){
+			$('#inputan').val(dt['data']);
+		});
+
+		//hapus data cv
+		function hapus_datacv()
+		{
+			swal({
+				  title: "Kamu Yakin?",
+				  text: "Once deleted, Kamu akan menghapus data lanjutanmu!",
+				  icon: "warning",
+				  buttons: true,
+				  dangerMode: true,
+				})
+				.then((willDelete) => {
+				  if (willDelete) 
+				  {
+				  		$.getJSON("<?= base_url()?>mahasiswa/Profil/hapus_datacv",function(hasil){
+						 if (hasil['status']==1) 
+		                    {
+		                        swal("Poof! Datamu sudah terhapus, silahkan refresh", {
+							      icon: "success",
+							    });
+		                        
+		                    } 
+		                    else 
+		                    {
+		                       swal({
+								  title: "Gagal Hapus",
+								  text: "Mungkin terjadi kesalahan, tanyakan ke pembimbing !!",
+								  icon: "error",
+								  button: "Ok !!!",
+								});
+		                    }
+		                   // document.location.reload(true);
+						});  
+				  } 
+				  else 
+				  {
+				    swal("Batal Hapus");
+				  }
+				});
 		}
 	</script>

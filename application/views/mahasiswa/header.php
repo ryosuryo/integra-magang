@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>HALAMAN MAHASISWA</title>
+  
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- Bootstrap -->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/bootstrap/css/bootstrap.min.css") ?>">
@@ -15,6 +16,7 @@
   <!-- link icon from font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/adminLTE/dashboard.css") ?>">
+ <script src="<?= base_url()?>assets2/lib/jquery.min.js"></script>
 </head>
 <body>
  <div class="wrapper">

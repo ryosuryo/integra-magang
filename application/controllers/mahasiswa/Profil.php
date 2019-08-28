@@ -9,6 +9,7 @@ class Profil extends CI_Controller
 
 		parent::__construct();
 		$this->load->model('Mmagang');
+		$this->load->model('Mprofil');
 	}
 
 	public function index()
@@ -26,37 +27,21 @@ class Profil extends CI_Controller
 	}
 	public function simpan_data_lanjutan()
 	{
-		$this->form_validation->set_rules('ckeditor', 'ckeditor', 'trim|required');
-		if ($this->form_validation->run() == TRUE) 
-		{
 			$id = $this->session->userdata('id_magang');
-			$input = $this->input->post('ckeditor');
 			$cek = $this->db->get_where('datacv', ['id_magang' => $id])->row_array();
 			if (empty($cek)) 
 			{
-				$data = [
-					'id_magang' =>  $id,
-					'data' => $input
-				];
-				$this->db->insert('datacv', $data);
-				echo "<script>alert('Berhasil Tambah Data.....')</script>";
-				redirect('mahasiswa/Profil','refresh');	
+				$this->Mprofil->tambah_datacv($id);
+				redirect('mahasiswa/Profil','refresh');
+				
 			} 
 			else 
 			{
-				$data = [
-					'data' => $input
-				];
-				$this->db->where('id_magang', $id)->update('datacv',$data);
-				echo "<script>alert('Berhasil Update Data')</script>";
-				redirect('mahasiswa/Profil','refresh');	
+				$this->Mprofil->update_datacv($id);
+				redirect('mahasiswa/Profil','refresh');;
+				
 			}
-		} 
-		else 
-		{
-			echo "<script>alert('lengkapi Dulu Data !!!')</script>";
-			redirect('mahasiswa/Profil','refresh');
-		}
+
 	}
 
 	function download()
@@ -71,6 +56,12 @@ class Profil extends CI_Controller
 	{
 		$id = $this->session->userdata('id_magang');
 		$dt = $this->db->get_where('magang', ['id_magang' => $id])->row_array();
+		echo json_encode($dt);
+	}
+	public function detailCV()
+	{
+		$id = $this->session->userdata('id_magang');
+		$dt = $this->db->get_where('datacv',  ['id_magang' => $id])->row_array();
 		echo json_encode($dt);
 	}
 	public function editDataCV()
@@ -107,6 +98,18 @@ class Profil extends CI_Controller
 		$this->load->view('mahasiswa/footer');
 	}
 
+	public function hapus_datacv()
+	{
+		$id = $this->session->userdata('id_magang');
+		$hapus = $this->db->where('id_magang', $id)->delete('datacv');
+		if ($hapus) {
+            $dt['status']=1;
+            echo json_encode($dt);
+        } else {
+            $dt['status']=0;
+            echo json_encode($dt);
+        }
+	}
 
 
 }

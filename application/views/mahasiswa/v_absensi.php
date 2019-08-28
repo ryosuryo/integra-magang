@@ -8,10 +8,30 @@
 			</div>
 			<div class="box-body text-center">
                 <p>Absensi setiap hari, jika tidak absen maka dianggap tidak masuk tanpa izin (Alpa)</p>
-                <button type="button" class="btn btn-success btn-lg" onclick="simpan_masuk()" id="simpan" >Masuk</button> &nbsp;
-                <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">
-                Tidak Masuk / Izin
-                </button>
+                 <?php
+                    $id = $this->session->userdata('id_magang');
+                   $cek_data = $this->db->get_where('absensi', ['id_magang' => $id, 'tanggal' => date('Y-m-d')] )->row_array();
+                    if (empty($cek_data)) 
+                    {
+                       ?>
+
+                       <button type="button" class="btn btn-success btn-lg" onclick="simpan_masuk()" id="simpan" >Masuk</button> &nbsp;
+                        <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">
+                        Tidak Masuk / Izin
+                        </button>
+                <?php
+                    }
+                    else
+                    {
+                ?>
+
+                     <button type="button" class="btn btn-success btn-lg" onclick="simpan_masuk()" id="simpan" disabled="disabled">Masuk</button> &nbsp;
+                     <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" disabled="disabled">
+                        Tidak Masuk / Izin
+                        </button>
+                <?php
+                    }
+                ?>
 			</div>
 </div>
 <?= $this->session->flashdata('pesan_izin');?>
@@ -49,7 +69,7 @@
                 $.getJSON("<?= base_url()?>mahasiswa/Absensi/absen_masuk",function(hasil){
                     if (hasil['status']==1) 
                     {
-                        swal("Berhasil Masuk!", "Anda sudah absen hari ini!", "success");
+                        swal("Berhasil Masuk!", "Anda sudah absen hari ini! Silahkan Refresh...", "success");
                     } 
                     else 
                     {
