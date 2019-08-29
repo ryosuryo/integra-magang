@@ -1,3 +1,17 @@
+<style>
+	@media print{
+	@page{
+		size:portrait;
+	}
+	.box-info
+	{
+		border-top:none;
+	}
+	img {
+		
+	}
+}
+</style>
 <div class="box box-info">
 			<div class="box-header">
 				<h3 class="box-title hidden-print">Data CV</h3>
@@ -10,7 +24,7 @@
 							<br>
 							<div class="row">
 								<div class="col-md-3">
-									<img src="<?php echo base_url("assets/img/$cv_magang[foto_magang]") ?>" alt="" width="180" height="200" class="img-thumbnail">
+									<img src="<?php echo base_url("assets/img/$cv_magang[foto_magang]") ?>" alt="" width="180" height="200" class="">
 								</div>
 								<div class="col-md-7">
 									<div class="table-responsive">
@@ -40,5 +54,6 @@
 					</li>
 				</ul>
 				<a href="<?= base_url()?>mahasiswa/Profil" class="hidden-print btn btn-sm btn-danger">Kembali</a>
+				<a href="#" class="hidden-print btn btn-sm btn-info" onclick="window.print()">Cetak CV</a>
 			</div>
 		</div>

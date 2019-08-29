@@ -1,15 +1,3 @@
-<style>
-@media print{
-	@page{
-		size: portrait;
-	}
-	
-	.box-info
-	{
-		border-top:none;
-	}
-}
-</style>
 
 		<div class="box box-info">
 			<div class="box-header">
@@ -62,7 +50,7 @@
 					</li>
 				</ul>
 
-				<a href="#" class="hidden-print btn btn-sm btn-success">Lihat CV</a>
+				<a href="<?= base_url()?>mahasiswa/Profil/lihat_cv" class="hidden-print btn btn-sm btn-success">Lihat CV</a>
 			</div>
 		</div>
 	
