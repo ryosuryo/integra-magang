@@ -53,8 +53,8 @@ class Welcome extends CI_Controller
 		
 		if ( ! $this->upload->do_upload('file_magang'))
 		{
-			echo "<script>alert('Tidak dapat upload, coba tanyakan pembimbing');</script>";
-			redirect('mahasiswa/Welcome','refresh');
+			$error = array('status' =>0, 'error' => $this->upload->display_errors());
+			echo json_encode($error);
 		}
 		else
 		{
@@ -63,8 +63,8 @@ class Welcome extends CI_Controller
 				'file_magang' => $input
 			];
 			$this->db->where('id_magang', $id)->update('magang', $data);
-			echo "<script>alert('Berhasil upload');</script>";
-			redirect('mahasiswa/Welcome','refresh');
+			$data = array('status'=>1, 'upload_data' => $this->upload->data());
+			echo json_encode($data);
 		}
 	}
 

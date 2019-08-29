@@ -16,20 +16,44 @@
                        ?>
 
                        <button type="button" class="btn btn-success btn-lg" onclick="simpan_masuk()" id="simpan" >Masuk</button> &nbsp;
-                        <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" id="izin">
                         Tidak Masuk / Izin
                         </button>
                 <?php
                     }
                     else
                     {
+                        if ($cek_data['absen']=="Masuk") 
+                        {
+                            
                 ?>
+                            <br><br>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <div class="alert alert-success" role="alert" style="width: 100%;">
+                                  Sudah Absen Masuk....
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+                 <?php           
+                        }
+                        else
+                        {
+                            ?>
 
-                     <button type="button" class="btn btn-success btn-lg" onclick="simpan_masuk()" id="simpan" disabled="disabled">Masuk</button> &nbsp;
-                     <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal" disabled="disabled">
-                        Tidak Masuk / Izin
-                        </button>
+            
+                            <br><br>
+                             <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                     <div class="alert alert-warning" role="alert">
+                                  Izin sudah dikrim....
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+                           
+
                 <?php
+                        }
                     }
                 ?>
 			</div>
@@ -69,7 +93,9 @@
                 $.getJSON("<?= base_url()?>mahasiswa/Absensi/absen_masuk",function(hasil){
                     if (hasil['status']==1) 
                     {
-                        swal("Berhasil Masuk!", "Anda sudah absen hari ini! Silahkan Refresh...", "success");
+                        swal("Berhasil Masuk!", "Anda sudah absen hari ini!", "success");
+                        $("#simpan").hide("fade");
+                        $("#izin").hide("fade");
                     } 
                     else 
                     {

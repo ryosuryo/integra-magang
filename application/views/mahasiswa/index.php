@@ -144,20 +144,37 @@
 					</div>
 					<div class="box collapse" id="demo2">
 						<div class="box-body">
-							<form class="form-horizontal" action="<?= base_url()?>mahasiswa/Welcome/upload_surat_magang" method="POST" enctype="multipart/form-data">
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Surat Magang</label>
-									<div class="col-sm-10">
-										<input type="file" class="form-control" name="file_magang">
-										<span class="text-danger">*Surat Pengantar dari Universitas (file format: ZIP/PDF , format nama: Nama anda_nama universitas/sekolah)</span>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-sm-offset-2 col-sm-10">
-										<button type="submit" class="btn btn-danger">Upload</button>
-									</div>
-								</div>
-							</form>
+							<?php
+								$cek_data = $this->db->get_where('magang', ['id_magang' => $this->session->userdata('id_magang')])->row_array();
+								if ($cek_data['file_magang']) 
+								{
+									?>
+									<span class="text-success" id="text1">*Surat Pengantar sudah terupload....</span>
+
+							<?php
+								}
+								else
+								{
+									?>
+									<form class="form-horizontal" method="POST" enctype="multipart/form-data" id="upload_file">
+										<div class="form-group">
+											<label class="col-sm-2 control-label" id="label">Surat Magang</label>
+											<div class="col-sm-10">
+												<input type="file" class="form-control" name="file_magang" id="unggah">
+												<span class="text-danger" id="text">*Surat Pengantar dari Universitas (file format: ZIP/PDF , format nama: Nama anda_nama universitas/sekolah)</span>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-offset-2 col-sm-10">
+												<button type="submit" class="btn btn-danger" id="tombol">Upload</button>
+											</div>
+										</div>
+									</form>
+
+							<?php
+								}
+							?>
+							
 						</div>
 					</div>	
 				</div>
@@ -166,3 +183,33 @@
 
 		</div>
 	</div>
+	<script type="text/javascript">
+		//upload surat magang
+		$('#upload_file').submit(function(event){
+			event.preventDefault();
+			var url = "<?= base_url()?>mahasiswa/Welcome/upload_surat_magang";
+			var data = new FormData($("#upload_file")[0]);
+			$.ajax({
+				url:url,
+				type:"post",
+	            data:data,
+	            contentType: false,
+	            processData: false,
+	            dataType:"json",
+	            success:function(hasil){
+	            	if(hasil['status']==1)
+	            	{
+	            		swal("Berhasil Upload!", "Anda sudah absen hari ini! Silahkan Refresh...", "success");
+	            		$("#upload_file").hide("fade");
+	            		setTimeout(function(){
+	            			$("#text1").hide("fade");
+	            		}, 1000);
+	            	}
+	            	else
+	            	{
+	            		swal("Gagal!!!", "Anda belum memlih file .....", "warning");
+	            	}
+	            }
+			});
+		});
+	</script>

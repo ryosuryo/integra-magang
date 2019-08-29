@@ -23,7 +23,7 @@ class Absensi extends CI_Controller {
        ];
        $this->db->insert('absensi', $data);
        
-       $this->session->set_flashdata('pesan_izin', '<div class="alert alert-success">Berhasil mengirim izin</div>');
+       //$this->session->set_flashdata('pesan_izin', '<div class="alert alert-success">Berhasil mengirim izin</div>');
        
        redirect('mahasiswa/Absensi','refresh');
 
