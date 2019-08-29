@@ -381,7 +381,7 @@
                            					     <thead>
                               	        <tr>
                                         <th>No.</th>
-                                        <th>Id_magang</th>
+                                
                                         <th>Nama magang</th>
                                         <th>Kampus</th>
                                         <th>Jurusan</th>
@@ -401,7 +401,7 @@
                                        $no++;
                                        echo '<tr>
                                                 <td>'.$no.'</td>
-                                                <td>'.$dm->id_magang.'</td>
+                                              
                                                 <td>'.$dm->nama_magang.'</td>
                                                 <td>'.$dm->kampus_magang.'</td>
                                                 <td>'.$dm->jurusan_magang.'</td>
