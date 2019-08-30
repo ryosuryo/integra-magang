@@ -51,6 +51,7 @@
 										PT INTEGRA INOVASI INDONESIA
 										<br>YOGYAKARTA INDONESIA
 									</span>
+									
 									</td>
 								</td>
 							</tr>

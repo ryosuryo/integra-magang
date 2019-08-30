@@ -11,7 +11,7 @@
 							<br>
 							<div class="row">
 								<div class="col-md-3">
-									<img src="<?php echo base_url("assets/img/$magang[foto_magang]") ?>" alt="" width="180" height="200" class="img-thumbnail">
+									<img src="<?php echo base_url("assets/img/$magang[foto_magang]") ?>" alt="" width="180" height="200" >
 								</div>
 								<div class="col-md-7">
 									<div class="table-responsive">
@@ -26,8 +26,9 @@
 									</div>
 								</div>
 							</div>
-							<button type="button" class="btn btn-warning btn-sm" onclick="tm_detail()" data-toggle="modal" data-target="#ModalEdit">
-							  Edit
+							<br>
+							<button type="button" class="btn btn-warning "  onclick="tm_detail()" data-toggle="modal" data-target="#ModalEdit" >
+							  Edit Data Pribadi
 							</button>
 						</div>
 					</li>
@@ -84,9 +85,11 @@
 	        	<input type="email" name="email_magang" id="email_magang" class="form-control">
         	</div>
         	<br>
-        <button type="button" class="btn btn-secondary btn-xs" data-dismiss="modal">Close</button>
-        <input type="submit" name="submit" class="btn btn-warning btn-xs">
+					<br>
+        
       </div>
+			<button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+        <input type="submit" name="submit" class="btn btn-warning">
        </form>
     </div>
   </div>
