@@ -371,17 +371,35 @@
 											</div>
 										<div class="modal-body">
 										<div class="normal-table-list mg-t-30">
-                        					<div class="basic-tb-hd">
+                        					<div class="basic-tb-hd text-center" >
                           					  <h4 >Data Anggota magang</h4>
-                            
+												</div>
+												<div class="form-group">
+    											<label for="exampleFormControlSelect1">Bulan Magang</label>
+    											<select class="form-control" id="exampleFormControlSelect1">
+      												<option>Januari</option>
+   												    <option>Februari</option>
+    											    <option>Maret</option>
+     												<option>April</option>
+      												<option>Mei</option>
+													  <option>Juni</option>
+													  <option>Juli</option>
+													  <option>Agustus</option>
+													  <option>September</option>
+													  <option>Oktober</option>
+													  <option>November</option>
+													  <option>Desember</option>
+    											</select>
+  											</div>
              								   </div>
+												
+												
                        					 <div class="bsc-tbl-st">
 											<div style="overflow-x:auto;">
                         					    <table class="table table-striped">
                            					     <thead>
                               	        <tr>
                                         <th>No.</th>
-                                
                                         <th>Nama magang</th>
                                         <th>Kampus</th>
                                         <th>Jurusan</th>
@@ -401,7 +419,6 @@
                                        $no++;
                                        echo '<tr>
                                                 <td>'.$no.'</td>
-                                              
                                                 <td>'.$dm->nama_magang.'</td>
                                                 <td>'.$dm->kampus_magang.'</td>
                                                 <td>'.$dm->jurusan_magang.'</td>
