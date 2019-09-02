@@ -20,10 +20,21 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('Mmagang');
-		$data['data_magang']=$this->Mmagang->get_magang();
 		
-		$this->load->view('mahasiswa/v_landing',$data);
-	
+		//$data['data_magang']=
+		$this->load->view('mahasiswa/v_landing');
 	}
+	public function get_magang()
+	{
+		$this->load->model('Mmagang');
+		$dt = $this->Mmagang->get_magang();
+		echo json_encode($dt);
+	}
+	public function cari($tahun)
+	{
+		$this->load->model('Mmagang');
+		$dt = $this->Mmagang->cari($tahun);
+		echo json_encode($dt);
+	}
+	
 }

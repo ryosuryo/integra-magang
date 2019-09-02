@@ -16,8 +16,33 @@ class Mmagang extends CI_Model
 		return $this->db->join('periode_pemagang','periode_pemagang.id_magang = magang.id_magang')
 					->get('magang')->result();
 		
-		
 	}	
+	public function cari($tahun)
+	{
+		return $this->db->query("SELECT 1 bulan,m.* FROM `periode_pemagang` pp LEFT JOIN magang m ON (pp.id_magang=m.id_magang) WHERE 1 BETWEEN month(tgl_awal) AND month(tgl_akhir) AND year(tgl_awal)=$tahun AND year(tgl_akhir)=$tahun
+UNION ALL
+SELECT 2 bulan,m.* FROM `periode_pemagang` pp LEFT JOIN magang m ON (pp.id_magang=m.id_magang) WHERE 2 BETWEEN month(tgl_awal) AND month(tgl_akhir) AND year(tgl_awal)=$tahun AND year(tgl_akhir)=$tahun
+UNION ALL
+SELECT 3 bulan,m.* FROM `periode_pemagang` pp LEFT JOIN magang m ON (pp.id_magang=m.id_magang) WHERE 3 BETWEEN month(tgl_awal) AND month(tgl_akhir) AND year(tgl_awal)=$tahun AND year(tgl_akhir)=$tahun
+UNION ALL
+SELECT 4 bulan,m.* FROM `periode_pemagang` pp LEFT JOIN magang m ON (pp.id_magang=m.id_magang) WHERE 4 BETWEEN month(tgl_awal) AND month(tgl_akhir) AND year(tgl_awal)=$tahun AND year(tgl_akhir)=$tahun
+UNION ALL
+SELECT 5 bulan,m.* FROM `periode_pemagang` pp LEFT JOIN magang m ON (pp.id_magang=m.id_magang) WHERE 5 BETWEEN month(tgl_awal) AND month(tgl_akhir) AND year(tgl_awal)=$tahun AND year(tgl_akhir)=$tahun
+UNION ALL
+SELECT 6 bulan,m.* FROM `periode_pemagang` pp LEFT JOIN magang m ON (pp.id_magang=m.id_magang) WHERE 6 BETWEEN month(tgl_awal) AND month(tgl_akhir) AND year(tgl_awal)=$tahun AND year(tgl_akhir)=$tahun
+UNION ALL
+SELECT 7 bulan,m.* FROM `periode_pemagang` pp LEFT JOIN magang m ON (pp.id_magang=m.id_magang) WHERE 7 BETWEEN month(tgl_awal) AND month(tgl_akhir) AND year(tgl_awal)=$tahun AND year(tgl_akhir)=$tahun
+UNION ALL
+SELECT 8 bulan,m.* FROM `periode_pemagang` pp LEFT JOIN magang m ON (pp.id_magang=m.id_magang) WHERE 8 BETWEEN month(tgl_awal) AND month(tgl_akhir) AND year(tgl_awal)=$tahun AND year(tgl_akhir)=$tahun
+UNION ALL
+SELECT 9 bulan,m.* FROM `periode_pemagang` pp LEFT JOIN magang m ON (pp.id_magang=m.id_magang) WHERE 9 BETWEEN month(tgl_awal) AND month(tgl_akhir) AND year(tgl_awal)=$tahun AND year(tgl_akhir)=$tahun
+UNION ALL
+SELECT 10 bulan,m.* FROM `periode_pemagang` pp LEFT JOIN magang m ON (pp.id_magang=m.id_magang) WHERE 10 BETWEEN month(tgl_awal) AND month(tgl_akhir) AND year(tgl_awal)=$tahun AND year(tgl_akhir)=$tahun
+UNION ALL
+SELECT 11 bulan,m.* FROM `periode_pemagang` pp LEFT JOIN magang m ON (pp.id_magang=m.id_magang) WHERE 11 BETWEEN month(tgl_awal) AND month(tgl_akhir) AND year(tgl_awal)=$tahun AND year(tgl_akhir)=$tahun
+UNION ALL
+SELECT 12 bulan,m.* FROM `periode_pemagang` pp LEFT JOIN magang m ON (pp.id_magang=m.id_magang) WHERE 12 BETWEEN month(tgl_awal) AND month(tgl_akhir) AND year(tgl_awal)=$tahun AND year(tgl_akhir)=$tahun")->result();
+	}
 
 	function daftar_magang($input)
 	{

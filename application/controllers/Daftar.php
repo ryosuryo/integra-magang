@@ -42,36 +42,44 @@ class Daftar extends CI_Controller
 	public function kampus($id_magang)
 	{
 		//$data['periode'] = $this->Mperiode->tampil_periode_tahun();
-		$this->load->view('daftar_2');
-
-
-		if ($this->input->post())
+		$cek_data = $this->db->get_where('maganag', ['id_magang' => $id_magang])->row_array();
+		if ($cek_data) 
 		{
+			$this->load->view('daftar_2');
+			if ($this->input->post())
+			{
+				//memasukkan data
+				$input = $this->input->post();
+				$inputan['kampus_magang'] = $input['kampus_magang'];
+				$inputan['jurusan_magang'] = $input['jurusan_magang'];
+				$inputan['nim_magang'] = $input['nim_magang'];
+				$inputan['status_magang'] = "pending";
+				$inputan['is_actived'] = 0;
+				$inputan['date_created'] = time('hh:mm:ss');
 
-			//memasukkan data
-			$input = $this->input->post();
-			$inputan['kampus_magang'] = $input['kampus_magang'];
-			$inputan['jurusan_magang'] = $input['jurusan_magang'];
-			$inputan['nim_magang'] = $input['nim_magang'];
-			$inputan['status_magang'] = "pending";
-			$inputan['is_actived'] = 0;
-			$inputan['date_created'] = time('hh:mm:ss');
-
-			$this->Mmagang->daftarmagang($inputan,$id_magang);
-			$this->Mmagang->periode_pemagang($id_magang);
-			$this->session->set_flashdata('pesan', '<div class="alert alert-success"> silahkan cek email untuk aktifasi </div>');
-			redirect("daftar/selesai/$id_magang",'refresh');
-
+				$this->Mmagang->daftarmagang($inputan,$id_magang);
+				$this->Mmagang->periode_pemagang($id_magang);
+				$this->session->set_flashdata('pesan', '<div class="alert alert-success"> silahkan cek email untuk aktifasi </div>');
+				redirect("daftar/selesai/$id_magang",'refresh');
+			}	
+		}
+		else
+		{
+			echo "<script>alert('Data yang kamu masukkan belum tersimpan, mungkin terjadi kesalahan');</script>";
+			redirect('Daftar','refresh');
 		}
 	}
 
 	function selesai($id_magang)
 	{
-		$data['detail'] = $this->Mmagang->detail($id_magang);
-		//$data['periode'] = $this->Mmagang->periode_magang($id_magang);
-		$this->load->view('daftar_selesai', $data);
+		$cek_data = $this->db->get_where('maganag', ['id_magang' => $id_magang])->row_array();
+		if ($cek_data) 
+		{
+			$data['detail'] = $this->Mmagang->detail($id_magang);
+			//$data['periode'] = $this->Mmagang->periode_magang($id_magang);
+			$this->load->view('daftar_selesai', $data);
 
-		//menyiapkan token
+			//menyiapkan token
 			$token = base64_encode(random_bytes(32));
 			$magang = $this->db->get_where('magang', ['id_magang' => $id_magang])->row_array();
 			$user_token = [
@@ -81,7 +89,12 @@ class Daftar extends CI_Controller
 			];
 			$this->db->insert('user_token', $user_token);
 			$this->_sendEmail($token,'verify',$id_magang);
-
+		}
+		else
+		{
+			echo "<script>alert('Data yang kamu masukkan belum tersimpan, mungkin terjadi kesalahan');</script>";
+			redirect('Daftar','refresh');
+		}
 	}
 
 	private function _sendEmail($token,$type,$id_magang)

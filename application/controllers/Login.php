@@ -3,18 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
-	public function index()
-	{
-
-		//membuat view
-		$this->load->view('v_landing');
-		//membuat model Mlogin
-		//$this->load->model('Mlogin');
-
-		
-		
-	}
-
 	public function proses_login()
 	{
 		$email_magang = $this->input->post('email_magang');

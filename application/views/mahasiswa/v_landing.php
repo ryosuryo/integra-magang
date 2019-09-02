@@ -373,65 +373,50 @@
 										<div class="normal-table-list mg-t-30">
                         					<div class="basic-tb-hd text-center" >
                           					  <h4 >Data Anggota magang</h4>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<form method="post">
+													<div class="form-group">
+	    											<label for="exampleFormControlSelect1">Bulan Magang</label>
+		    											<select class="form-control" id="bulan" name="bulan" onchange="">
+		      												  <option value="1">Januari</option>
+		   												      <option value="2">Februari</option>
+		    											      <option value="3">Maret</option>
+		     												  <option value="4">April</option>
+		      												  <option value="5">Mei</option>
+															  <option value="6">Juni</option>
+															  <option value="7">Juli</option>
+															  <option value="8">Agustus</option>
+															  <option value="9">September</option>
+															  <option value="10">Oktober</option>
+															  <option value="11">November</option>
+															  <option value="12">Desember</option>
+		    											</select>
+		  											</div>
+												</form>
 												</div>
-												<div class="form-group">
-    											<label for="exampleFormControlSelect1">Bulan Magang</label>
-    											<select class="form-control" id="exampleFormControlSelect1">
-      												<option>Januari</option>
-   												    <option>Februari</option>
-    											    <option>Maret</option>
-     												<option>April</option>
-      												<option>Mei</option>
-													  <option>Juni</option>
-													  <option>Juli</option>
-													  <option>Agustus</option>
-													  <option>September</option>
-													  <option>Oktober</option>
-													  <option>November</option>
-													  <option>Desember</option>
-    											</select>
-  											</div>
-             								   </div>
+												<div class="col-md-6">
+													<form>
+														<div class="form-group">
+		    											<label for="exampleFormControlSelect1">Tahun Magang</label>
+			    											<select class="form-control" id="tahun" name="tahun" onchange="cari()">
+			      												  <option value="2019">2019</option>
+			      												  <option value="2019">2020</option>
+			   												     
+			    											</select>
+			  											</div>
+													</form>
+												</div>
+											</div>
+             							</div>
 												
 												
                        					 <div class="bsc-tbl-st">
-											<div style="overflow-x:auto;">
-                        					    <table class="table table-striped">
-                           					     <thead>
-                              	        <tr>
-                                        <th>No.</th>
-                                        <th>Nama magang</th>
-                                        <th>Kampus</th>
-                                        <th>Jurusan</th>
-                                        <th>Jenis Kelamin</th>
-										<th>Tanggal Awal</th>
-										<th>Tanggal Akhir</th>
-                                     
-                                       
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                   <?php
-                                   $no=0;
-                                   foreach ($data_magang as $dm) 
-                                   {
-                                       $no++;
-                                       echo '<tr>
-                                                <td>'.$no.'</td>
-                                                <td>'.$dm->nama_magang.'</td>
-                                                <td>'.$dm->kampus_magang.'</td>
-                                                <td>'.$dm->jurusan_magang.'</td>
-												<td>'.$dm->jk_magang.'</td>
-												<td>'.$dm->tgl_awal.'</td>
-                                                <td>'.$dm->tgl_akhir.'</td>
-                                            </tr>';
-                                 			  }
-                                 			  ?>
-                              		  </tbody>
-                          		  </table>
-									</div>
-                          		<br>
+											<div class="row" id="tampil_anggota">
+												
+											</div>
+		                          		<br>
                            		 </div>
                    					 </div>
 										</div>
@@ -603,11 +588,45 @@
   
 
 		<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-		<script>
+		<script type="text/javascript">
+			// tampil anggota 
+			$.getJSON("<?= base_url()?>Welcome/get_magang",function(data){
+				var datanya='';
+				$.each(data,function(key,dt){
+					datanya+=
+					'<div class="col-md-4">'+
+						'<div class="card text-center">'+
+							'<div class="card-body">'+
+								'<h4 class="card-title">'+dt['nama_magang']+'</h4>'+
+	      						'<p class="card-text">'+dt['kampus_magang']+'<br>'+dt['jurusan_magang']+'</p>'+
+							'</div>'+
 
-	
+						'</div>'+
+					'</div>'
+				});
+				$('#tampil_anggota').html(datanya);
+			});
+			//cari anggota magang
+			function cari()
+			{
+				$.getJSON("<?= base_url()?>Welcome/cari/"+$("#tahun").val(),function(data){
+				var datanya='';
+				$.each(data,function(key,dt){
+					datanya+=
+					'<div class="col-md-4">'+
+						'<div class="card text-center">'+
+							'<div class="card-body">'+
+								'<h4 class="card-title">'+dt['nama_magang']+'</h4>'+
+	      						'<p class="card-text">'+dt['kampus_magang']+'<br>'+dt['jurusan_magang']+'</p>'+
+							'</div>'+
+
+						'</div>'+
+					'</div>'
+				});
+				$('#tampil_anggota').html(datanya);
+			});
+			}
 		</script>
-
 
 
 
