@@ -1,7 +1,7 @@
 
 		<div class="box box-info">
 			<div class="box-header">
-				<h3 class="box-title hidden-print">PROFIL</h3>
+				<h2 >	&emsp;	&emsp;PROFIL</h2>
 			</div>
 			<div class="box-body">
 				<ul class="timeline timeline-inverse" style="">
@@ -45,13 +45,13 @@
 									<br>
 									<textarea class="ckeditor" id="inputan" name="ckeditor"></textarea>
 									<br>
-									<input type="submit" name="submit" class="btn btn-sm btn-primary">
+									<input type="submit" name="submit" class="btn btn-sm btn-primary"> 
 								</form>				
 						</div>
 					</li>
 				</ul>
-
-				<a href="<?= base_url()?>mahasiswa/Profil/lihat_cv" class="hidden-print btn btn-sm btn-success">Lihat CV</a>
+				&emsp;	&emsp;	&emsp; 	&ensp;
+				<a href="<?= base_url()?>mahasiswa/Profil/lihat_cv" class="hidden-print btn btn-sm btn-success">LIHAT CV</a>
 			</div>
 		</div>
 	
@@ -61,7 +61,7 @@
     <div class="modal-content">
     	<form method="post" action="<?= base_url()?>mahasiswa/Profil/editDataCV">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Data Pribadi</h5>
+        <h3 class="modal-title text-center" id="exampleModalLabel">Data Pribadi</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -83,13 +83,17 @@
 	        	<input type="text" name="nohp_magang" id="nohp_magang" class="form-control">
 	        	<label>Email</label>
 	        	<input type="email" name="email_magang" id="email_magang" class="form-control">
+					<br>
         	</div>
+					&emsp;
+					
+					<button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+       	  <input type="submit" name="submit" class="btn btn-success">
         	<br>
 					<br>
-        
+        <p></p>
       </div>
-			<button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
-        <input type="submit" name="submit" class="btn btn-warning">
+		
        </form>
     </div>
   </div>

@@ -9,7 +9,13 @@
 	}
 	#foto{
 		padding:none;
+		
 
+	}
+	.foto{
+		
+		border: 10px outset gray;
+		border-radius: 50%;
 	}
 
 	#table{
@@ -24,9 +30,20 @@
 	.line-title{
 		border: 0;
 		border-style: inset;
-		border-top: 1px solid #000;
+		border-top: 2px solid #5D6D7E;
 	}
 	img {
+		
+	}
+	#data-lanjutan{
+		margin-top:-8%;
+	}
+	.footer{
+		position:fixed;
+		bottom: 0;
+		width:80%;
+		
+		
 		
 	}
 }
@@ -34,7 +51,8 @@
 
 <div class="box box-info">
 			<div class="box-header">
-				<h3 class="hidden-print">Data CV</h3>
+				
+				<h2 class="hidden-print"> 	&emsp; 	&emsp;DATA CV</h2>
 			</div>
 			<div class="box-body">
 				
@@ -60,8 +78,8 @@
 							<hr class="line-title">
 							
 							<div class="row">
-								<div class="col-md-3" id="foto">
-									<img src="<?php echo base_url("assets/img/$cv_magang[foto_magang]") ?>" alt="" width="180" height="200" class="">
+								<div class="col-md-3" id="">
+									<img src="<?php echo base_url("assets/img/$cv_magang[foto_magang]") ?>" alt="" width="180" height="200" class="foto">
 								</div>
 								<div class="col-md-7">	
 									<div class="table-responsive" id="table">
@@ -79,17 +97,28 @@
 						</div>
 					</li>
 					<li>
-						<div class="timeline-item" style="background: white;border:none;">
-							<h3 class="timeline-header"><a href="#">Data Lanjutan</a></h3>
+						<div class="timeline-item" id="data-lanjutan"style="background: white;border:none;">
+							<h3 class="timeline-header hidden-print"><a href="#">DATA LANJUTAN</a></h3>
+							<hr class="line-title">
 							<br>
 							<div class="row">
 								<div class="col-md-12">
 									<?php echo $cv_magang['data']; ?>
 								</div>	
 							</div>
+							<div class="footer text-center">
+							<hr class="line-title">
+							<h5 >PT INTEGRA INOVASI INDONESIA - © Copyright 2019. All Rights Reserved.</h5>
+
+							</div>
+
 						</div>
+						
+						
 					</li>
+					<br><br><br>
 				</ul>
+				&emsp;	&emsp; 	&emsp; 
 				<a href="<?= base_url()?>mahasiswa/Profil" class="hidden-print btn btn-sm btn-danger">Kembali</a>
 				<a href="#" class="hidden-print btn btn-sm btn-info" onclick="window.print()">Cetak CV</a>
 			</div>
