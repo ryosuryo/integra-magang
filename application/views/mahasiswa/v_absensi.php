@@ -10,7 +10,9 @@
                 <p>Absensi setiap hari, jika tidak absen maka dianggap tidak masuk tanpa izin (Alpa)</p>
                  <?php
                     $id = $this->session->userdata('id_magang');
-                   $cek_data = $this->db->get_where('absensi', ['id_magang' => $id, 'tanggal' => date('Y-m-d')] )->row_array();
+                    date_default_timezone_set("Asia/Jakarta");
+                    $tanggal = date("Y-m-d");
+                    $cek_data = $this->db->get_where('absensi', ['id_magang' => $id, 'tanggal' => $tanggal] )->row_array();
                     if (empty($cek_data)) 
                     {
                        ?>

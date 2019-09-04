@@ -376,34 +376,19 @@
 											</div>
 											<div class="row">
 												<div class="col-md-6">
-													<form method="post">
-													<div class="form-group">
-	    											<label for="exampleFormControlSelect1">Bulan Magang</label>
-		    											<select class="form-control" id="bulan" name="bulan" onchange="">
-		      												  <option value="1">Januari</option>
-		   												      <option value="2">Februari</option>
-		    											      <option value="3">Maret</option>
-		     												  <option value="4">April</option>
-		      												  <option value="5">Mei</option>
-															  <option value="6">Juni</option>
-															  <option value="7">Juli</option>
-															  <option value="8">Agustus</option>
-															  <option value="9">September</option>
-															  <option value="10">Oktober</option>
-															  <option value="11">November</option>
-															  <option value="12">Desember</option>
-		    											</select>
-		  											</div>
-												</form>
-												</div>
-												<div class="col-md-6">
 													<form>
 														<div class="form-group">
-		    											<label for="exampleFormControlSelect1">Tahun Magang</label>
+		    											<label for="exampleFormControlSelect1">Tahun</label>
 			    											<select class="form-control" id="tahun" name="tahun" onchange="cari()">
-			      												  <option value="2019">2019</option>
-			      												  <option value="2019">2020</option>
-			   												     
+			    												<option value="">Please Select</option>
+			      												 <?php
+													                $thn_skr = date('Y');
+													                for ($x = $thn_skr; $x <= 2024; $x++) {
+													                ?>
+													                    <option value="<?php echo $x ?>"><?php echo $x ?></option>
+													                <?php
+													                }
+													                ?>
 			    											</select>
 			  											</div>
 													</form>
@@ -413,8 +398,21 @@
 												
 												
                        					 <div class="bsc-tbl-st">
-											<div class="row" id="tampil_anggota">
-												
+											<div class="row">
+												<div class="table-responsive">
+													<table class="table table-bordered table-striped">
+														<thead>
+															<tr>
+																<th>Bulan</th>
+																<th>Nama Peserta</th>
+																<th>Kampus/Sekolah</th>
+															</tr>
+														</thead>
+														<tbody id="tampil_anggota">
+															
+														</tbody>
+												</table>
+												</div>
 											</div>
 		                          		<br>
                            		 </div>
@@ -588,40 +586,40 @@
   
 
 		<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
-		<script type="text/javascript">
-			// tampil anggota 
-			$.getJSON("<?= base_url()?>Welcome/get_magang",function(data){
-				var datanya='';
-				$.each(data,function(key,dt){
-					datanya+=
-					'<div class="col-md-4">'+
-						'<div class="card text-center">'+
-							'<div class="card-body">'+
-								'<h4 class="card-title">'+dt['nama_magang']+'</h4>'+
-	      						'<p class="card-text">'+dt['kampus_magang']+'<br>'+dt['jurusan_magang']+'</p>'+
-							'</div>'+
+		<script type="text/javascript"> 
 
-						'</div>'+
-					'</div>'
-				});
-				$('#tampil_anggota').html(datanya);
-			});
 			//cari anggota magang
 			function cari()
 			{
 				$.getJSON("<?= base_url()?>Welcome/cari/"+$("#tahun").val(),function(data){
 				var datanya='';
+				var bulan = ['Januari', 'Februari', 'Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+				var xbulan = '';
+				var bulan1 = '';
+				var count = 0;
+				var i = '';
+				// print_r(data);
+				//console.log(data);
 				$.each(data,function(key,dt){
-					datanya+=
-					'<div class="col-md-4">'+
-						'<div class="card text-center">'+
-							'<div class="card-body">'+
-								'<h4 class="card-title">'+dt['nama_magang']+'</h4>'+
-	      						'<p class="card-text">'+dt['kampus_magang']+'<br>'+dt['jurusan_magang']+'</p>'+
-							'</div>'+
-
-						'</div>'+
-					'</div>'
+					xbulan = dt['bulan']-1;
+					bulan1 = bulan[xbulan];
+					count = 0;
+					for(var i = 0; i < dt.length; ++i){
+						console.log(data[i]);
+					    if(data[i]['bulan'] == dt['bulan'])
+					        count++;
+					}
+					if (count == 0) 
+					{
+						count=1;
+					}
+						datanya+=
+						'<tr>'+
+							'<td rowspan="'+count+'">'+bulan1+'</td>'+
+							'<td>'+dt['nama_magang']+'</td>'+
+							'<td>'+dt['kampus_magang']+'</td>'+
+						'</tr>'
+					
 				});
 				$('#tampil_anggota').html(datanya);
 			});

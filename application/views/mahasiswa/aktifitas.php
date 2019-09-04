@@ -8,7 +8,7 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Tanggal</label>
-						<input type="date" class="form-control" name="tgl_aktifitas" required="true">
+						<input type="date" class="form-control" name="tgl_aktifitas">
 					</div>
 					<div class="form-group">
 						<label>Capture Hasil</label>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 02 Sep 2019 pada 05.45
+-- Generation Time: 04 Sep 2019 pada 04.25
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -32,6 +32,7 @@ CREATE TABLE `absensi` (
   `id_absensi` int(50) NOT NULL,
   `id_magang` int(50) NOT NULL,
   `tanggal` date NOT NULL,
+  `jam_absen` time NOT NULL,
   `absen` enum('Masuk','Tidak Masuk','','') NOT NULL,
   `alasan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -40,17 +41,19 @@ CREATE TABLE `absensi` (
 -- Dumping data untuk tabel `absensi`
 --
 
-INSERT INTO `absensi` (`id_absensi`, `id_magang`, `tanggal`, `absen`, `alasan`) VALUES
-(22, 26, '2019-08-20', 'Tidak Masuk', 'sakit perut'),
-(23, 26, '2019-08-21', 'Masuk', ''),
-(24, 26, '2019-08-22', 'Masuk', ''),
-(25, 26, '2019-08-23', 'Masuk', ''),
-(26, 26, '2019-08-27', 'Masuk', ''),
-(27, 26, '2019-08-27', 'Masuk', ''),
-(28, 26, '2019-08-27', 'Masuk', ''),
-(29, 26, '2019-08-27', 'Tidak Masuk', 'Sakit kepala'),
-(40, 26, '2019-08-28', 'Masuk', ''),
-(52, 26, '2019-08-29', 'Masuk', '');
+INSERT INTO `absensi` (`id_absensi`, `id_magang`, `tanggal`, `jam_absen`, `absen`, `alasan`) VALUES
+(22, 26, '2019-08-20', '00:00:00', 'Tidak Masuk', 'sakit perut'),
+(23, 26, '2019-08-21', '00:00:00', 'Masuk', ''),
+(24, 26, '2019-08-22', '00:00:00', 'Masuk', ''),
+(25, 26, '2019-08-23', '00:00:00', 'Masuk', ''),
+(26, 26, '2019-08-27', '00:00:00', 'Masuk', ''),
+(27, 26, '2019-08-27', '00:00:00', 'Masuk', ''),
+(28, 26, '2019-08-27', '00:00:00', 'Masuk', ''),
+(29, 26, '2019-08-27', '00:00:00', 'Tidak Masuk', 'Sakit kepala'),
+(40, 26, '2019-08-28', '00:00:00', 'Masuk', ''),
+(52, 26, '2019-08-29', '00:00:00', 'Masuk', ''),
+(53, 26, '2019-09-02', '00:00:00', 'Masuk', ''),
+(64, 26, '2019-09-03', '02:09:22', 'Masuk', '');
 
 -- --------------------------------------------------------
 
@@ -93,7 +96,8 @@ CREATE TABLE `aktifitas` (
 
 INSERT INTO `aktifitas` (`id_aktifitas`, `id_magang`, `tgl_aktifitas`, `isi_aktifitas`, `capture_aktifitas`, `status_aktifitas`) VALUES
 (16, 26, '2019-08-15', 'membuat absensi', 'modem.jpeg', 'Diterima'),
-(17, 26, '2019-08-14', 'membuat validasi', 'printer.jpg', 'Diterima');
+(17, 26, '2019-08-14', 'membuat validasi', 'printer.jpg', 'Diterima'),
+(18, 26, '2019-09-03', 'hahsasuahsh', 'cap.png', 'pending');
 
 -- --------------------------------------------------------
 
@@ -266,7 +270,7 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `absensi`
 --
 ALTER TABLE `absensi`
-  MODIFY `id_absensi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_absensi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -278,7 +282,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `aktifitas`
 --
 ALTER TABLE `aktifitas`
-  MODIFY `id_aktifitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_aktifitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `catatan_penolakan`

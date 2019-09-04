@@ -24,12 +24,6 @@ class Welcome extends CI_Controller {
 		//$data['data_magang']=
 		$this->load->view('mahasiswa/v_landing');
 	}
-	public function get_magang()
-	{
-		$this->load->model('Mmagang');
-		$dt = $this->Mmagang->get_magang();
-		echo json_encode($dt);
-	}
 	public function cari($tahun)
 	{
 		$this->load->model('Mmagang');
