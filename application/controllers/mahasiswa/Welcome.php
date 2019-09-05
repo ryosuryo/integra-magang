@@ -48,8 +48,8 @@ class Welcome extends CI_Controller
 	{
 		$id = $this->session->userdata('id_magang');
 		$config['upload_path'] = './assets/SuratMagang';
-		$config['allowed_types'] = 'gif|jpg|png|jpeg|pdf';
-		$config['max_size']  = '1000000000000000000';
+		$config['allowed_types'] = 'pdf';
+		$config['max_size']  = '1000000';
 		$config['max_width']  = '1024000000000000000000';
 		$config['max_height']  = '768000000000000000000000';
 		

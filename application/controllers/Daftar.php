@@ -42,7 +42,7 @@ class Daftar extends CI_Controller
 	public function kampus($id_magang)
 	{
 		//$data['periode'] = $this->Mperiode->tampil_periode_tahun();
-		$cek_data = $this->db->get_where('maganag', ['id_magang' => $id_magang])->row_array();
+		$cek_data = $this->db->get_where('magang', ['id_magang' => $id_magang])->row_array();
 		if ($cek_data) 
 		{
 			$this->load->view('daftar_2');
@@ -72,7 +72,7 @@ class Daftar extends CI_Controller
 
 	function selesai($id_magang)
 	{
-		$cek_data = $this->db->get_where('maganag', ['id_magang' => $id_magang])->row_array();
+		$cek_data = $this->db->get_where('magang', ['id_magang' => $id_magang])->row_array();
 		if ($cek_data) 
 		{
 			$data['detail'] = $this->Mmagang->detail($id_magang);

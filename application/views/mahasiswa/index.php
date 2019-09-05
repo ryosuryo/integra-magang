@@ -161,7 +161,8 @@
 											<label class="col-sm-2 control-label" id="label">Surat Magang</label>
 											<div class="col-sm-10">
 												<input type="file" class="form-control" name="file_magang" id="unggah">
-												<span class="text-danger" id="text">*Surat Pengantar dari Universitas (file format: ZIP/PDF , format nama: Nama anda_nama universitas/sekolah)</span>
+												<span class="text-danger" id="text">*Surat Pengantar dari Universitas (file format:PDF , format nama: Nama anda_nama universitas/sekolah)</span>
+												<span class="text-danger" id="text">*Maksimal Ukuran : 10 MB</span>
 											</div>
 										</div>
 										<div class="form-group">
@@ -199,7 +200,7 @@
 	            success:function(hasil){
 	            	if(hasil['status']==1)
 	            	{
-	            		swal("Berhasil Upload!", "Anda sudah absen hari ini! Silahkan Refresh...", "success");
+	            		swal("Berhasil Upload!", "Anda SUdah Upload.", "success");
 	            		$("#upload_file").hide("fade");
 	            		setTimeout(function(){
 	            			$("#text1").hide("fade");
@@ -207,7 +208,7 @@
 	            	}
 	            	else
 	            	{
-	            		swal("Gagal!!!", "Anda belum memlih file .....", "warning");
+	            		swal("Gagal!!!", "Lihat kembali Syarat & Ketentuan di bawah form....", "warning");
 	            	}
 	            }
 			});

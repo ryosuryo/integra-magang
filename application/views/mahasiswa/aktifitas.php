@@ -9,6 +9,7 @@
 					<div class="form-group">
 						<label>Tanggal</label>
 						<input type="date" class="form-control" name="tgl_aktifitas">
+						<span class="text-danger">* Apabila tanggal sesuai hari ini, kosongkan saja</span>
 					</div>
 					<div class="form-group">
 						<label>Capture Hasil</label>
