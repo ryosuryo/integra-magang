@@ -15,7 +15,7 @@
 						<th>Jurusan</th>
 						<th>No.Handphone</th>
 						<th>Alamat</th>
-						<th>Dokumen</th>
+						<th>Surat Magang</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -29,7 +29,7 @@
 						<td><?php echo $value['nohp_magang']; ?></td>
 						<td><?php echo $value['alamat_magang']; ?></td>
 						<td>
-							<a href="<?php echo base_url("assets/dokumen/$value[file_magang]"); ?>"target="_blank">Download</a>
+							<a href="<?php echo base_url("assets/SuratMagang/$value[file_magang]"); ?>"target="_blank">Download</a>
 						</td>
 					</tr>
 				<?php endforeach ?>

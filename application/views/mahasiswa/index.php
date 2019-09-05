@@ -123,7 +123,7 @@
 									<?php foreach ($aktifitas as $key => $value): ?>
 										<tr>
 											<td><?php echo $key+1; ?></td>
-											<td><?php echo $value['tgl_aktifitas']; ?></td>
+											<td><?php echo date("d-F-Y", strtotime($value['tgl_aktifitas'])); ?></td>
 											<td><?php echo $value['isi_aktifitas']; ?></td>
 										</tr>
 										

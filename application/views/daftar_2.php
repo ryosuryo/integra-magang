@@ -21,7 +21,6 @@
 			<div class="collapse navbar-collapse" id="navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right" id="main-menu">
 					<li role="presentation"><a href="<?php echo base_url("index.php") ?>"><b>Beranda</b></a></li>
-					<li role="presentation"><a href="<?php echo base_url("login") ?>"><b>Masuk</b></a></li>
 					<li role="presentation"><a href="<?php echo base_url("daftar") ?>"><b>Daftar</b></a></li>
 				</ul>
 			</div> 

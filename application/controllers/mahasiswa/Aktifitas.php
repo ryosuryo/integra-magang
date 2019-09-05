@@ -138,7 +138,7 @@ class Aktifitas extends CI_Controller
 		        	$no++;
 		            $pdf->Cell(15,6,$no,1,0);
 		            $pdf->Cell(55,6,$row->nama_magang,1,0);
-		            $pdf->Cell(40,6,$row->tgl_aktifitas,1,0);
+		            $pdf->Cell(40,6,date("d-F-Y", strtotime($row->tgl_aktifitas)),1,0);
 		            $pdf->Cell(55,6,$row->isi_aktifitas,1,0);
 		            $pdf->Cell(25,6,$row->status_aktifitas,1,1);  
 		        }

@@ -19,7 +19,7 @@
 				<div class="col-md-6">
 					<div class="form-group">
 						<label>Kegiatan</label>
-						<textarea name="isi_aktifitas" placeholder="Isi Aktifitas" cols="30" rows="5" class="form-control" required="true"></textarea>
+						<textarea name="isi_aktifitas" placeholder="Isi Aktifitas" cols="30" rows="6" class="form-control" required="true"></textarea>
 					</div>
 				</div>
 			</div>
@@ -43,7 +43,7 @@
 					<?php foreach ($aktifitas as $key => $value): ?>
 						<tr>
 							<td><?php echo $key+1; ?></td>
-							<td><?php echo $value['tgl_aktifitas']; ?></td>
+							<td><?php echo date("d-F-Y", strtotime($value['tgl_aktifitas'])); ?></td>
 							<td><?php echo $value['isi_aktifitas']; ?></td>
 							<td><img src="<?= base_url("assets/capture_aktivitas/$value[capture_aktifitas]")?>" width="100px" height="75px"></td>
 							<td><?php echo $value['status_aktifitas']; ?></td>

@@ -9,7 +9,7 @@
 					<div class="form-group">
 						<label for="">Nama Mahasiswa</label>
 						<select name="nama_magang" id="nama_magang" class="form-control">
-							<option value="">Semua</option>
+							<option value=""></option>
 							<?php
 								foreach ($mahasiswa as $mh) {
 									echo '<option value="'.$mh->nama_magang.'">'.$mh->nama_magang.'</option>';
@@ -48,7 +48,7 @@
 						echo '<tr>
 								<td>'.$no.'</td>
 								<td>'.$ab->nama_magang.'</td>
-								<td>'.$ab->tanggal.'</td>
+								<td>'.date("d-F-Y", strtotime($ab->tanggal)).'</td>
 								<td>'.$ab->absen.'</td>
 								<td>'.$ab->alasan.'</td>
 							</tr>';

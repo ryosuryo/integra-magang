@@ -22,9 +22,8 @@
 							echo '<tr>
 									<td>'.$no.'</td>
 									<td>'.$p->nama_magang.'</td>
-									<td>'.$p->tgl_awal.'</td>
-									<td>'.$p->tgl_akhir.'</td>
-									
+									<td>'.date("d-F-Y", strtotime($p->tgl_awal)).'</td>
+									<td>'.date("d-F-Y", strtotime($p->tgl_akhir)).'</td>
 								</tr>';
 						}
 					?>
