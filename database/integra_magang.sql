@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04 Sep 2019 pada 04.25
+-- Generation Time: 12 Sep 2019 pada 04.39
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -53,7 +53,10 @@ INSERT INTO `absensi` (`id_absensi`, `id_magang`, `tanggal`, `jam_absen`, `absen
 (40, 26, '2019-08-28', '00:00:00', 'Masuk', ''),
 (52, 26, '2019-08-29', '00:00:00', 'Masuk', ''),
 (53, 26, '2019-09-02', '00:00:00', 'Masuk', ''),
-(64, 26, '2019-09-03', '02:09:22', 'Masuk', '');
+(64, 26, '2019-09-03', '02:09:22', 'Masuk', ''),
+(65, 26, '2019-09-04', '09:49:24', 'Masuk', ''),
+(66, 28, '2019-09-04', '02:45:30', 'Masuk', ''),
+(67, 28, '2019-09-05', '09:36:20', 'Masuk', '');
 
 -- --------------------------------------------------------
 
@@ -97,7 +100,9 @@ CREATE TABLE `aktifitas` (
 INSERT INTO `aktifitas` (`id_aktifitas`, `id_magang`, `tgl_aktifitas`, `isi_aktifitas`, `capture_aktifitas`, `status_aktifitas`) VALUES
 (16, 26, '2019-08-15', 'membuat absensi', 'modem.jpeg', 'Diterima'),
 (17, 26, '2019-08-14', 'membuat validasi', 'printer.jpg', 'Diterima'),
-(18, 26, '2019-09-03', 'hahsasuahsh', 'cap.png', 'pending');
+(18, 26, '2019-09-03', 'hahsasuahsh', 'cap.png', 'pending'),
+(19, 28, '2019-09-05', 'membuat forgot password', 'avatar.png', 'Diterima'),
+(20, 28, '2019-09-04', 'memperbaiki error', 'call-answer.png', 'Ditolak');
 
 -- --------------------------------------------------------
 
@@ -136,7 +141,7 @@ CREATE TABLE `datacv` (
 --
 
 INSERT INTO `datacv` (`id_dataCV`, `id_magang`, `data`) VALUES
-(1, 26, '<p>xxxss</p>\r\n');
+(1, 28, '<p>Nama Saya Fani</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -169,7 +174,8 @@ CREATE TABLE `magang` (
 
 INSERT INTO `magang` (`id_magang`, `nim_magang`, `nama_magang`, `ttl_magang`, `email_magang`, `password_magang`, `kampus_magang`, `jurusan_magang`, `alamat_magang`, `nohp_magang`, `status_magang`, `file_magang`, `foto_magang`, `jk_magang`, `is_actived`, `date_created`) VALUES
 (26, '028089237429811', 'Fani Rahmatulloh', 'Jombang, 28 September 2001', 'fanirahmatulloh842@gmail.com', '$2y$10$i6M2gonFPQcOGxoCwvkvhObvuSeJr108uAv1d/VTpxqymvW71Ot/.', 'Universitas Gajah Mada', 'Teknik Kendaraan Ringan', 'JL. Danau Buyan G7 D7 Sawojajar Malang', '081389031167', 'Diterima', 'doc_3.pdf', 'facebook1.png', 'Laki-Laki', 1, 1565842559),
-(27, '028089237429811', 'Riski', '', '', '', '', '', '', '', '', '', '', '', 1, 0);
+(27, '028089237429811', 'Riski', '', '', '', '', '', '', '', '', '', '', '', 1, 0),
+(28, '00122137823428', 'Mohammad Fani', 'Jombang ,29 September 2001', 'mohammad_fani_26rpl@student.smktelkom-mlg.sch.id', '$2y$10$v6hmuIHT6Qwm/iHVUUhyFuxW92m1ZNao/leVLgLvIn3qHiPmjSOzi', 'SMK Telkom Malang', 'Rekayasa Perangkat Lunak', 'JL. Danau Buyan G7 D7, Sawojajar, Malang', '081389031168977', 'Diterima', 'Mohammad_Fani_Rahmatulloh.pdf', 'Mohammad_Fani_Rahmatulloh.jpg', 'Laki-Laki', 1, 1567581490);
 
 -- --------------------------------------------------------
 
@@ -190,7 +196,8 @@ CREATE TABLE `periode_pemagang` (
 
 INSERT INTO `periode_pemagang` (`id_periode_pemagang`, `id_magang`, `tgl_awal`, `tgl_akhir`) VALUES
 (48, 26, '2019-04-01', '2019-09-23'),
-(49, 27, '2019-09-01', '2019-12-30');
+(49, 27, '2019-09-01', '2019-12-30'),
+(51, 28, '2019-07-01', '2019-09-27');
 
 -- --------------------------------------------------------
 
@@ -270,7 +277,7 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `absensi`
 --
 ALTER TABLE `absensi`
-  MODIFY `id_absensi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id_absensi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -282,7 +289,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `aktifitas`
 --
 ALTER TABLE `aktifitas`
-  MODIFY `id_aktifitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_aktifitas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `catatan_penolakan`
@@ -300,13 +307,13 @@ ALTER TABLE `datacv`
 -- AUTO_INCREMENT for table `magang`
 --
 ALTER TABLE `magang`
-  MODIFY `id_magang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_magang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `periode_pemagang`
 --
 ALTER TABLE `periode_pemagang`
-  MODIFY `id_periode_pemagang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id_periode_pemagang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `user_token`
