@@ -25,6 +25,11 @@ class Aktifitas extends CI_Controller
 		$this->load->view('admin/footer');		
 	}
 
+	public function detail($id_aktifitas)
+	{
+		$dt = $this->Maktifitas->tm_detail($id_aktifitas);
+		echo json_encode($dt);
+	}
 	public function cari()
 	{
 		$nama = $this->input->post('nama_magang');

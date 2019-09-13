@@ -55,7 +55,16 @@
 		<!-- Head Libs -->
 		<script src="<?= base_url()?>assets2/vendor/modernizr/modernizr.min.js"></script>
 		<script src="<?= base_url()?>assets2/vendor/jquery/jquery.min.js"></script>
-
+		<style>
+			.wabutton{
+			position:fixed;
+			bottom:20px;
+			left:20px;
+			width: 50px;
+			height: 50px;
+			z-index:100;
+			}
+		</style>
 	</head>
 	<body class="loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
 		<div class="loading-overlay">
@@ -104,6 +113,9 @@
 													</li>
 													<li>
 													<a class="dropdown-item" data-hash data-hash-offset="68" href="#contact">Kontak</a>
+													</li>
+													<li>
+													<a class="dropdown-item" data-hash data-hash-offset="68" href="<?= base_url()?>Welcome/faq">Faq</a>
 													</li>
 												</ul>
 							</nav>
@@ -626,7 +638,12 @@
 			}
 		</script>
 
+		<a href="https://api.whatsapp.com/send?phone=62895339642658&text=Assalamualaikum... Saya sudah berkunjung ke https://www.integraindonesia.co.id dan ingin mendapatkan informasi lebih lanjut tentang PT. Integra Inovasi Indonesia -- IT Consultant & Software Developer.">
 
+			<img src="<?= base_url()?>assets/image/whatsapp.png" class="wabutton" alt="WhatsApp-Button">
+		</a>
+
+ 	
 
 	</body>
 </html>

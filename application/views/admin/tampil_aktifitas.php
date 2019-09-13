@@ -48,7 +48,9 @@
 							<td><?php echo $value['nama_magang']; ?></td>
 							<td><?php echo $value['tgl_aktifitas']; ?></td>
 							<td><?php echo $value['isi_aktifitas']; ?></td>
-							<td><a href="<?= base_url("assets/capture_aktivitas/$value[capture_aktifitas]");?>" target="_blank">Lihat</a></td>
+							<td>
+								<a href="#detail" data-toggle="modal" class="btn btn-danger" onclick="tm_detail(<?php echo $value['id_aktifitas']?>)">Lihat</a>
+							</td>
 							<td>
 								
 								<select name="status_aktifitas[<?php echo $value['id_aktifitas']?>]" class="form-control" onchange="submit()">
@@ -69,7 +71,32 @@
 	</div>
 </div>
 
+										<div class="modal fade" id="detail" role="dialog">
+											<div class="modal-dialog modal-lg" role="document">
+										  		<div class="modal-content">
+     											 <div class="modal-header text-center bg-primary">
+												  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          											<span aria-hidden="true">&times;</span>
+       											 </button>
+											</div>
+										<div class="modal-body"> 
+											<div id="img"></div>
+	                   					 </div>
+											</div>
+											</div>
+										</div>
 
+
+<script type="text/javascript">
+	function tm_detail(id_aktifitas)
+	{
+		$.getJSON("<?= base_url()?>admin/Aktifitas/detail/"+id_aktifitas,function(data){
+			$('#img').html(
+				'<img src="<?= base_url()?>assets/capture_aktivitas/'+data['capture_aktifitas']+'" style="width:100%">'
+				);
+		});
+	}
+</script>
 
 
 

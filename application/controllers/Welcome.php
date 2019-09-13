@@ -30,5 +30,9 @@ class Welcome extends CI_Controller {
 		$dt = $this->Mmagang->cari($tahun);
 		echo json_encode($dt);
 	}
+	public function faq()
+	{
+		$this->load->view('v_faq');
+	}
 	
 }
