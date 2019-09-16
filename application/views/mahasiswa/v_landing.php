@@ -58,10 +58,8 @@
 		<style>
 			.wabutton{
 			position:fixed;
-			bottom:20px;
+			bottom:0px;
 			left:20px;
-			width: 50px;
-			height: 50px;
 			z-index:100;
 			}
 		</style>
@@ -85,7 +83,7 @@
 							<div class="header-column">
 								<div class="header-row">
 									<div class="header-logo">
-										<a href="index.html">
+										<a href="#">
 											<img alt="Porto" width="95" height="40" src="<?= base_url()?>assets2/img/logo-integra.png">
 										</a>
 									</div>
@@ -118,9 +116,9 @@
 													<a class="dropdown-item" data-hash data-hash-offset="68" href="<?= base_url()?>Welcome/faq">Faq</a>
 													</li>
 												</ul>
-							</nav>
-					</div>
-					<div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2 ">
+											</nav>
+									</div>
+							<div class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2 ">
 										<div class="header-nav-feature header-nav-features-user d-inline-flex mx-2 pr-2 signin" id="headerAccount">
 											<a href="#" class="header-nav-features-toggle text-color-light">
 												<i class="far fa-user text-color-light"></i> Sign In
@@ -638,9 +636,8 @@
 			}
 		</script>
 
-		<a href="https://api.whatsapp.com/send?phone=62895339642658&text=Assalamualaikum... Saya sudah berkunjung ke https://www.integraindonesia.co.id dan ingin mendapatkan informasi lebih lanjut tentang PT. Integra Inovasi Indonesia -- IT Consultant & Software Developer.">
-
-			<img src="<?= base_url()?>assets/image/whatsapp.png" class="wabutton" alt="WhatsApp-Button">
+		<a href="https://api.whatsapp.com/send?phone=62895339642658&text=Assalamualaikum... Saya sudah berkunjung ke https://www.integraindonesia.co.id dan ingin mendapatkan informasi lebih lanjut tentang PT. Integra Inovasi Indonesia -- IT Consultant & Software Developer." class="btn btn-success wabutton">
+			<i class="fab fa-whatsapp"></i> Whatsapp ?
 		</a>
 
  	
