@@ -84,7 +84,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="#">
-											<img alt="Porto" width="95" height="40" src="<?= base_url()?>assets2/img/logo-integra.png">
+											<img alt="Porto" width="95" height="40" src="<?= base_url()?>assets/image/logo-integra-white.png">
 										</a>
 									</div>
 								</div>
@@ -267,10 +267,10 @@
 								<div class="feature-box feature-box-style-2">
 									<div class="feature-box-icon">     
                                     </div>
-									<div class="feature-box-info">
+									<div class="feature-box-info text-center">
                                     <img src="<?= base_url()?>assets2/img/icons/programming.png" alt="">
-										<h4 class="font-weight-bold text-color-light text-4 mb-2">WEB DEVELOPMENT</h4>
-										<p class="text-color-light opacity-7">Pengembangan website untuk profil instansi / perusahaan, e-commerce, online shop, portal dan sistem informasi berbasis web</p>
+										<h4 class="font-weight-bold text-color-light text-4 mb-2 text-center">WEB DEVELOPMENT</h4>
+										<p class="text-color-light opacity-7 text-center">Pengembangan website untuk profil instansi / perusahaan, e-commerce, online shop, dan portal web</p>
 									</div>
 								</div>
 							</div>
@@ -279,7 +279,7 @@
 									<div class="feature-box-icon">
 										
 									</div>
-									<div class="feature-box-info">
+									<div class="feature-box-info text-center">
                                     <img src="<?= base_url()?>assets2/img/icons/smartphone.png" alt="">
 										<h4 class="font-weight-bold text-color-light text-4 mb-2">MOBILE APPLICATION</h4>
 										<p class="text-color-light opacity-7">Pengembangan layanan dengan menggunakan teknologi mobile antara lain SMS Broadcast, VASMS 5 Digit (SMS Premium), dan Mobile Application</p>
@@ -291,10 +291,10 @@
 									<div class="feature-box-icon">
 										
 									</div>
-									<div class="feature-box-info">
+									<div class="feature-box-info text-center">
                                     <img src="<?= base_url()?>assets2/img/icons/iot.png" alt="">
-										<h4 class="font-weight-bold text-color-light text-4 mb-2">HARDWARE & NETWORKING</h4>
-										<p class="text-color-light opacity-7">Penganalan tentang hardware dan jaringan pada teknologi modern</p>
+										<h4 class="font-weight-bold text-color-light text-4 mb-2">MULTIMEDIA</h4>
+										<p class="text-color-light opacity-7">Pengolahan media digital, grafis, video, animasi, dan sebagainya</p>
 									</div>
 								</div>
 							</div>
@@ -304,7 +304,7 @@
 									<div class="feature-box-icon">
 										
 									</div>
-									<div class="feature-box-info">
+									<div class="feature-box-info text-center">
                                     <img src="<?= base_url()?>assets2/img/icons/e-goverment.png" alt="">
 										<h4 class="font-weight-bold text-color-light text-4 mb-2">E-GOVERMENT</h4>
 										<p class="text-color-light opacity-7">Produk sistem informasi untuk pemerintahan (e-government solution) dalam rangka meningkatkan kinerja instansi pemerintahan dan pelayanan kepada masyarakat</p>
@@ -317,7 +317,7 @@
 									<div class="feature-box-icon">
 										
 									</div>
-									<div class="feature-box-info">
+									<div class="feature-box-info text-center">
                                     <img src="<?= base_url()?>assets2/img/icons/network.png" alt="">
 										<h4 class="font-weight-bold text-color-light text-4 mb-2">INFORMATION SYSTEM</h4>
 										<p class="text-color-light opacity-7">Pengembangan Sistem Informasi untuk berbagai keperluan pengelolaan data, reporting, dashboard executive, decision support system, mapping / GIS. dll untuk diterapkan dalam dunia pemerintahan, pendidikan, perusahaan</p>
@@ -330,7 +330,7 @@
 									<div class="feature-box-icon">
 										
 									</div>
-									<div class="feature-box-info">
+									<div class="feature-box-info text-center">
                                     <img src="<?= base_url()?>assets2/img/icons/ux.png" alt="">
 										<h4 class="font-weight-bold text-color-light text-4 mb-2">UI/UX</h4>
 										<p class="text-color-light opacity-7">Pengembangan dibidang Design Graphic pada ui / ux.</p>
@@ -348,7 +348,7 @@
 								<p class="text-color-dark opacity-7">PT INTEGRA INOVASI INDONESIA</p>
 							</div>
 					
-					<div class="row justify-content-center pt-5 mt-5" >
+					<div class="row justify-content-center mt-2" >
 					
 					
 					<div class="card" style="width: 25rem; margin-right: 5%; margin-left: 5%;" >
@@ -437,7 +437,7 @@
 							<br>
 							<div class="text-center">
   							<a href="" class="btn btn-primary btn-rounded mb-4" data-toggle="modal" data-target="#modal_anggota">
-   							 DATA ANGGOTA MAGANG</a>
+   							 DATA PESERTA MAGANG YANG DITERIMA</a>
 							</div>
 						</div>
 
@@ -447,7 +447,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col text-center">
-								<h2 class="font-weight-bold text-color-light mb-2">Universitas yang pernah Praktek Kerja Industri</h2>
+								<h2 class="font-weight-bold text-color-light mb-2">Sekolah dan Perguruan Tinggi yang Pernah Magang</h2>
 								<p class="text-color-light opacity-7">PT INTEGRA INOVASI INDONESIA</p>
 							</div>
 						</div>
@@ -503,7 +503,7 @@
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-md-6">
-								 <br>
+								 
 								<!-- Google Maps - Settings on footer -->
 								
 								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.002196710974!2d110.35187851402735!3d-7.789590394386394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5818addd2185%3A0x52df8a7945064334!2sPT.+Integra+Inovasi+Indonesia!5e0!3m2!1sen!2sid!4v1565767357907!5m2!1sen!2sid" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -513,16 +513,16 @@
 								
 								<div class="px-4">
 									<h2 class="font-weight-bold line-height-1 mb-2">KONTAK</h2>
-									<p class="text-3 mb-4">PT INTEGRA INOVASI INDONESIA</p>
-									<p class="text-3 mb-4">PT INTEGRA INOVASI INDONESIA memberikan solusi Smart City bagi Pemerintah Daerah untuk membangun Daerah yang Inovatif & Berdaya saing dengan dukungan Teknologi Informasi & Komunikasi. Melalui aplikasi berbasis web, mobile application, social media, geospatial dan live broadcast dikolaborasikan untuk mendukung implementasi Smart City yang efektif dan efisien.</p>
+									
+									<p class="text-3 mb-4">PT INTEGRA INOVASI INDONESIA memberikan kesempatan magang pada pelajar dan mahasiswa di seluruh Indonesia pada bidang Pengembangan Teknologi Informasi. Informasi lebih lanjut silahkan menghubungi kami melalui : </p>
 									 <img src="<?= base_url()?>assets2/img/icons/map.png" alt="">
 								<span class="text-3 mb-4">ALAMAT : Cokro Square, Jl. HOS Cokroaminoto No.124, Tegalrejo, Yogyakarta</span>
 								<p></p>
 								<img src="<?= base_url()?>assets2/img/icons/phone.png" alt="">
-								<span class="text-3 mb-4">HUBUNGI: 0274 5304851 , HP/SMS/WA. 0815-4594-7999 | 0812-4999-1199</span>
+								<span class="text-3 mb-4">HUBUNGI: 0274 5304851 , HP/SMS/WA. 085643940881</span>
 								<p></p>
 								<img src="<?= base_url()?>assets2/img/icons/mail.png" alt="">
-								<span class="text-3 mb-4"> Email :info@integraindonesia.co.id,  integrainovasi.indonesia@gmail.com</span>
+								<span class="text-3 mb-4"> Email :info@integraindonesia.co.id</span>
 								</div>
 							</div>
 						</div>
@@ -636,8 +636,8 @@
 			}
 		</script>
 
-		<a href="https://api.whatsapp.com/send?phone=62895339642658&text=Assalamualaikum... Saya sudah berkunjung ke https://www.integraindonesia.co.id dan ingin mendapatkan informasi lebih lanjut tentang PT. Integra Inovasi Indonesia -- IT Consultant & Software Developer." class="btn btn-success btn-rounded mb-4 wabutton">
-			<i class="fab fa-whatsapp"></i> Contact Us !
+		<a href="https://api.whatsapp.com/send?phone=6285643940881&text=Assalamualaikum... Saya ingin menanyakan perihal magang di PT. Integra Inovasi Indonesia" class="btn btn-success btn-rounded mb-4 wabutton" target="_blank" style="font-size: 16px;">
+			<i class="fab fa-whatsapp"></i> Hubungi Kami !
 		</a>
 
  	
