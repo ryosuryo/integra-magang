@@ -57,7 +57,7 @@
 		<script src="<?= base_url()?>assets2/vendor/jquery/jquery.min.js"></script>
 </head>
 
-<body class="loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 500}">
+<body class="loading-overlay-showing" data-plugin-page-transition data-loading-overlay data-plugin-options="{'hideDelay': 1000}">
 		<div class="loading-overlay">
 			<div class="bounce-loader">
 				<div class="bounce1"></div>
@@ -75,26 +75,174 @@
 						<div class="header-row">
 							<div class="header-column">
 								<div class="header-row">
-									
+									<div class="header-logo">
+										<a href="#">
+											<img alt="Porto" width="95" height="40" src="<?= base_url()?>assets2/img/logo-integra.png">
+										</a>
+									</div>
 								</div>
 							</div>
 						
-					
-						</header>
+					<div class="header-column justify-content-end">
+								<div class="header-row">
+									<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
+										<div class="header-nav-main header-nav-main-mobile-dark header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1">
+											<nav class="collapse">
+												<ul class="nav nav-pills" id="mainNav">
+													<li class="dropdown">
+														<a class="dropdown-item text-color-primary" href="<?= base_url()?>Welcome">
+															Beranda
+														</a>
+													</li>
+												</ul>
+											</nav>
+									</div>
+			</header>
 
-				<section id="services" class="section section-height-3 bg-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn">
+				<section id="services" class="section section-height-3 bg-light border-0 m-0 appear-animation" data-appear-animation="fadeIn">
 					<div class="container my-3">
-						<div class="row mb-5">
+						<div class="row">
 							<div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
-								<img alt="Porto" width="95" height="40" src="<?= base_url()?>assets2/img/logo-integra.png">
-								<br><br>
-								<h2 class="font-weight-bold text-color-light mb-2">Butuh Bantuan ?</h2>
-								<p class="text-color-light opacity-7">Memulai magang di PT. Integra Inovasi Indonesia</p>
+								<img src="<?= base_url()?>assets/image/headerFAQ1.jpg" width="100%">
 							</div>
 						</div>
 						</div>
 					</div>	
 				</section>
+
+				<section id="services" class="section section-height-3 bg-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn">
+					<div class="container my-3">
+						<div class="row mb-5">
+							<div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+								<h2 class="font-weight-bold text-color-light mb-2">Orang-Orang Juga Menanyakan</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+									<!--Accordion wrapper-->
+								<div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+
+								  <!-- Accordion card -->
+								  <div class="card">
+
+								    <!-- Card header -->
+								    <div class="card-header" role="tab" id="headingTwo1">
+								      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1"
+								        aria-expanded="false" aria-controls="collapseTwo1">
+								        <h5 class="mb-0">
+								          Bagaimana cara daftar magang
+								        </h5>
+								      </a>
+								    </div>
+
+								    <!-- Card body -->
+								    <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1"
+								      data-parent="#accordionEx1">
+								      <div class="card-body">
+								        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+								        wolf
+								        moon
+								        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+								        Brunch
+								        3
+								        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+								        shoreditch
+								        et.
+								        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+								        Ad
+								        vegan
+								        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+								        nesciunt
+								        you probably haven't heard of them accusamus labore sustainable VHS.
+								      </div>
+								    </div>
+
+								  </div>
+								  <!-- Accordion card -->
+
+								  <!-- Accordion card -->
+								  <div class="card">
+
+								    <!-- Card header -->
+								    <div class="card-header" role="tab" id="headingTwo2">
+								      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo21"
+								        aria-expanded="false" aria-controls="collapseTwo21">
+								        <h5 class="mb-0">
+								          Syarat diterima magang
+								        </h5>
+								      </a>
+								    </div>
+
+								    <!-- Card body -->
+								    <div id="collapseTwo21" class="collapse" role="tabpanel" aria-labelledby="headingTwo21"
+								      data-parent="#accordionEx1">
+								      <div class="card-body">
+								        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+								        wolf
+								        moon
+								        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+								        Brunch
+								        3
+								        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+								        shoreditch
+								        et.
+								        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+								        Ad
+								        vegan
+								        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+								        nesciunt
+								        you probably haven't heard of them accusamus labore sustainable VHS.
+								      </div>
+								    </div>
+
+								  </div>
+								  <!-- Accordion card -->
+
+								  <!-- Accordion card -->
+								  <div class="card">
+
+								    <!-- Card header -->
+								    <div class="card-header" role="tab" id="headingThree31">
+								      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31"
+								        aria-expanded="false" aria-controls="collapseThree31">
+								        <h5 class="mb-0">
+								          Kuota peserta magang setiap bulan 
+								        </h5>
+								      </a>
+								    </div>
+
+								    <!-- Card body -->
+								    <div id="collapseThree31" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
+								      data-parent="#accordionEx1">
+								      <div class="card-body">
+								        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+								        wolf
+								        moon
+								        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+								        Brunch
+								        3
+								        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+								        shoreditch
+								        et.
+								        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+								        Ad
+								        vegan
+								        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+								        nesciunt
+								        you probably haven't heard of them accusamus labore sustainable VHS.
+								      </div>
+								    </div>
+
+								  </div>
+								  <!-- Accordion card -->
+
+								</div>
+								<!-- Accordion wrapper -->
+								</div>
+						</div>
+					</div>	
+				</section>
+				
 				
 
 	</div>

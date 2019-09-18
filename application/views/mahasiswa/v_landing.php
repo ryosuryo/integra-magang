@@ -636,8 +636,8 @@
 			}
 		</script>
 
-		<a href="https://api.whatsapp.com/send?phone=62895339642658&text=Assalamualaikum... Saya sudah berkunjung ke https://www.integraindonesia.co.id dan ingin mendapatkan informasi lebih lanjut tentang PT. Integra Inovasi Indonesia -- IT Consultant & Software Developer." class="btn btn-success wabutton">
-			<i class="fab fa-whatsapp"></i> Whatsapp ?
+		<a href="https://api.whatsapp.com/send?phone=62895339642658&text=Assalamualaikum... Saya sudah berkunjung ke https://www.integraindonesia.co.id dan ingin mendapatkan informasi lebih lanjut tentang PT. Integra Inovasi Indonesia -- IT Consultant & Software Developer." class="btn btn-success btn-rounded mb-4 wabutton">
+			<i class="fab fa-whatsapp"></i> Contact Us !
 		</a>
 
  	
