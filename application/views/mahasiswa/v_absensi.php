@@ -48,7 +48,7 @@
                              <div class="col-md-4"></div>
                             <div class="col-md-4">
                                      <div class="alert alert-warning" role="alert">
-                                  Izin sudah dikrim....
+                                  Izin sudah dikirim....
                                 </div>
                             </div>
                             <div class="col-md-4"></div>
@@ -66,7 +66,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header text-center bg-primary">
-                    <h2 class="modal-title w-100 font-weight-bold text-color-light" id="exampleModalLabel">FORM IZIN PT INTEGRA</h2>
+                    <h2 class="modal-title w-100 font-weight-bold text-color-light" id="exampleModalLabel">Form Izin Magang</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
