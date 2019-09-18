@@ -121,7 +121,7 @@ class Daftar extends CI_Controller
 		}
 		else if ($type == 'forgot')
 		{
-			
+			//untuk fitur lupa password
 		}
 
 		//mengirim email verifikasi
