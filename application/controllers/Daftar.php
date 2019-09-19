@@ -153,26 +153,26 @@ class Daftar extends CI_Controller
 					$this->db->update('magang');
 					$this->db->delete('user_token', ['email' => $email_magang]);
 					$this->session->set_flashdata('pesan_login', '<div class="alert alert-success">'. $email_magang .' telah aktif , tunggu konfirmasi penerimaan untuk login</div>');
-					redirect('Welcome','refresh');
+					redirect('Welcome/alert','refresh');
 				}
 				else
 				{
 					$this->db->delete('magang', ['email' => $email_magang]);
 					$this->db->delete('user_token', ['email' => $email_magang]);
 					$this->session->set_flashdata('pesan_login', '<div class="alert alert-danger">Activation Failed; Token Kadaluarsa</div>');
-					redirect('Welcome','refresh');
+					redirect('Welcome/alert','refresh');
 				}
 			}
 			else
 			{
 				$this->session->set_flashdata('pesan_login', '<div class="alert alert-danger">Activation Failed; Email Salah</div>');
-				redirect('Welcome','refresh');
+				redirect('Welcome/alert','refresh');
 			}
 		}
 		else
 		{
 			$this->session->set_flashdata('pesan_login', '<div class="alert alert-danger">Activation Failed; Email Salah</div>');
-			redirect('Welcome','refresh');
+			redirect('Welcome/alert','refresh');
 		}
 	}
 

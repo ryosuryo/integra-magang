@@ -15,6 +15,7 @@ class Mperiode extends CI_Model
 	function tampil()
 	{
 		return $this->db->join('magang', 'magang.id_magang = periode_pemagang.id_magang')
+						->where('magang.status_magang', 'Diterima')
 				 		->get('periode_pemagang')
 				 		->result();
 	}

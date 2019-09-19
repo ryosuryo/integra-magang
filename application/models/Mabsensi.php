@@ -5,11 +5,11 @@ class Mabsensi extends CI_Model {
 
 	public function tampil_absen()
 	{
-		return $this->db->join('magang','magang.id_magang=absensi.id_magang')->get('absensi')->result();
+		return $this->db->join('magang','magang.id_magang=absensi.id_magang')->where('magang.status_magang','Diterima')->get('absensi')->result();
 	}
 	public function get_magang()
 	{
-		return $this->db->get('magang')->result();
+		return $this->db->where('status_magang','Diterima')->get('magang')->result();
 	}
 	public function cari_absen($nama)
 	{

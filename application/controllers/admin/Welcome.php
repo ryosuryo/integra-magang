@@ -27,9 +27,11 @@ class Welcome extends CI_Controller
 
 	}
 
-	
-
-
+	public function detail_data_pemagang_baru($id_magang)
+	{
+		$dt = $this->Mmagang->detail_data($id_magang);
+		echo json_encode($dt);
+	}
 	public function beritahu()
 	{
 		$input = $this->input->post('status_magang');
@@ -51,7 +53,7 @@ class Welcome extends CI_Controller
 					];
 					$this->db->insert('catatan_penolakan', $data);
 					$this->kirim_email_pemberitahuan($id_magang);
-					$this->db->delete('magang', ['status_magang' => "Ditolak"]);
+					//$this->db->delete('magang', ['status_magang' => "Ditolak"]);
 				}
 			}
 			redirect('admin','refresh');

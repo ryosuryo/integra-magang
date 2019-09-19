@@ -34,7 +34,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('v_faq');
 	}
-	public function alerts()
+	public function alert()
 	{
 		$this->load->view('v_alert');
 	}

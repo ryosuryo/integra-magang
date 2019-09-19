@@ -39,7 +39,7 @@ class Maktifitas extends CI_Model
 
 	function tampil_aktifitas()
 	{
-		$ambil = $this->db->join('magang', 'aktifitas.id_magang = magang.id_magang', 'left')->order_by('tgl_aktifitas')->get('aktifitas');
+		$ambil = $this->db->join('magang', 'aktifitas.id_magang = magang.id_magang', 'left')->where('magang.status_magang','Diterima')->order_by('tgl_aktifitas')->get('aktifitas');
 		$data = $ambil->result_array();
 
 
@@ -80,7 +80,7 @@ class Maktifitas extends CI_Model
 
 	public function get_magang()
 	{
-		return $this->db->get('magang')->result();
+		return $this->db->where('status_magang', 'Diterima')->get('magang')->result();
 	}
 
 	function hapus_aktifitas($id)
