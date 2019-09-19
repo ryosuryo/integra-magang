@@ -4,9 +4,9 @@
 
 	<!-- Basic -->
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>Integra Inovasi Indonesia</title>	
+		<title>Integra Inovasi Indonesia</title>
 
 		<meta name="keywords" content="HTML5 Template" />
 		<meta name="description" content="Porto - Responsive HTML5 Template">
@@ -33,7 +33,7 @@
 		<link rel="stylesheet" href="<?= base_url()?>assets2/vendor/magnific-popup/magnific-popup.min.css">
 
 		<!-- Theme CSS -->
-		
+
 		<link rel="stylesheet" href="<?= base_url()?>assets2/css/theme.css">
 		<link rel="stylesheet" href="<?= base_url()?>assets2/css/theme-elements.css">
 		<link rel="stylesheet" href="<?= base_url()?>assets2/css/theme-blog.css">
@@ -43,11 +43,11 @@
 		<link rel="stylesheet" href="<?= base_url()?>assets2/vendor/rs-plugin/css/settings.css">
 		<link rel="stylesheet" href="<?= base_url()?>assets2/vendor/rs-plugin/css/layers.css">
 		<link rel="stylesheet" href="<?= base_url()?>assets2/vendor/rs-plugin/css/navigation.css">
-		
-	
+
+
 
 		<!-- Skin CSS -->
-		<link rel="stylesheet" href="<?= base_url()?>assets2/css/skins/default.css"> 
+		<link rel="stylesheet" href="<?= base_url()?>assets2/css/skins/default.css">
 
 		<!-- Theme Custom CSS -->
 		<link rel="stylesheet" href="<?= base_url()?>assets2/css/custom.css">
@@ -82,7 +82,7 @@
 									</div>
 								</div>
 							</div>
-						
+
 					<div class="header-column justify-content-end">
 								<div class="header-row">
 									<div class="header-nav header-nav-links header-nav-dropdowns-dark header-nav-light-text order-2 order-lg-1">
@@ -107,143 +107,155 @@
 							</div>
 						</div>
 						</div>
-					</div>	
+					</div>
 				</section>
 
-				<section id="services" class="section section-height-3 bg-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn">
-					<div class="container my-3">
-						<div class="row mb-5">
-							<div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
-								<h2 class="font-weight-bold text-color-light mb-2">Orang-Orang Juga Menanyakan</h2>
-							</div>
-						</div>
+
+
+				<section id="contact" class="section bg-color-primary border-0 m-0">
+					<div class="container-fluid">
 						<div class="row">
 							<div class="col-md-6">
-									<!--Accordion wrapper-->
-								<div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
 
-								  <!-- Accordion card -->
-								  <div class="card">
+								<!-- gambar FAQ -->
+								<img src="<?= base_url()?>assets/image/alurmagang.jpg" alt="" width="100%">
 
-								    <!-- Card header -->
-								    <div class="card-header" role="tab" id="headingTwo1">
-								      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1"
-								        aria-expanded="false" aria-controls="collapseTwo1">
-								        <h5 class="mb-0">
-								          Bagaimana cara daftar magang
-								        </h5>
-								      </a>
-								    </div>
 
-								    <!-- Card body -->
-								    <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1"
-								      data-parent="#accordionEx1">
-								      <div class="card-body">
-								        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-								        wolf
-								        moon
-								        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-								        Brunch
-								        3
-								        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-								        shoreditch
-								        et.
-								        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-								        Ad
-								        vegan
-								        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-								        nesciunt
-								        you probably haven't heard of them accusamus labore sustainable VHS.
-								      </div>
-								    </div>
 
-								  </div>
-								  <!-- Accordion card -->
+							</div>
+							<div class="col-md-6 p-5 my-5">
 
-								  <!-- Accordion card -->
-								  <div class="card">
+								<div class="px-4">
 
-								    <!-- Card header -->
-								    <div class="card-header" role="tab" id="headingTwo2">
-								      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo21"
-								        aria-expanded="false" aria-controls="collapseTwo21">
-								        <h5 class="mb-0">
-								          Syarat diterima magang
-								        </h5>
-								      </a>
-								    </div>
 
-								    <!-- Card body -->
-								    <div id="collapseTwo21" class="collapse" role="tabpanel" aria-labelledby="headingTwo21"
-								      data-parent="#accordionEx1">
-								      <div class="card-body">
-								        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-								        wolf
-								        moon
-								        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-								        Brunch
-								        3
-								        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-								        shoreditch
-								        et.
-								        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-								        Ad
-								        vegan
-								        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-								        nesciunt
-								        you probably haven't heard of them accusamus labore sustainable VHS.
-								      </div>
-								    </div>
+									<!-- Konten FAQ -->
+									<div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
 
-								  </div>
-								  <!-- Accordion card -->
+										<h2 class="font-weight-bold text-color-light mb-2 text-center">FAQ</h2>
+									  <!-- Accordion card -->
+									  <div class="card">
 
-								  <!-- Accordion card -->
-								  <div class="card">
+									    <!-- Card header -->
+									    <div class="card-header" role="tab" id="headingTwo1">
+									      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1"
+									        aria-expanded="false" aria-controls="collapseTwo1">
+									        <h5 class="mb-0">
+									          Bagaimana cara daftar magang
+									        </h5>
+									      </a>
+									    </div>
 
-								    <!-- Card header -->
-								    <div class="card-header" role="tab" id="headingThree31">
-								      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31"
-								        aria-expanded="false" aria-controls="collapseThree31">
-								        <h5 class="mb-0">
-								          Kuota peserta magang setiap bulan 
-								        </h5>
-								      </a>
-								    </div>
+									    <!-- Card body -->
+									    <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1"
+									      data-parent="#accordionEx1">
+									      <div class="card-body">
+									        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+									        wolf
+									        moon
+									        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+									        Brunch
+									        3
+									        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+									        shoreditch
+									        et.
+									        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+									        Ad
+									        vegan
+									        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+									        nesciunt
+									        you probably haven't heard of them accusamus labore sustainable VHS.
+									      </div>
+									    </div>
 
-								    <!-- Card body -->
-								    <div id="collapseThree31" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
-								      data-parent="#accordionEx1">
-								      <div class="card-body">
-								        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-								        wolf
-								        moon
-								        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-								        Brunch
-								        3
-								        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-								        shoreditch
-								        et.
-								        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-								        Ad
-								        vegan
-								        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-								        nesciunt
-								        you probably haven't heard of them accusamus labore sustainable VHS.
-								      </div>
-								    </div>
+									  </div>
+									  <!-- Accordion card -->
 
-								  </div>
-								  <!-- Accordion card -->
+									  <!-- Accordion card -->
+									  <div class="card">
+
+									    <!-- Card header -->
+									    <div class="card-header" role="tab" id="headingTwo2">
+									      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo21"
+									        aria-expanded="false" aria-controls="collapseTwo21">
+									        <h5 class="mb-0">
+									          Syarat diterima magang
+									        </h5>
+									      </a>
+									    </div>
+
+									    <!-- Card body -->
+									    <div id="collapseTwo21" class="collapse" role="tabpanel" aria-labelledby="headingTwo21"
+									      data-parent="#accordionEx1">
+									      <div class="card-body">
+									        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+									        wolf
+									        moon
+									        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+									        Brunch
+									        3
+									        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+									        shoreditch
+									        et.
+									        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+									        Ad
+									        vegan
+									        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+									        nesciunt
+									        you probably haven't heard of them accusamus labore sustainable VHS.
+									      </div>
+									    </div>
+
+									  </div>
+									  <!-- Accordion card -->
+
+									  <!-- Accordion card -->
+									  <div class="card">
+
+									    <!-- Card header -->
+									    <div class="card-header" role="tab" id="headingThree31">
+									      <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseThree31"
+									        aria-expanded="false" aria-controls="collapseThree31">
+									        <h5 class="mb-0">
+									          Kuota peserta magang setiap bulan
+									        </h5>
+									      </a>
+									    </div>
+
+									    <!-- Card body -->
+									    <div id="collapseThree31" class="collapse" role="tabpanel" aria-labelledby="headingThree31"
+									      data-parent="#accordionEx1">
+									      <div class="card-body">
+									        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+									        wolf
+									        moon
+									        officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+									        Brunch
+									        3
+									        wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+									        shoreditch
+									        et.
+									        Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+									        Ad
+									        vegan
+									        excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
+									        nesciunt
+									        you probably haven't heard of them accusamus labore sustainable VHS.
+									      </div>
+									    </div>
+
+									  </div>
+									  <!-- Accordion card -->
+
+									</div>
+
 
 								</div>
-								<!-- Accordion wrapper -->
-								</div>
+							</div>
 						</div>
-					</div>	
+					</div>
 				</section>
-				
-				
+
+
 
 	</div>
 
@@ -266,18 +278,18 @@
 		<script src="<?= base_url()?>assets2/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 		<script src="<?= base_url()?>assets2/vendor/vide/jquery.vide.min.js"></script>
 		<script src="<?= base_url()?>assets2/vendor/vivus/vivus.min.js"></script>
-		
+
 		<!-- Theme Base, Components and Settings -->
 		<script src="<?= base_url()?>assets2/js/theme.js"></script>
-		
+
 		<!-- Current Page Vendor and Views -->
 		<script src="<?= base_url()?>assets2/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
 		<script src="<?= base_url()?>assets2/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 		<script src="<?= base_url()?>assets2/js/views/view.contact.js"></script>
-		
+
 		<!-- Theme Custom -->
 		<script src="<?= base_url()?>assets2/js/custom.js"></script>
-		
+
 		<!-- Theme Initialization Files -->
 		<script src="<?= base_url()?>assets2/js/theme.init.js"></script>
 
