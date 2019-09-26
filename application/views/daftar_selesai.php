@@ -83,7 +83,7 @@
 									<td><?php echo $detail['jk_magang'] ?></td>
 								</tr>
 								<tr>
-									<th>Handphoe</th>
+									<th>No. Handphone</th>
 									<td><?php echo $detail['nohp_magang']; ?></td>
 								</tr>
 								<tr>

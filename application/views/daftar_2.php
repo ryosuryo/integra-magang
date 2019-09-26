@@ -81,7 +81,7 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label for="text">NIM</label>
-												<input type="text" pattern="[0-9 , .]{3,200}" class="form-control" name="nim_magang" required="true" placeholder="NIM">
+												<input type="text" pattern="[0-9 ,A-Z, .]{3,200}" class="form-control" name="nim_magang" required="true" placeholder="NIM">
 											</div>
 											<div class="form-group">
 												<label for="file">Dokumen</label>
