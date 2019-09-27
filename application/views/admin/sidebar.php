@@ -8,7 +8,10 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                   <ul class="nav justify-content-center">
                     <li class="nav-item">
-                      <a class="nav-link" href="<?php echo base_url("admin"); ?>">Dashboard</a>
+                      <a class="nav-link" href="<?php echo base_url("admin/grafik"); ?>">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="<?php echo base_url("admin"); ?>">Data Pendaftar</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="<?php echo base_url("admin/magang"); ?>">Data Pemagang</a>
@@ -23,7 +26,7 @@
                       <a class="nav-link" href="<?php echo base_url("admin/aktifitas"); ?>">Aktivitas</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="<?php echo base_url("admin/logout"); ?>">logout</a>
+                      <a class="nav-link" href="<?php echo base_url("admin/logout"); ?>">Log Out</a>
                     </li>
                   </ul>
                 </div>

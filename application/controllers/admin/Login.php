@@ -21,7 +21,7 @@ class Login extends CI_Controller
 			$cek = $this->Mlogin->login_admin($username,$password);
 			if($cek=="berhasil")
 			{
-				redirect('admin','refresh');
+				redirect('admin/grafik','refresh');
 			}
 			else
 			{
