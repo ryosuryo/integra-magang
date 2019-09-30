@@ -1,4 +1,30 @@
-<div class="box box-info">
+
+<div class="row">
+	<div class="col-md-3">
+	<div class="box box-info">
+			<div class="box-header">
+				<h3 class="box-title">Filter</h3>
+			</div>
+			<div class="box-body">
+				<form action="<?= base_url()?>admin/tampil/cari" method="POST">
+					<div class="form-group">
+						<label for="">Tahun</label>
+						<select name="Tahun" id="Tahun" class="form-control">
+							<option value=""></option>
+							<?php
+								foreach ($mahasiswa as $mh) {
+									echo '<option value="'.$mh->nama_magang.'">'.$mh->nama_magang.'</option>';
+								}
+							?>
+						</select><br>
+						<input type="submit" name="submit" class="btn btn-warning">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-9">
+	<div class="box box-info">
 	<div class="box-header">
 		<h3 class="box-title">Data Periode</h3>
 	</div>
