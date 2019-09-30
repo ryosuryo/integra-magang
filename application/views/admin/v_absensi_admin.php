@@ -16,7 +16,7 @@
 								}
 							?>
 						</select><br>
-						<input type="submit" class="btn btn-warning">
+						<input type="submit" name="submit" class="btn btn-warning">
 					</div>
 				</form>
 			</div>
@@ -42,11 +42,10 @@
 				</thead>
 				<tbody>
 					<?php
-					$no=0;
+					$no=$this->uri->segment(4)+1;
 					foreach ($absensi as $ab) {
-						$no++;
 						echo '<tr>
-								<td>'.$no.'</td>
+								<td>'.$no++.'</td>
 								<td>'.$ab->nama_magang.'</td>
 								<td>'.date("d-F-Y", strtotime($ab->tanggal)).'</td>
 								<td>'.$ab->absen.'</td>
@@ -56,6 +55,7 @@
 					?>
 				</tbody>
 			</table>
+			<?php echo $this->pagination->create_links(); ?>
 		</div>
 		</form>
 	</div>
