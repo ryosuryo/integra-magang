@@ -42,19 +42,21 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ($aktifitas as $key => $value): ?>
+					<?php 
+					$no=$this->uri->segment(4)+1;
+					foreach ($aktifitas as $key): ?>
 						<tr>
-							<td><?php echo $key+1; ?></td>
-							<td><?php echo $value['nama_magang']; ?></td>
-							<td><?php echo $value['tgl_aktifitas']; ?></td>
-							<td><?php echo $value['isi_aktifitas']; ?></td>
+							<td><?php echo $no++ ?></td>
+							<td><?php echo $key->nama_magang ?></td>
+							<td><?php echo $key->tgl_aktifitas ?></td>
+							<td><?php echo $key->isi_aktifitas ?></td>
 							<td>
-								<a href="#detail" data-toggle="modal" class="btn btn-danger" onclick="tm_detail(<?php echo $value['id_aktifitas']?>)">Lihat</a>
+								<a href="#detail" data-toggle="modal" class="btn btn-danger" onclick="tm_detail(<?php echo $key->id_aktifitas?>)">Lihat</a>
 							</td>
 							<td>
 								
 								<select name="status_aktifitas[<?php echo $value['id_aktifitas']?>]" class="form-control" onchange="submit()">
-									<option><?php echo $value['status_aktifitas']; ?></option>
+									<option><?php echo $key->status_aktifitas ?></option>
 									<option value="Pending">Pending</option>
 									<option value="Diterima">Diterima</option>
 									<option value="Ditolak">Ditolak</option>
@@ -64,6 +66,7 @@
 					<?php endforeach ?>
 				</tbody>
 			</table>
+			<?php echo $this->pagination->create_links(); ?>
 		</div>
 		</form>
 	</div>

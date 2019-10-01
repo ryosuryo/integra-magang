@@ -95,7 +95,21 @@ class Maktifitas extends CI_Model
 		$this->db->delete('aktifitas');
 	}
 
-	
+	public function limit_magang($limit, $start)
+	{
+		return $this->db->join('magang','magang.id_magang=aktifitas.id_magang')
+						->where('magang.status_magang','Diterima')
+						->limit($limit, $start)
+						->get('aktifitas')
+						->result();
+	}
+
+	public function number_rows(){
+	return $this->db->join('magang','magang.id_magang=aktifitas.id_magang')
+					->where('magang.status_magang','Diterima')
+					->get('aktifitas')
+					->num_rows();
+	}
 
 	
 
