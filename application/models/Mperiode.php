@@ -33,7 +33,21 @@ class Mperiode extends CI_Model
 		return $data;
 	}
 
-	
+	public function limit_magang($limit, $start)
+	{
+		return $this->db->join('magang','magang.id_magang=periode_pemagang.id_magang')
+						->where('magang.status_magang','Diterima')
+						->limit($limit, $start)
+						->get('periode_pemagang')
+						->result();
+	}
+
+	public function number_rows(){
+	return $this->db->join('magang','magang.id_magang=periode_pemagang.id_magang')
+					->where('magang.status_magang','Diterima')
+					->get('periode_pemagang')
+					->num_rows();
+	}
 
 }
 

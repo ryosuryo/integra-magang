@@ -42,11 +42,10 @@
 				</thead>
 				<tbody>
 					<?php
-						$no=0;
+						$no=$this->uri->segment(4)+1;
 						foreach ($periode as $p) {
-							$no++;
 							echo '<tr>
-									<td>'.$no.'</td>
+									<td>'.$no++.'</td>
 									<td>'.$p->nama_magang.'</td>
 									<td>'.date("d-F-Y", strtotime($p->tgl_awal)).'</td>
 									<td>'.date("d-F-Y", strtotime($p->tgl_akhir)).'</td>
@@ -55,6 +54,7 @@
 					?>
 				</tbody>
 			</table>
+			<?php echo $this->pagination->create_links(); ?>
 			</div>
 
 		</div>
