@@ -12,17 +12,12 @@ class Grafik extends CI_Controller{
     }
 
     public function index()
-    {
-        $data['pemagang']=$this->Mgrafik->get_data_pemagang();
-        $this->load->view('admin/header');
+	{
+		$data['pemagang']=$this->Mgrafik->get_data_pemagang();
+		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-        $this->load->view('admin/v_grafik',$data);
-        $this->load->view('admin/footer');
+		$this->load->view('admin/v_grafik', $data);
+		$this->load->view('admin/footer');		
     }
-
-    public function data_pendaftar()
-    {
-        $data['pendaftar']=$this->Mgrafik->get_data_pendaftar();
-        $this->load->view('admin/v_grafik');
-    }
+    
 }

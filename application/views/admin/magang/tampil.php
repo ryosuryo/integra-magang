@@ -19,22 +19,26 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ($magang as $key => $value):?>
+					<?php
+					$no=$this->uri->segment(4)+1;
+					foreach ($magang as $key):?>
 					<tr>
-						<td><?php echo $key+1; ?></td>
-						<td><?php echo $value['nama_magang']; ?></td>
-						<td><?php echo $value['email_magang']; ?></td>
-						<td><?php echo $value['kampus_magang']; ?></td>
-						<td><?php echo $value['jurusan_magang']; ?></td>
-						<td><?php echo $value['nohp_magang']; ?></td>
-						<td><?php echo $value['alamat_magang']; ?></td>
+						<td><?php echo $no++ ?></td>
+						<td><?php echo $key->nama_magang ?></td>
+						<td><?php echo $key->email_magang ?></td>
+						<td><?php echo $key->kampus_magang ?></td>
+						<td><?php echo $key->jurusan_magang ?></td>
+						<td><?php echo $key->nohp_magang ?></td>
+						<td><?php echo $key->alamat_magang ?></td>
 						<td>
-							<a href="<?php echo base_url("assets/SuratMagang/$value[file_magang]"); ?>"target="_blank">Download</a>
+							<a href="<?php echo base_url("assets/SuratMagang/$key->file_magang"); ?>"target="_blank">Download</a>
 						</td>
 					</tr>
+					
 				<?php endforeach ?>
 				</tbody>
 			</table>
+			<?php echo $this->pagination->create_links(); ?>
 		</div>
 		
 	</div>

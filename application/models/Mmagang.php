@@ -168,10 +168,21 @@ class Mmagang extends CI_Model
 			$this->db->where('id_magang', $id);
 			$this->db->update('magang', $input);
 		}
-
-
-		
 	}	
+
+	public function limit_magang($limit, $start)
+	{
+		return $this->db->where('magang.status_magang','Diterima')
+						->limit($limit, $start)
+						->get('magang')
+						->result();
+	}
+
+	public function number_rows(){
+	return $this->db->where('magang.status_magang','Diterima')
+					->get('magang')
+					->num_rows();
+	}
 
 }
 
