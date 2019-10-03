@@ -9,7 +9,7 @@
 					<div class="form-group">
 						<label for="">Nama Mahasiswa</label>
 						<select name="nama_magang" id="nama_magang" class="form-control">
-							<option value=""></option>
+							<option value="">Semua</option>
 							<?php
 								foreach ($mahasiswa as $mh) {
 									echo '<option value="'.$mh->nama_magang.'">'.$mh->nama_magang.'</option>';

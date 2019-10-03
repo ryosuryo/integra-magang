@@ -52,7 +52,7 @@ class Aktifitas extends CI_Controller
 
 	public function detail($id_aktifitas)
 	{
-		$dt = $this->Maktifitas->tm_detail($id_aktifitas);
+		$dt = $this->ma->tm_detail($id_aktifitas);
 		echo json_encode($dt);
 	}
 	public function cari()
@@ -60,12 +60,21 @@ class Aktifitas extends CI_Controller
 		$nama = $this->input->post('nama_magang');
 		if ($nama==null)
 		{
-			redirect('admin/aktifitas','refresh');	
+			redirect('admin/Aktifitas','refresh');	
 		}
 		else
 		{
-			$data['aktifitas'] = $this->Maktifitas->cari($nama);
-			$data['mahasiswa'] = $this->Maktifitas->get_magang();
+			$perpage=10;
+			$data['start']=$this->uri->segment(4);
+			$config=array(
+				'base_url'=>base_url('admin/Aktifitas/cari'),
+				'total_rows'=>$this->ma->cari_aktifitas($nama,$perpage,$data['start'])->num_rows(),
+				'per_page'=>$perpage,
+			);
+			$this->pagination->initialize($config);
+
+			$data['aktifitas'] = $this->ma->cari_aktifitas($nama,$perpage,$data['start'])->result();
+			$data['mahasiswa'] = $this->ma->get_magang();
 			$this->load->view('admin/header');
 			$this->load->view('admin/sidebar');
 			$this->load->view('admin/tampil_aktifitas', $data);
@@ -85,7 +94,7 @@ class Aktifitas extends CI_Controller
 	}
 	function hapus($id)
 	{
-		$this->Maktifitas->hapus_aktifitas($id);
+		$this->ma->hapus_aktifitas($id);
 		redirect('admin/aktifitas','refresh');
 	}
 

@@ -54,28 +54,14 @@ class Maktifitas extends CI_Model
 		return $semua;
 
 	}
-	public function cari($nama)
+	public function cari_aktifitas($nama,$limit,$start)
 	{
-		$ambil = $this->db->where('nama_magang',$nama)
+		return $this->db->where('nama_magang',$nama)
 						  ->join('magang', 'aktifitas.id_magang = magang.id_magang', 'left')
 						  ->order_by('tgl_aktifitas')
+						  ->limit($limit,$start)
 						  ->get('aktifitas');
-		$data = $ambil->result_array();
-
-
-		$semua=array();
-		foreach ($data as $key => $value) 
-		{
-			$ambil1 = $this->db->where('nama_magang',$nama)
-							   ->join('magang', 'aktifitas.id_magang = magang.id_magang', 'left')
-							   ->order_by('tgl_aktifitas')
-							   ->get('aktifitas');
-			$data1 = $ambil1->result_array();
-			$value['detail']=$data1;
-			$semua[] = $value;
-		}
-
-		return $semua;
+		
 	}
 
 	public function get_magang()
