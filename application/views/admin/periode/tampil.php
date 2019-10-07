@@ -6,14 +6,14 @@
 				<h3 class="box-title">Filter</h3>
 			</div>
 			<div class="box-body">
-				<form action="<?= base_url()?>admin/tampil/cari" method="POST">
+				<form action="<?= base_url()?>admin/Periode/cari" method="POST">
 					<div class="form-group">
 						<label for="">Tahun</label>
 						<select name="Tahun" id="Tahun" class="form-control">
-							<option value=""></option>
+							<option value="">Semua</option>
 							<?php
-								foreach ($mahasiswa as $mh) {
-									echo '<option value="'.$mh->nama_magang.'">'.$mh->nama_magang.'</option>';
+								foreach ($periode as $p) {
+									echo '<option value="'.date("Y", strtotime($p->tgl_awal)).'">'.date("Y", strtotime($p->tgl_awal)).'</option>';
 								}
 							?>
 						</select><br>

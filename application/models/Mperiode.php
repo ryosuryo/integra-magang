@@ -33,6 +33,32 @@ class Mperiode extends CI_Model
 		return $data;
 	}
 
+	public function cari_periode($tahun,$limit,$start)
+	{
+		//->where("DATE_FORMAT(column_name,'%Y-%m')", $bulan)
+		/**function get_data($nomor,$bulan,$tahun) {
+			$this->db->select('*');
+			$this->db->from('tb_pelanggan as pel');
+			$this->db->join('tb_produk as pro', 'pel.id_barcode  = pro.id_barcode');    
+			$this->db->select_sum('jumlah');
+			$this->db->where('MONTH(pel.tgl_pembelian)',$bulan);
+			$this->db->where('YEAR(pel.tgl_pembelian)',$tahun);
+			$this->db->group_by('pel.id_barcode');
+			$query = $this->db->get();
+			if ($query->num_rows() > 0) {
+				return $query->result();
+				} else {
+				return false;
+			}
+		}  **/
+		
+		
+		return $this->db->where('tahun', $tahun)
+						->join('periode','magang.id_magang=periode.id_magang')
+						->limit($limit, $start)
+						->get('periode');
+	}
+
 	public function limit_magang($limit, $start)
 	{
 		return $this->db->join('magang','magang.id_magang=periode_pemagang.id_magang')

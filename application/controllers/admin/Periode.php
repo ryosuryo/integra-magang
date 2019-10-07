@@ -47,6 +47,34 @@ class Periode extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
+	public function cari()
+	{
+		$tahun = $this->input->post('tahun');
+		if ($tahun==null)
+		{
+			redirect('admin/Periode','refresh');	
+		}
+		else
+		{
+			$perpage=10;
+			$data['start']=$this->uri->segment(4);
+			$config=array(
+				'base_url'=>base_url('admin/Periode/cari'),
+				'total_rows'=> $this->mp->cari_periode($tahun,$perpage,$data['start'])->num_rows(),
+				'per_page'=>$perpage,
+				
+			);
+			$this->pagination->initialize($config);
+
+			$data['periode']=$this->mp->cari_periode($tahun,$perpage,$data['start'])->result();
+			$data['mahasiswa'] = $this->mp->get_magang();
+			$this->load->view('admin/header');
+			$this->load->view('admin/sidebar');
+			$this->load->view('admin/periode/tampil', $data);
+			$this->load->view('admin/footer');
+		}
+	}
+
 	function tambah()
 	{
 		$data['bulan']= array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'December');
