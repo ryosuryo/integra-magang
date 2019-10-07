@@ -468,6 +468,9 @@
 								<div>
 									<img class="img-fluid" src="<?= base_url()?>assets2/img/logos/amikom1.png" alt="">
 								</div>
+								<div>
+									<img class="img-fluid" src="<?= base_url()?>assets2/img/logos/polije.png" alt="">
+								</div>
 
 
 							</div>
