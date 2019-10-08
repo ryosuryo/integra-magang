@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 12 Sep 2019 pada 04.39
--- Versi Server: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Generation Time: Oct 08, 2019 at 05:47 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `absensi`
+-- Table structure for table `absensi`
 --
 
 CREATE TABLE `absensi` (
@@ -38,7 +38,7 @@ CREATE TABLE `absensi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `absensi`
+-- Dumping data for table `absensi`
 --
 
 INSERT INTO `absensi` (`id_absensi`, `id_magang`, `tanggal`, `jam_absen`, `absen`, `alasan`) VALUES
@@ -56,12 +56,19 @@ INSERT INTO `absensi` (`id_absensi`, `id_magang`, `tanggal`, `jam_absen`, `absen
 (64, 26, '2019-09-03', '02:09:22', 'Masuk', ''),
 (65, 26, '2019-09-04', '09:49:24', 'Masuk', ''),
 (66, 28, '2019-09-04', '02:45:30', 'Masuk', ''),
-(67, 28, '2019-09-05', '09:36:20', 'Masuk', '');
+(67, 28, '2019-09-05', '09:36:20', 'Masuk', ''),
+(68, 33, '2019-09-26', '09:27:23', 'Masuk', ''),
+(69, 33, '2019-09-30', '08:45:17', 'Masuk', ''),
+(71, 26, '2019-09-30', '00:00:00', 'Masuk', ''),
+(72, 33, '2019-10-01', '08:17:00', 'Masuk', ''),
+(73, 33, '2019-10-02', '09:10:42', 'Masuk', ''),
+(74, 33, '2019-10-07', '08:54:48', 'Masuk', ''),
+(75, 34, '2019-10-07', '10:26:59', 'Masuk', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -72,7 +79,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama_admin`) VALUES
@@ -81,7 +88,7 @@ INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama_admin`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `aktifitas`
+-- Table structure for table `aktifitas`
 --
 
 CREATE TABLE `aktifitas` (
@@ -94,7 +101,7 @@ CREATE TABLE `aktifitas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `aktifitas`
+-- Dumping data for table `aktifitas`
 --
 
 INSERT INTO `aktifitas` (`id_aktifitas`, `id_magang`, `tgl_aktifitas`, `isi_aktifitas`, `capture_aktifitas`, `status_aktifitas`) VALUES
@@ -107,7 +114,7 @@ INSERT INTO `aktifitas` (`id_aktifitas`, `id_magang`, `tgl_aktifitas`, `isi_akti
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `catatan_penolakan`
+-- Table structure for table `catatan_penolakan`
 --
 
 CREATE TABLE `catatan_penolakan` (
@@ -118,16 +125,18 @@ CREATE TABLE `catatan_penolakan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `catatan_penolakan`
+-- Dumping data for table `catatan_penolakan`
 --
 
 INSERT INTO `catatan_penolakan` (`id_catatan`, `id_magang`, `status_magang`, `catatan`) VALUES
-(13, 26, 'Diterima', 'Jaga tata tertib dengan baik, ikuti nasehat pembimbing');
+(13, 26, 'Diterima', 'Jaga tata tertib dengan baik, ikuti nasehat pembimbing'),
+(15, 33, 'Diterima', ''),
+(16, 34, 'Diterima', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `datacv`
+-- Table structure for table `datacv`
 --
 
 CREATE TABLE `datacv` (
@@ -137,7 +146,7 @@ CREATE TABLE `datacv` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `datacv`
+-- Dumping data for table `datacv`
 --
 
 INSERT INTO `datacv` (`id_dataCV`, `id_magang`, `data`) VALUES
@@ -146,7 +155,18 @@ INSERT INTO `datacv` (`id_dataCV`, `id_magang`, `data`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `magang`
+-- Stand-in structure for view `jml_pemagang`
+-- (See below for the actual view)
+--
+CREATE TABLE `jml_pemagang` (
+`tahun` int(4)
+,`jumlah_pemagang` bigint(21)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `magang`
 --
 
 CREATE TABLE `magang` (
@@ -169,18 +189,31 @@ CREATE TABLE `magang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `magang`
+-- Dumping data for table `magang`
 --
 
 INSERT INTO `magang` (`id_magang`, `nim_magang`, `nama_magang`, `ttl_magang`, `email_magang`, `password_magang`, `kampus_magang`, `jurusan_magang`, `alamat_magang`, `nohp_magang`, `status_magang`, `file_magang`, `foto_magang`, `jk_magang`, `is_actived`, `date_created`) VALUES
 (26, '028089237429811', 'Fani Rahmatulloh', 'Jombang, 28 September 2001', 'fanirahmatulloh842@gmail.com', '$2y$10$i6M2gonFPQcOGxoCwvkvhObvuSeJr108uAv1d/VTpxqymvW71Ot/.', 'Universitas Gajah Mada', 'Teknik Kendaraan Ringan', 'JL. Danau Buyan G7 D7 Sawojajar Malang', '081389031167', 'Diterima', 'doc_3.pdf', 'facebook1.png', 'Laki-Laki', 1, 1565842559),
 (27, '028089237429811', 'Riski', '', '', '', '', '', '', '', '', '', '', '', 1, 0),
-(28, '00122137823428', 'Mohammad Fani', 'Jombang ,29 September 2001', 'mohammad_fani_26rpl@student.smktelkom-mlg.sch.id', '$2y$10$v6hmuIHT6Qwm/iHVUUhyFuxW92m1ZNao/leVLgLvIn3qHiPmjSOzi', 'SMK Telkom Malang', 'Rekayasa Perangkat Lunak', 'JL. Danau Buyan G7 D7, Sawojajar, Malang', '081389031168977', 'Diterima', 'Mohammad_Fani_Rahmatulloh.pdf', 'Mohammad_Fani_Rahmatulloh.jpg', 'Laki-Laki', 1, 1567581490);
+(28, '00122137823428', 'Mohammad Fani', 'Jombang ,29 September 2001', 'mohammad_fani_26rpl@student.smktelkom-mlg.sch.id', '$2y$10$v6hmuIHT6Qwm/iHVUUhyFuxW92m1ZNao/leVLgLvIn3qHiPmjSOzi', 'SMK Telkom Malang', 'Rekayasa Perangkat Lunak', 'JL. Danau Buyan G7 D7, Sawojajar, Malang', '081389031168977', 'Diterima', 'Mohammad_Fani_Rahmatulloh.pdf', 'Mohammad_Fani_Rahmatulloh.jpg', 'Laki-Laki', 1, 1567581490),
+(33, 'E31171358', 'Rezha Pratama H', '', 'rezhasinatra@gmail.com', '$2y$10$zPqq4Dk14EDHo/imdDa/HujBnT/qC7D/D7CF/3SFrq7/1Vb03Ov8e', 'Politeknik Negeri Jember', 'Manajemen Informatika / Teknologi Informasi', 'Perumahan Tegal Besar Permai 2 P.18, kaliwates, Jember', '08980394734', 'Diterima', '', '', 'Laki-Laki', 1, 1569463272),
+(34, 'E31171296', 'Aprilia Cindy', 'Lumajang, 7 April 1999', 'ravikaput@gmail.com', '$2y$10$9KyqcGVJWa9nWsImLNBBYedsAQQUKWoKp52jWgnjTSkkY0s3vYhAe', 'Politeknik Negeri Jember', 'Manajemen Informatika', 'Lumajang', '081238666090', 'Diterima', '', '1aff95a67c60f395d7ec16c641ef6a8b.jpg', 'Perempuan', 1, 1570417942);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `periode_pemagang`
+-- Stand-in structure for view `periode`
+-- (See below for the actual view)
+--
+CREATE TABLE `periode` (
+`id_magang` int(50)
+,`tahun` int(4)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `periode_pemagang`
 --
 
 CREATE TABLE `periode_pemagang` (
@@ -191,18 +224,20 @@ CREATE TABLE `periode_pemagang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `periode_pemagang`
+-- Dumping data for table `periode_pemagang`
 --
 
 INSERT INTO `periode_pemagang` (`id_periode_pemagang`, `id_magang`, `tgl_awal`, `tgl_akhir`) VALUES
 (48, 26, '2019-04-01', '2019-09-23'),
 (49, 27, '2019-09-01', '2019-12-30'),
-(51, 28, '2019-07-01', '2019-09-27');
+(51, 28, '2019-07-01', '2019-09-27'),
+(54, 33, '2019-09-16', '2019-12-13'),
+(55, 34, '2019-09-16', '2019-12-14');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_token`
+-- Table structure for table `user_token`
 --
 
 CREATE TABLE `user_token` (
@@ -211,6 +246,32 @@ CREATE TABLE `user_token` (
   `token` varchar(128) NOT NULL,
   `date_created` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_token`
+--
+
+INSERT INTO `user_token` (`id`, `email`, `token`, `date_created`) VALUES
+(8, 'nfdhanyml@gmail.com', 'VTLMSwkWiRhP+P3NO08NrPuB2nr0Sth6/RvJzKsBJLA=', '1569419228'),
+(12, 'rezhasinatra@gmail.com', 'DxXalqkl2LbwFr/90K5tz1I2Pqn+YjU+owDsnneN/V0=', '1569463641');
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `jml_pemagang`
+--
+DROP TABLE IF EXISTS `jml_pemagang`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `jml_pemagang`  AS  select year(`periode_pemagang`.`tgl_awal`) AS `tahun`,count(year(`periode_pemagang`.`tgl_awal`)) AS `jumlah_pemagang` from `periode_pemagang` group by year(`periode_pemagang`.`tgl_awal`) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `periode`
+--
+DROP TABLE IF EXISTS `periode`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `periode`  AS  select `periode_pemagang`.`id_magang` AS `id_magang`,year(`periode_pemagang`.`tgl_awal`) AS `tahun` from `periode_pemagang` ;
 
 --
 -- Indexes for dumped tables
@@ -277,7 +338,7 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `absensi`
 --
 ALTER TABLE `absensi`
-  MODIFY `id_absensi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id_absensi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -295,7 +356,7 @@ ALTER TABLE `aktifitas`
 -- AUTO_INCREMENT for table `catatan_penolakan`
 --
 ALTER TABLE `catatan_penolakan`
-  MODIFY `id_catatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_catatan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `datacv`
@@ -307,44 +368,44 @@ ALTER TABLE `datacv`
 -- AUTO_INCREMENT for table `magang`
 --
 ALTER TABLE `magang`
-  MODIFY `id_magang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_magang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `periode_pemagang`
 --
 ALTER TABLE `periode_pemagang`
-  MODIFY `id_periode_pemagang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_periode_pemagang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `absensi`
+-- Constraints for table `absensi`
 --
 ALTER TABLE `absensi`
   ADD CONSTRAINT `absensi_ibfk_1` FOREIGN KEY (`id_magang`) REFERENCES `magang` (`id_magang`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `aktifitas`
+-- Constraints for table `aktifitas`
 --
 ALTER TABLE `aktifitas`
   ADD CONSTRAINT `aktifitas_ibfk_2` FOREIGN KEY (`id_magang`) REFERENCES `magang` (`id_magang`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `catatan_penolakan`
+-- Constraints for table `catatan_penolakan`
 --
 ALTER TABLE `catatan_penolakan`
   ADD CONSTRAINT `catatan_penolakan_ibfk_1` FOREIGN KEY (`id_magang`) REFERENCES `magang` (`id_magang`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `periode_pemagang`
+-- Constraints for table `periode_pemagang`
 --
 ALTER TABLE `periode_pemagang`
   ADD CONSTRAINT `periode_pemagang_ibfk_1` FOREIGN KEY (`id_magang`) REFERENCES `magang` (`id_magang`) ON DELETE CASCADE ON UPDATE CASCADE;
